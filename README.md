@@ -28,9 +28,7 @@ https://docs.microsoft.com/en-us/dotnet/api/Xamarin.Forms.DatePicker?view=xamari
 All other external plugins and libraries are not allowed in the project.
 
 
-
 The submission needs to include a zip file with the project file and folder structure intact for the Visual Studio IDE.
-
 
 
 Your submission must be your original work. No more than a combined total of 30% of a submission can be directly quoted or closely paraphrased from sources, even if cited correctly. Use the report provided when submitting your task as a guide.
@@ -38,12 +36,10 @@ Your submission must be your original work. No more than a combined total of 30%
  You must use the rubric to direct the creation of your submission because it provides detailed criteria that will be used to evaluate your work. Each requirement below may be evaluated by more than one rubric aspect. The rubric aspect titles may contain hyperlinks to relevant portions of the course.
 
 
-
 A.  Draw a low-fidelity wireframe for your mobile application, that includes all of the following requirements:
 
 
 Note: This assessment requires you to submit pictures, graphics, and/or diagrams. Each file must be an attachment no larger than 30 MB in size. Diagrams must be original and may be hand-drawn or drawn using a graphics program. Do not use CAD programs because attachments will be too large.
-
 
 
 
@@ -154,7 +150,6 @@ B.  Create within the Xamarin.Forms framework, a mobile application aligned to t
       https://github.com/edsnider/LocalNotificationsPlugin
 
 6.  Write code to create a set of data for evaluation purposes, including one term and one course from part B3, and include the two assessments from part B4 for that course. Include your own name, phone number, and email address as the course instructor for the course.
-
 
 
 C.  Examine the wireframe from part A, to determine any changes that you made during the development of the mobile application.
