@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
   </ItemGroup>
 </Project>
