@@ -1,12 +1,9 @@
-﻿using C971.ViewModels;
-using C971.Views;
-using System;
-using System.Collections.Generic;
+﻿using C971.Views;
 using Xamarin.Forms;
 
 namespace C971
 {
-  public partial class AppShell : Xamarin.Forms.Shell
+  public partial class AppShell : Shell
   {
     public AppShell()
     {

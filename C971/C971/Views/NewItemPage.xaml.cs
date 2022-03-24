@@ -1,10 +1,6 @@
 ﻿using C971.Models;
 using C971.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace C971.Views
 {

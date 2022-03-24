@@ -1,5 +1,4 @@
 ﻿using C971.ViewModels;
-using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace C971.Views

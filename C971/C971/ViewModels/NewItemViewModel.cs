@@ -1,8 +1,5 @@
-﻿using C971.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
+﻿using System;
+using C971.Models;
 using Xamarin.Forms;
 
 namespace C971.ViewModels

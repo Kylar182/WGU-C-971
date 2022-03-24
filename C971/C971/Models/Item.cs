@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace C971.Models
+﻿namespace C971.Models
 {
   public class Item
   {

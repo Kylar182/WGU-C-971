@@ -1,9 +1,9 @@
-﻿using C971.Models;
-using C971.Views;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using C971.Models;
+using C971.Views;
 using Xamarin.Forms;
 
 namespace C971.ViewModels

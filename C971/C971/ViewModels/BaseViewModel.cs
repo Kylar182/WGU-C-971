@@ -1,9 +1,9 @@
-﻿using C971.Models;
-using C971.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using C971.Models;
+using C971.Services;
 using Xamarin.Forms;
 
 namespace C971.ViewModels

@@ -1,8 +1,8 @@
-﻿using C971.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using C971.Models;
 
 namespace C971.Services
 {
