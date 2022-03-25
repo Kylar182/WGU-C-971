@@ -1,7 +1,12 @@
 # WGU-Mobile Application Development Using C# – C-971
 
-This is a mobile app using Xamarin Forms as per the requirements of the course. See
-the attached pdf (PA-C971-Requirements.pdf) for full requirements.
+### Dev Note
+
+This is a mobile app using Xamarin Forms as per the requirements of the course. See the attached pdf (PA-C971-Requirements.pdf) for full requirements.
+Due to the plugin / nuget restrictions of the course I have opted for a simple solution using the sqlite-net-pcl as requested by my instructor. 
+I have also added Xamarin.Android.Support.v4 Library to the Android project because it's not actually possibly to run without it due to the restrictions of the Xam.Plugins.Notifier Library were instructed to use.
+Under normal circumstances I would use Entity Framework's SQLite libraries, System Component Model Data Annotations for Validation, etc.
+Considering the timing, I would have also much preferred to use .Net MAUI over Xamarin.
 
 ## Introduction
 
