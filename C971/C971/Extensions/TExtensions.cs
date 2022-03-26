@@ -21,7 +21,10 @@ namespace C971.Extensions
         return true;
       }
 
-      value = (T)typeof(T).GetDefaultValue();
+      if (typeof(T).IsValueType && Nullable.GetUnderlyingType(typeof(T)) == null)
+        value = (T)typeof(T).GetDefaultValue();
+      else
+        value = default(T);
 
       return false;
     }
