@@ -4,7 +4,7 @@
              x:Class="C971.Views.ItemsPage"
              Title="{Binding Title}"
              xmlns:local="clr-namespace:C971.ViewModels"  
-             xmlns:model="clr-namespace:C971.Models"  
+             xmlns:model="clr-namespace:C971.Models.DatabaseModels"  
              x:Name="BrowseItemsPage">
 
     <ContentPage.ToolbarItems>
@@ -20,12 +20,12 @@
                 SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Item">
-                        <Label Text="{Binding Text}" 
+                    <StackLayout Padding="10" x:DataType="model:AcademicTerm">
+                        <Label Text="{Binding Id}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="16" />
-                        <Label Text="{Binding Description}" 
+                        <Label Text="{Binding Title}" 
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" />

@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 using C971.Models.DatabaseModels;
 
 namespace C971.Services
@@ -8,6 +10,14 @@ namespace C971.Services
   /// </summary>
   public interface IDBService<T> where T : BaseModel
   {
+    /// <summary>
+    /// Get an Item of this Type using the given expression
+    /// </summary>
+    /// <param name="predExpr">
+    /// Expression for Query
+    /// </param>
+    Task<T> Get(Expression<Func<T, bool>> predExpr);
+
     /// <summary>
     /// Add an Item to it's Table in the Database
     /// </summary>
