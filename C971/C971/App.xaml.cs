@@ -23,6 +23,9 @@ namespace C971
       DependencyService.Register<MockDataStore>();
       DependencyService.RegisterSingleton(conn);
       DependencyService.Register<IAcademicTermService, AcademicTermService>();
+      DependencyService.Register<IAssessmentService, AssessmentService>();
+      DependencyService.Register<ICourseService, CourseService>();
+      DependencyService.Register<IInstructorService, InstructorService>();
       MainPage = new AppShell();
     }
 
