@@ -1,4 +1,4 @@
-﻿
+﻿using System.IO;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
@@ -15,8 +15,11 @@ namespace C971.Droid
 
       Xamarin.Essentials.Platform.Init(this, savedInstanceState);
       global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-      LoadApplication(new App());
+      string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
+      string db = Path.Combine(path, "C971.db3");
+      LoadApplication(new App(db));
     }
+
     public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
     {
       Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+using System.IO;
 using Foundation;
 using UIKit;
 
@@ -20,7 +21,9 @@ namespace C971.iOS
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
       global::Xamarin.Forms.Forms.Init();
-      LoadApplication(new App());
+      string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+      string db = Path.Combine(path, "C971.db3");
+      LoadApplication(new App(db));
 
       return base.FinishedLaunching(app, options);
     }

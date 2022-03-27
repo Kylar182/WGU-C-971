@@ -1,0 +1,38 @@
+﻿using System.Threading.Tasks;
+using C971.Models.DatabaseModels;
+using SQLite;
+
+namespace C971.Services.Implementations
+{
+  /// <inheritdoc cref="IDBService{T}"/>
+  public abstract class DBService<T> : IDBService<T> where T : BaseModel
+  {
+    /// <inheritdoc cref="SQLiteAsyncConnection"/>
+    protected readonly SQLiteAsyncConnection _conn;
+
+    /// <inheritdoc cref="IDBService{T}"/>
+    public DBService(DBConn dbPath)
+    {
+      _conn = new SQLiteAsyncConnection(dbPath.ConnectionString);
+    }
+
+    /// <inheritdoc />
+    public virtual async Task<T> Add(T item)
+    {
+      _ = await _conn.InsertAsync(item);
+      return item;
+    }
+
+    /// <inheritdoc />
+    public virtual async Task<int> Update(T item)
+    {
+      return await _conn.UpdateAsync(item);
+    }
+
+    /// <inheritdoc />
+    public virtual async Task<int> Delete(T item)
+    {
+      return await _conn.DeleteAsync(item);
+    }
+  }
+}
