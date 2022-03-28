@@ -17,7 +17,7 @@ namespace C971.Models.DatabaseModels
     /// <summary>
     /// Description of the Course
     /// </summary>
-    [MaxLength(500), NotNull]
+    [MaxLength(1000), NotNull]
     public string Description { get; set; }
     /// <summary>
     /// User's written Notes on the Course
