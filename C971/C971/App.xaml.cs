@@ -20,7 +20,6 @@ namespace C971
         ConnectionString = dbPath
       };
 
-      DependencyService.Register<MockDataStore>();
       DependencyService.RegisterSingleton(conn);
       DependencyService.Register<IAcademicTermService, AcademicTermService>();
       DependencyService.Register<IAssessmentService, AssessmentService>();
@@ -178,7 +177,6 @@ namespace C971
           CourseId = 3,
           Due = new DateTime(2022, 4, 15, 5, 59, 59, DateTimeKind.Utc)
         });
-
 
         _syncConn.Insert(new Instructor()
         {

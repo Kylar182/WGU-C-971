@@ -12,4 +12,10 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\TermsPage.xaml.cs">
+      <DependentUpon>TermsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

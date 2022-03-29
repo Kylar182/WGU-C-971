@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="C971.Views.AboutPage"
-             xmlns:vm="clr-namespace:C971.ViewModels"
+             x:Class="C971.Views.TermsPage"
+             xmlns:vm="clr-namespace:C971.ViewModels"  
+             xmlns:model="clr-namespace:C971.Models.DatabaseModels"
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>
-        <vm:AboutViewModel />
+      <vm:AcademicTermVM />
     </ContentPage.BindingContext>
     
     <ContentPage.Resources>
