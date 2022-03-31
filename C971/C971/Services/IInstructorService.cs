@@ -5,7 +5,7 @@ namespace C971.Services
   /// <summary>
   /// Academic Instructor Database Service
   /// </summary>
-  public interface IInstructorService : IDBService<Instructor>
+  public interface IInstructorService : ICRUDService<Instructor>
   {
   }
 }

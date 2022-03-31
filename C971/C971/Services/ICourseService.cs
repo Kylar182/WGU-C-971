@@ -5,7 +5,7 @@ namespace C971.Services
   /// <summary>
   /// Academic Course Database Service
   /// </summary>
-  public interface ICourseService : IDBService<Course>
+  public interface ICourseService : ICRUDService<Course>
   {
   }
 }

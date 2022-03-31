@@ -1,6 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using C971.Models.DatabaseModels;
+using C971.Services;
 using Xamarin.Forms;
 
 namespace C971.ViewModels
@@ -13,6 +17,11 @@ namespace C971.ViewModels
   /// </typeparam>
   public abstract class BaseCrudPageVM<T> : BaseViewModel where T : BaseModel
   {
+    /// <summary>
+    /// DB CRUD Service for this Database Model
+    /// </summary>
+    protected ICRUDService<T> Service;
+
     /// <summary>
     /// Observable Collection of this Database Model T Type
     /// </summary>
@@ -70,9 +79,27 @@ namespace C971.ViewModels
     /// Task overridden in Inherited VMs that Loads the Page's <para />
     /// Items and adds them to the observable Collection
     /// </summary>
-    protected virtual Task ExecuteLoadItems()
+    protected virtual async Task ExecuteLoadItems()
     {
-      return Task.CompletedTask;
+      IsBusy = true;
+
+      try
+      {
+        Items.Clear();
+
+        List<T> items = await Service.GetAll();
+
+        foreach (T item in items)
+          Items.Add(item);
+      }
+      catch (Exception ex)
+      {
+        Debug.WriteLine(ex);
+      }
+      finally
+      {
+        IsBusy = false;
+      }
     }
 
     /// <summary>

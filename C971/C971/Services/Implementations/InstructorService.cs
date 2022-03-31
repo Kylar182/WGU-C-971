@@ -3,5 +3,5 @@
 namespace C971.Services.Implementations
 {
   /// <inheritdoc cref="IInstructorService"/>
-  public class InstructorService : DBService<Instructor>, IInstructorService { }
+  public class InstructorService : CRUDDBService<Instructor>, IInstructorService { }
 }
