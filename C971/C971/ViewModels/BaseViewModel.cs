@@ -14,7 +14,7 @@ namespace C971.ViewModels
       set { SetProperty(ref isBusy, value); }
     }
 
-    string title = string.Empty;
+    protected string title = string.Empty;
     public string Title
     {
       get { return title; }

@@ -8,7 +8,6 @@ namespace C971.ViewModels
   {
     public InstructorVM()
     {
-      Title = "Instructors";
       Service = DependencyService.Get<IInstructorService>();
     }
   }

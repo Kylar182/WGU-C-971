@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using C971.Extensions;
 using C971.Models.DatabaseModels;
 using C971.Services;
 using Xamarin.Forms;
@@ -39,6 +40,11 @@ namespace C971.ViewModels
     /// Command to Navigate to the Update Item Page for the selected Item
     /// </summary>
     public Command<T> ItemTapped { get; }
+
+    /// <summary>
+    /// Page Title Base if not overwritten
+    /// </summary>
+    protected new string title = typeof(T).Name.ToPlural();
 
     protected virtual string NewPage => "New" + typeof(T).Name + "Page";
     protected virtual string UpdatePage => "Update" + typeof(T).Name + "Page";

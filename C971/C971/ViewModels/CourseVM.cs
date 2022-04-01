@@ -8,7 +8,6 @@ namespace C971.ViewModels
   {
     public CourseVM()
     {
-      Title = "Courses";
       Service = DependencyService.Get<ICourseService>();
     }
   }
