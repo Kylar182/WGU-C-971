@@ -1,4 +1,5 @@
-﻿using C971.Models.DatabaseModels;
+﻿using System.Threading.Tasks;
+using C971.Models.DatabaseModels;
 
 namespace C971.ViewModels
 {
@@ -22,6 +23,14 @@ namespace C971.ViewModels
     public void OnAppearing()
     {
       IsBusy = true;
+    }
+
+    protected override async Task SaveItem()
+    {
+      if (Valid)
+        await Service.Add(Item);
+      else
+        return;
     }
   }
 }

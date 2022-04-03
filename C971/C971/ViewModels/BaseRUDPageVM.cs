@@ -64,13 +64,14 @@ namespace C971.ViewModels
     /// <remarks>
     ///  Validations => Key Boolean false = invalid, string Error = Error Message if Invalid
     /// </remarks>
-    protected void SetOrError<P>(List<Tuple<bool, string>> validations, P value, [CallerMemberName] string propertyName = "")
+    protected void SetOrError<P>(ref P backingStore, List<Tuple<bool, string>> validations, P value, 
+                                          [CallerMemberName] string propertyName = "", Action onChanged = null)
     {
       if (propertyName.NotEmpty())
       {
         foreach (Tuple<bool, string> validation in validations)
         {
-          if (!validation.Item1)
+          if (validation.Item1)
             RemoveError(propertyName, validation.Item2);
           else
             AddError(propertyName, validation.Item2);
@@ -78,6 +79,8 @@ namespace C971.ViewModels
 
         if (PropValid(propertyName))
           Item.SetByName(propertyName, value);
+
+        SetProperty(ref backingStore, value, propertyName, onChanged);
       }
     }
 
