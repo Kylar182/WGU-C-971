@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -51,11 +52,8 @@ namespace C971.ViewModels
     /// <typeparam name="P">
     /// Property Type Calling the Set Method
     /// </typeparam>
-    /// <param name="valid">
-    /// Boolean from Validation Eval Expression
-    /// </param>
-    /// <param name="error">
-    /// Error Message to add or Remove
+    /// <param name="validations">
+    /// Key Value Pair Validations of the Value 
     /// </param>
     /// <param name="value">
     /// Property's Value
@@ -63,20 +61,23 @@ namespace C971.ViewModels
     /// <param name="propertyName">
     /// Name of the Property or Caller if not Explicit
     /// </param>
-    protected void SetOrError<P>(bool valid, string error, P value, [CallerMemberName] string propertyName = "")
+    /// <remarks>
+    ///  Validations => Key Boolean false = invalid, string Error = Error Message if Invalid
+    /// </remarks>
+    protected void SetOrError<P>(List<Tuple<bool, string>> validations, P value, [CallerMemberName] string propertyName = "")
     {
       if (propertyName.NotEmpty())
       {
-        if (valid)
+        foreach (Tuple<bool, string> validation in validations)
         {
-          RemoveError(propertyName, error);
-          if (PropValid(propertyName))
-            Item.SetByName(propertyName, value);
+          if (!validation.Item1)
+            RemoveError(propertyName, validation.Item2);
+          else
+            AddError(propertyName, validation.Item2);
         }
-        else
-        {
-          AddError(propertyName, error);
-        }
+
+        if (PropValid(propertyName))
+          Item.SetByName(propertyName, value);
       }
     }
 
