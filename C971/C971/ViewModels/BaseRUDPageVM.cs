@@ -64,7 +64,7 @@ namespace C971.ViewModels
     /// <remarks>
     ///  Validations => Key Boolean false = invalid, string Error = Error Message if Invalid
     /// </remarks>
-    protected void SetOrError<P>(ref P backingStore, List<Tuple<bool, string>> validations, P value, 
+    protected void SetOrError<P>(ref P backingStore, List<Tuple<bool, string>> validations, P value,
                                           [CallerMemberName] string propertyName = "", Action onChanged = null)
     {
       if (propertyName.NotEmpty())

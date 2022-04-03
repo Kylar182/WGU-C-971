@@ -22,7 +22,15 @@ namespace C971.Extensions
       return true;
     }
 
-
+    /// <summary>
+    /// Method to Try and get a value of a public property by the it's name and return it
+    /// </summary>
+    /// <param name="obj">
+    /// Object with the property
+    /// </param>
+    /// <param name="name">
+    /// Property's Name
+    /// </param>
     public static object GetByName(this Object obj, string name)
     {
       PropertyInfo prop = obj.GetType().GetProperty(name, BindingFlags.Public | BindingFlags.Instance);

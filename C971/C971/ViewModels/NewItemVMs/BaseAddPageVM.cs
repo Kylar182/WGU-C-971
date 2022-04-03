@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using C971.Models.DatabaseModels;
 
-namespace C971.ViewModels
+namespace C971.ViewModels.NewItemVMs
 {
   /// <summary>
   /// Base View Model for New DB Model Pages
