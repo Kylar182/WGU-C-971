@@ -16,7 +16,7 @@ namespace C971.Models.DatabaseModels
     /// The Term Title, must be Unique
     /// </summary>
     [MaxLength(250), Unique, NotNull]
-    public string Title { get; set; }
+    public string TermTitle { get; set; }
 
     /// <summary>
     /// Date / Time of the Academic Term's Start (WGU / Utah) Local Time

@@ -55,7 +55,7 @@ namespace C971
 
         _syncConn.Insert(new AcademicTerm()
         {
-          Title = "Spring 2022",
+          TermTitle = "Spring 2022",
           Start = new DateTime(2022, 1, 01, 6, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 7, 01, 5, 59, 59, DateTimeKind.Utc),
         });

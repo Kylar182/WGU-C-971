@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using C971.Models.DatabaseModels;
+using Xamarin.Forms;
 
 namespace C971.ViewModels.NewItemVMs
 {
@@ -11,10 +13,16 @@ namespace C971.ViewModels.NewItemVMs
   /// </typeparam>
   public abstract class BaseAddPageVM<T> : BaseRUDPageVM<T> where T : BaseModel, new()
   {
-    /// <inheritdoc cref="BaseAddPageVM{}" />
     public BaseAddPageVM()
     {
       Item = new();
+    }
+
+    /// <inheritdoc cref="BaseAddPageVM{}" />
+    public BaseAddPageVM(Func<Task> save)
+    {
+      Item = new();
+      Save = new Command(async () => await save?.Invoke());
     }
 
     /// <summary>
@@ -25,7 +33,7 @@ namespace C971.ViewModels.NewItemVMs
       IsBusy = true;
     }
 
-    protected override async Task SaveItem()
+    public override async Task SaveItem()
     {
       if (Valid)
         await Service.Add(Item);

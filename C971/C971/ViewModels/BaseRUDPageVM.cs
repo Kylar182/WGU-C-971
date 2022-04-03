@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using C971.Extensions;
 using C971.Models.DatabaseModels;
 using C971.Services;
-using Xamarin.Forms;
 
 namespace C971.ViewModels
 {
@@ -31,7 +31,7 @@ namespace C971.ViewModels
     /// <summary>
     /// Command to attempt to Save the State of the Current Model if Valid
     /// </summary>
-    public Command Save { get; }
+    public ICommand Save { get; protected set; }
 
     /// <summary>
     /// Errors of each Property
@@ -64,8 +64,8 @@ namespace C971.ViewModels
     /// <remarks>
     ///  Validations => Key Boolean false = invalid, string Error = Error Message if Invalid
     /// </remarks>
-    protected void SetOrError<P>(ref P backingStore, List<Tuple<bool, string>> validations, P value,
-                                          [CallerMemberName] string propertyName = "", Action onChanged = null)
+    protected void SetOrError<P>(List<Tuple<bool, string>> validations, P value,
+                                          [CallerMemberName] string propertyName = "")
     {
       if (propertyName.NotEmpty())
       {
@@ -79,8 +79,6 @@ namespace C971.ViewModels
 
         if (PropValid(propertyName))
           Item.SetByName(propertyName, value);
-
-        SetProperty(ref backingStore, value, propertyName, onChanged);
       }
     }
 
@@ -122,10 +120,10 @@ namespace C971.ViewModels
       {
         Errors.TryGetValue(propertyName, out List<string> errors);
 
-        if (errors.Where(e => e == error).Any())
+        if (errors != null && errors.Where(e => e == error).Any())
           errors.Remove(errors.Where(e => e == error).First());
 
-        if (errors.Any())
+        if (errors != null && errors.Any())
           Errors[propertyName] = errors;
         else
         {
@@ -148,7 +146,7 @@ namespace C971.ViewModels
     /// <summary>
     /// Trys to Save the Item to the Database if it's Valid
     /// </summary>
-    protected virtual Task SaveItem()
+    public virtual Task SaveItem()
     {
       return Task.CompletedTask;
     }
