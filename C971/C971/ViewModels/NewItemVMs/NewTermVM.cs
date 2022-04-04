@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using C971.Extensions;
 using C971.Models.DatabaseModels;
@@ -19,11 +20,14 @@ namespace C971.ViewModels.NewItemVMs
       get { return termTitle; }
       set
       {
-        SetOrError(new() { new Tuple<bool, string>(value.NotEmpty(), "A Title is required") }, value);
+        SetOrError(new() { new Tuple<bool, string>(value.NotEmpty(), "A Title is required") }, value.TrimFix());
 
-        SetProperty(ref termTitle, value);
+        SetProperty(ref termTitle, value.TrimFix());
       }
     }
+
+    /// <inheritdoc cref="AcademicTerm.TermTitle"/>
+    public string TermTitleError => Errors.ContainsKey(nameof(TermTitle)) ? Errors[nameof(TermTitle)].First() : "";
 
     private DateTime start;
     /// <inheritdoc cref="AcademicTerm.Start"/>
@@ -42,6 +46,9 @@ namespace C971.ViewModels.NewItemVMs
       }
     }
 
+    /// <inheritdoc cref="AcademicTerm.Start"/>
+    public string StartError => Errors.ContainsKey(nameof(Start)) ? Errors[nameof(Start)].First() : "";
+
     private DateTime end;
     /// <inheritdoc cref="AcademicTerm.End"/>
     public DateTime End
@@ -55,10 +62,14 @@ namespace C971.ViewModels.NewItemVMs
       }
     }
 
+    /// <inheritdoc cref="AcademicTerm.End"/>
+    public string EndError => Errors.ContainsKey(nameof(End)) ? Errors[nameof(End)].First() : "";
+
     /// <inheritdoc cref="NewTermVM" />
     public NewTermVM()
     {
       Title = "New Term";
+      TermTitle = null;
       Service = DependencyService.Get<IAcademicTermService>();
       Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                               6, 0, 0, DateTimeKind.Utc);
@@ -68,6 +79,7 @@ namespace C971.ViewModels.NewItemVMs
     public NewTermVM(Func<Task> save) : base(save)
     {
       Title = "New Term";
+      TermTitle = null;
       Service = DependencyService.Get<IAcademicTermService>();
       Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                               6, 0, 0, DateTimeKind.Utc);

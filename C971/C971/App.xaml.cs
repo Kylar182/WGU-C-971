@@ -180,9 +180,9 @@ namespace C971
 
         _syncConn.Insert(new Instructor()
         {
-          Name = "Dr. Aweigh Corral ",
-          PhoneNumber = "877-435-7948 1858",
-          Email = "Aweigh.Corral@wgu.edu"
+          Name = "Dr. Andrew Beeman",
+          PhoneNumber = "217-549-5995",
+          Email = "abeema5@wgu.edu"
         });
 
         _syncConn.Insert(new Course()

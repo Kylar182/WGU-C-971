@@ -20,4 +20,25 @@
     </ResourceDictionary>
   </ContentPage.Resources>
 
+  <ContentPage.Content>
+    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Padding="10" Spacing="5">
+
+      <Entry Text="{Binding TermTitle}" Placeholder="Title of New Term" HeightRequest="50" />
+      <Label TextColor="Red" Text="{Binding TermTitleError}" FontSize="Small" />
+
+      <Grid>
+        <Label Text="Start Date" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="Small" />
+        <DatePicker Date="{Binding Start}" Grid.Column="1" Grid.Row="0" />
+        <Label TextColor="Red" Text="{Binding StartError}" FontSize="Small" />
+
+        <Label Text="End Date" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" FontSize="Small" />
+        <DatePicker Date="{Binding End}" Grid.Column="1" Grid.Row="1"/>
+        <Label TextColor="Red" Text="{Binding EndError}" FontSize="Small" />
+      </Grid>
+
+      <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}"/>
+
+    </StackLayout>
+  </ContentPage.Content>
+
 </b:BaseNewItemPage>

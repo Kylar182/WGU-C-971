@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using C971.Models.DatabaseModels;
 using C971.ViewModels.NewItemVMs;
 using SQLite;
+using Xamarin.Forms;
 
 namespace C971.Views.NewItemPages
 {
@@ -29,6 +30,7 @@ namespace C971.Views.NewItemPages
       try
       {
         await _viewModel.SaveItem();
+        await Shell.Current.GoToAsync("..");
       }
       catch (SQLiteException ex)
       {

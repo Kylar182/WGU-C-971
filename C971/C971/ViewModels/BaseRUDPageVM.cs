@@ -79,6 +79,10 @@ namespace C971.ViewModels
 
         if (PropValid(propertyName))
           Item.SetByName(propertyName, value);
+
+        OnPropertyChanged($"{propertyName}Error");
+
+        OnPropertyChanged(nameof(Valid));
       }
     }
 
@@ -97,8 +101,18 @@ namespace C971.ViewModels
       {
         Errors.TryGetValue(propertyName, out List<string> errors);
 
-        if (!errors.Where(e => e == error).Any())
-          errors.Add(error);
+        if (errors != null)
+        {
+          if (!errors.Where(e => e == error).Any())
+            errors.Add(error);
+        }
+        else
+        {
+          errors = new()
+          {
+            error
+          };
+        }
 
         Errors[propertyName] = errors;
       }
@@ -126,9 +140,7 @@ namespace C971.ViewModels
         if (errors != null && errors.Any())
           Errors[propertyName] = errors;
         else
-        {
           Errors.Remove(propertyName);
-        }
       }
     }
 
