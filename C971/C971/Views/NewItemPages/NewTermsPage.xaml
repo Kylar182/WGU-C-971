@@ -6,7 +6,8 @@
                    xmlns:vm="clr-namespace:C971.ViewModels.NewItemVMs"
                    xmlns:model="clr-namespace:C971.Models.DatabaseModels"
                    Title="{Binding Title}"
-                   x:TypeArguments="vm:NewTermVM,model:AcademicTerm">
+                   x:TypeArguments="vm:NewTermVM,model:AcademicTerm"
+                   IsBusy="{Binding IsBusy}">
 
   <ContentPage.BindingContext>
     <vm:NewTermVM />
@@ -21,12 +22,12 @@
   </ContentPage.Resources>
 
   <ContentPage.Content>
-    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Padding="10" Spacing="5">
+    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Padding="20" Spacing="2">
 
       <Entry Text="{Binding TermTitle}" Placeholder="Title of New Term" HeightRequest="50" />
       <Label TextColor="Red" Text="{Binding TermTitleError}" FontSize="Small" />
 
-      <Grid>
+      <Grid  Padding="0,0,0,20">
         <Label Text="Start Date" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="Small" />
         <DatePicker Date="{Binding Start}" Grid.Column="1" Grid.Row="0" />
         <Label TextColor="Red" Text="{Binding StartError}" FontSize="Small" />

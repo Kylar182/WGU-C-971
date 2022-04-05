@@ -83,7 +83,6 @@ namespace C971.ViewModels.NewItemVMs
       Service = DependencyService.Get<IAcademicTermService>();
       Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                               6, 0, 0, DateTimeKind.Utc);
-
     }
   }
 }
