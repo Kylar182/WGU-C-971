@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<b:BaseNewItemPage xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:b="clr-namespace:C971.Views.NewItemPages;assembly=C971"
+                   x:Class="C971.Views.NewItemPages.NewCoursePage"
+                   xmlns:vm="clr-namespace:C971.ViewModels.NewItemVMs"
+                   xmlns:model="clr-namespace:C971.Models.DatabaseModels"
+                   Title="{Binding Title}"
+                   x:TypeArguments="vm:NewCourseVM,model:Course"
+                   IsBusy="{Binding IsBusy}">
+
+  <ContentPage.BindingContext>
+    <vm:NewTermVM />
+  </ContentPage.BindingContext>
+    
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Color x:Key="Accent">
+        #96d1ff
+      </Color>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ContentPage.Content>
+    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Padding="20" Spacing="2">
+
+
+
+      <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}"/>
+
+    </StackLayout>
+  </ContentPage.Content>
+
+</b:BaseNewItemPage>

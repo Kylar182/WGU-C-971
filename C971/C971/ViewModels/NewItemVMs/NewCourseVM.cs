@@ -40,10 +40,10 @@ namespace C971.ViewModels.NewItemVMs
         if (value.NotEmpty())
           max = value.Length <= 1000;
 
-        SetOrError(new() 
+        SetOrError(new()
         {
           new Tuple<bool, string>(value.NotEmpty(), "A Description is required"),
-          new Tuple<bool, string>(max, "Description Max 1000 Characters") 
+          new Tuple<bool, string>(max, "Description Max 1000 Characters")
         }, value.TrimFix());
 
         SetProperty(ref description, value.TrimFix());
@@ -89,6 +89,58 @@ namespace C971.ViewModels.NewItemVMs
     /// <inheritdoc cref="Course.InstructorId"/>
     public string InstructorIdError => Errors.ContainsKey(nameof(InstructorId)) ? Errors[nameof(InstructorId)].First() : "";
 
+    private int academicTermId;
+    /// <inheritdoc cref="Course.AcademicTermId"/>
+    public int AcademicTermId
+    {
+      get { return academicTermId; }
+      set
+      {
+        SetOrError(new() { new Tuple<bool, string>(academicTermId > 0, "A Term is required") }, value);
+
+        SetProperty(ref academicTermId, value);
+      }
+    }
+
+    private int? perfAssessmentId;
+    /// <inheritdoc cref="Course.PerfAssessmentId"/>
+    public int? PerfAssessmentId
+    {
+      get { return perfAssessmentId; }
+      set
+      {
+        SetOrError(new() { new Tuple<bool, string>(true, "Performance Assessment") }, value);
+
+        SetProperty(ref perfAssessmentId, value);
+      }
+    }
+
+    private int? objAssessmentId;
+    /// <inheritdoc cref="Course.ObjAssessmentId"/>
+    public int? ObjAssessmentId
+    {
+      get { return objAssessmentId; }
+      set
+      {
+        SetOrError(new() { new Tuple<bool, string>(true, "Objective Assessment") }, value);
+
+        SetProperty(ref objAssessmentId, value);
+      }
+    }
+
+    private int? id;
+    /// <inheritdoc cref="BaseModel.Id"/>
+    public int? Id
+    {
+      get { return id; }
+      set
+      {
+        SetOrError(new() { new Tuple<bool, string>(true, "Couse Id") }, value);
+
+        SetProperty(ref id, value);
+      }
+    }
+
     /// <inheritdoc cref="NewCourseVM" />
     public NewCourseVM()
     {
@@ -101,14 +153,42 @@ namespace C971.ViewModels.NewItemVMs
     }
 
     /// <inheritdoc cref="NewCourseVM" />
-    public NewCourseVM(Func<Task> save) : base(save)
+    public NewCourseVM(Func<Task> save, int? id = null) : base(save)
     {
       Title = "New Course";
-      Name = null;
       Service = DependencyService.Get<ICourseService>();
-      Description = null;
-      Notes = null;
-      InstructorId = 0;
+
+      if (id == null)
+      {
+        Name = null;
+        Description = null;
+        Notes = null;
+        InstructorId = 0;
+      }
+    }
+
+    public async Task LoadAsync(int? id)
+    {
+      Course course = await Service.Get(pr => pr.Id == id.Value);
+
+      if (course != null)
+      {
+        Id = id;
+        Name = course.Name;
+        Description = course.Description;
+        Notes = course.Notes;
+        InstructorId = course?.InstructorId ?? 0;
+        ObjAssessmentId = course.ObjAssessmentId;
+        PerfAssessmentId = course.PerfAssessmentId;
+      }
+      else
+      {
+        Title = "New Course";
+        Name = null;
+        Description = null;
+        Notes = null;
+        InstructorId = 0;
+      }
     }
   }
 }

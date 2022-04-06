@@ -4,9 +4,11 @@ using C971.Models.DatabaseModels;
 using C971.ViewModels.NewItemVMs;
 using SQLite;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace C971.Views.NewItemPages
 {
+  [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class NewTermsPage : BaseNewItemPage<NewTermVM, AcademicTerm>
   {
     public NewTermsPage()
