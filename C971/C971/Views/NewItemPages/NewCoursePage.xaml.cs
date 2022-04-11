@@ -61,8 +61,9 @@ namespace C971.Views.NewItemPages
     /// <summary>
     /// Load the Course from Navigation, if Any
     /// </summary>
-    /// <param name="id"></param>
-    /// <returns></returns>
+    /// <param name="id">
+    /// Course Id
+    /// </param>
     private async Task LoadCourse(int? id)
     {
       try

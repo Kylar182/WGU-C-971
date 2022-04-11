@@ -13,6 +13,13 @@ namespace C971.ViewModels.NewItemVMs
   /// </summary>
   public class NewCourseVM : BaseAddPageVM<Course>
   {
+    /// <inheritdoc cref="IAcademicTermService"/>
+    private readonly IAcademicTermService _termService;
+    /// <inheritdoc cref="IInstructorService"/>
+    private readonly IInstructorService _instructorService;
+    /// <inheritdoc cref="IAssessmentService"/>
+    private readonly IAssessmentService _assessmentService;
+
     private string name;
     /// <inheritdoc cref="Course.Name"/>
     public string Name
@@ -147,6 +154,9 @@ namespace C971.ViewModels.NewItemVMs
       Title = "New Course";
       Name = null;
       Service = DependencyService.Get<ICourseService>();
+      _termService = DependencyService.Get<IAcademicTermService>();
+      _instructorService = DependencyService.Get<IInstructorService>();
+      _assessmentService = DependencyService.Get<IAssessmentService>();
       Description = null;
       Notes = null;
       InstructorId = 0;
@@ -157,6 +167,9 @@ namespace C971.ViewModels.NewItemVMs
     {
       Title = "New Course";
       Service = DependencyService.Get<ICourseService>();
+      _termService = DependencyService.Get<IAcademicTermService>();
+      _instructorService = DependencyService.Get<IInstructorService>();
+      _assessmentService = DependencyService.Get<IAssessmentService>();
 
       if (id == null)
       {
