@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using C971.Extensions;
@@ -148,23 +149,47 @@ namespace C971.ViewModels.NewItemVMs
       }
     }
 
+    private List<Instructor> instructors;
+    /// <summary>
+    /// List of Instructors at WGU
+    /// </summary>
+    public List<Instructor> Instructors
+    {
+      get { return instructors; }
+      set
+      {
+        SetOrError(new() { new Tuple<bool, string>(true, "Instructors") }, value);
+      }
+    }
+
+
+
     /// <inheritdoc cref="NewCourseVM" />
     public NewCourseVM()
     {
+      IsBusy = true;
       Title = "New Course";
       Name = null;
       Service = DependencyService.Get<ICourseService>();
       _termService = DependencyService.Get<IAcademicTermService>();
       _instructorService = DependencyService.Get<IInstructorService>();
       _assessmentService = DependencyService.Get<IAssessmentService>();
-      Description = null;
-      Notes = null;
-      InstructorId = 0;
+
+      if (id == null)
+      {
+        Name = null;
+        Description = null;
+        Notes = null;
+        InstructorId = -1;
+      }
+
+      IsBusy = false;
     }
 
     /// <inheritdoc cref="NewCourseVM" />
     public NewCourseVM(Func<Task> save, int? id = null) : base(save)
     {
+      IsBusy = true;
       Title = "New Course";
       Service = DependencyService.Get<ICourseService>();
       _termService = DependencyService.Get<IAcademicTermService>();
@@ -176,11 +201,13 @@ namespace C971.ViewModels.NewItemVMs
         Name = null;
         Description = null;
         Notes = null;
-        InstructorId = 0;
+        InstructorId = -1;
       }
+
+      IsBusy = false;
     }
 
-    public async Task LoadAsync(int? id)
+    public async Task LoadCourseAsync(int? id)
     {
       Course course = await Service.Get(pr => pr.Id == id.Value);
 
@@ -200,8 +227,13 @@ namespace C971.ViewModels.NewItemVMs
         Name = null;
         Description = null;
         Notes = null;
-        InstructorId = 0;
+        InstructorId = -1;
       }
+    }
+
+    private async Task LoadAsync()
+    {
+
     }
   }
 }

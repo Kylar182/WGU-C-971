@@ -10,7 +10,7 @@
                    IsBusy="{Binding IsBusy}">
 
   <ContentPage.BindingContext>
-    <vm:NewTermVM />
+    <vm:NewCourseVM />
   </ContentPage.BindingContext>
     
   <ContentPage.Resources>
@@ -22,8 +22,19 @@
   </ContentPage.Resources>
 
   <ContentPage.Content>
-    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Padding="20" Spacing="2">
+    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20" Spacing="4">
 
+      <Entry Text="{Binding Name}" Placeholder="Course Name" HeightRequest="50" FontSize="Small"  />
+      <Label TextColor="Red" Text="{Binding NameError}" FontSize="Small" />
+
+      <Editor Text="{Binding Description}" Placeholder="Course Description" FontSize="Small" />
+      <Label TextColor="Red" Text="{Binding DescriptionError}" FontSize="Small" />
+
+      <Editor Text="{Binding Notes}" Placeholder="Notes" FontSize="Small" />
+      <Label TextColor="Red" Text="{Binding NotesError}" FontSize="Small" />
+
+      <Picker SelectedIndex="{Binding InstructorId}" FontSize="Small" />
+      <Label TextColor="Red" Text="{Binding InstructorIdError}" FontSize="Small" />
 
 
       <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}"/>

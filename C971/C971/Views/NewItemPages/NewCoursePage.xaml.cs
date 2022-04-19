@@ -66,17 +66,25 @@ namespace C971.Views.NewItemPages
     /// </param>
     private async Task LoadCourse(int? id)
     {
+      if (_viewModel != null)
+        _viewModel.IsBusy = true;
       try
       {
         if (id != null && _viewModel != null)
-          await _viewModel.LoadAsync(id);
+          await _viewModel.LoadCourseAsync(id);
+        if (_viewModel != null)
+          _viewModel.IsBusy = false;
       }
       catch (SQLiteException ex)
       {
+        if (_viewModel != null)
+          _viewModel.IsBusy = false;
         await DisplayAlert("SQL Error", ex.Message, "OK");
       }
       catch (Exception ex)
       {
+        if (_viewModel != null)
+          _viewModel.IsBusy = false;
         await DisplayAlert("Error", ex.Message, "OK");
       }
     }

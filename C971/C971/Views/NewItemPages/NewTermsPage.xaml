@@ -22,7 +22,7 @@
   </ContentPage.Resources>
 
   <ContentPage.Content>
-    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Padding="20" Spacing="2">
+    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20" Spacing="4">
 
       <Entry Text="{Binding TermTitle}" Placeholder="Title of New Term" HeightRequest="50" />
       <Label TextColor="Red" Text="{Binding TermTitleError}" FontSize="Small" />
