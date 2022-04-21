@@ -82,37 +82,41 @@ namespace C971.ViewModels.NewItemVMs
     /// <inheritdoc cref="Course.Notes"/>
     public string NotesError => Errors.ContainsKey(nameof(Notes)) ? Errors[nameof(Notes)].First() : "";
 
-    private int instructorId;
+    private Instructor instructor;
     /// <inheritdoc cref="Course.InstructorId"/>
-    public int InstructorId
+    public Instructor Instructor
     {
-      get { return instructorId; }
+      get { return instructor; }
       set
       {
-        SetOrError(new() { new Tuple<bool, string>(instructorId > 0, "An Instructor is required") }, value);
+        SetOrError(new() { new Tuple<bool, string>(value.Id > 0, "An Instructor is required") }, value.Id,
+                                                                                          nameof(Course.InstructorId));
 
-        SetProperty(ref instructorId, value);
+        SetProperty(ref instructor, value);
       }
     }
 
     /// <inheritdoc cref="Course.InstructorId"/>
-    public string InstructorIdError => Errors.ContainsKey(nameof(InstructorId)) ? Errors[nameof(InstructorId)].First() : "";
+    public string InstructorIdError => Errors.ContainsKey(nameof(Course.InstructorId)) ? 
+                                                                        Errors[nameof(Course.InstructorId)].First() : "";
 
-    private int academicTermId;
+    private AcademicTerm term;
     /// <inheritdoc cref="Course.AcademicTermId"/>
-    public int AcademicTermId
+    public AcademicTerm Term
     {
-      get { return academicTermId; }
+      get { return term; }
       set
       {
-        SetOrError(new() { new Tuple<bool, string>(academicTermId > 0, "A Term is required") }, value);
+        SetOrError(new() { new Tuple<bool, string>(value.Id > 0, "A Term is required") }, value.Id, 
+                                                                                      nameof(Course.AcademicTermId));
 
-        SetProperty(ref academicTermId, value);
+        SetProperty(ref term, value);
       }
     }
 
     /// <inheritdoc cref="Course.AcademicTermId"/>
-    public string AcademicTermIdError => Errors.ContainsKey(nameof(AcademicTermId)) ? Errors[nameof(AcademicTermId)].First() : "";
+    public string AcademicTermIdError => Errors.ContainsKey(nameof(Course.AcademicTermId)) ? 
+                                                                    Errors[nameof(Course.AcademicTermId)].First() : "";
 
     private int? perfAssessmentId;
     /// <inheritdoc cref="Course.PerfAssessmentId"/>
@@ -166,42 +170,38 @@ namespace C971.ViewModels.NewItemVMs
     /// <inheritdoc cref="NewCourseVM" />
     public NewCourseVM()
     {
-      IsBusy = true;
       Title = "New Course";
       Name = null;
 
-      if (id == null)
+      if (Id == null)
       {
         Name = null;
         Description = null;
         Notes = null;
-        InstructorId = -1;
-        AcademicTermId = -1;
       }
-
-      IsBusy = false;
     }
 
     /// <inheritdoc cref="NewCourseVM" />
     public NewCourseVM(Func<Task> save, int? id = null) : base(save)
     {
-      IsBusy = true;
       Title = "New Course";
       Service = DependencyService.Get<ICourseService>();
       _termService = DependencyService.Get<IAcademicTermService>();
       _instructorService = DependencyService.Get<IInstructorService>();
       _assessmentService = DependencyService.Get<IAssessmentService>();
 
-      LoadAsync().ConfigureAwait(true);
-
       if (id == null)
       {
         Name = null;
         Description = null;
         Notes = null;
-        InstructorId = -1;
-        AcademicTermId = -1;
+        SetOrError(new() { new Tuple<bool, string>(-1 > 0, "An Instructor is required") }, -1,
+                                                                                          nameof(Course.InstructorId));
+        SetOrError(new() { new Tuple<bool, string>(-1 > 0, "A Term is required") }, -1,
+                                                                                      nameof(Course.AcademicTermId));
       }
+
+      LoadAsync().ConfigureAwait(true);
 
       IsBusy = false;
     }
@@ -212,12 +212,11 @@ namespace C971.ViewModels.NewItemVMs
 
       if (course != null)
       {
+        Item = course;
         Id = id;
         Name = course.Name;
         Description = course.Description;
         Notes = course.Notes;
-        InstructorId = course.InstructorId;
-        AcademicTermId = course.AcademicTermId ?? 0;
         ObjAssessmentId = course.ObjAssessmentId;
         PerfAssessmentId = course.PerfAssessmentId;
       }
@@ -227,13 +226,14 @@ namespace C971.ViewModels.NewItemVMs
         Name = null;
         Description = null;
         Notes = null;
-        InstructorId = -1;
-        AcademicTermId = -1;
       }
     }
 
     private async Task LoadAsync()
     {
+      Instructors.Clear();
+      Terms.Clear();
+
       List<Instructor> instructors = new();
       List<AcademicTerm> terms = new();
 
@@ -253,15 +253,24 @@ namespace C971.ViewModels.NewItemVMs
         }
       }).ConfigureAwait(true);
 
-      Instructors.Clear();
-
-      foreach (Instructor instructor in instructors)
+      foreach (Instructor instructor in instructors.OrderBy(pr => pr.Name))
         Instructors.Add(instructor);
 
-      Terms.Clear();
-
-      foreach (AcademicTerm term in terms)
+      foreach (AcademicTerm term in terms.OrderBy(pr => pr.TermTitle))
         Terms.Add(term);
+
+      if (Id != null)
+      {
+        Instructor = Instructors.FirstOrDefault(t => t.Id == Item.InstructorId);
+        Term = Terms.FirstOrDefault(t => t.Id == Item.AcademicTermId);
+      }
+      else
+      {
+        SetOrError(new() { new Tuple<bool, string>(-1 > 0, "An Instructor is required") }, -1,
+                                                                                            nameof(Course.InstructorId));
+        SetOrError(new() { new Tuple<bool, string>(-1 > 0, "A Term is required") }, -1,
+                                                                                        nameof(Course.AcademicTermId));
+      }
     }
   }
 }

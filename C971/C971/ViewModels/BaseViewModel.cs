@@ -7,7 +7,7 @@ namespace C971.ViewModels
 {
   public class BaseViewModel : INotifyPropertyChanged
   {
-    bool isBusy = false;
+    protected bool isBusy = false;
     public bool IsBusy
     {
       get { return isBusy; }

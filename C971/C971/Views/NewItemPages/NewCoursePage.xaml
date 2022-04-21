@@ -33,11 +33,11 @@
       <Editor Text="{Binding Notes}" Placeholder="Notes" FontSize="Small" />
       <Label TextColor="Red" Text="{Binding NotesError}" FontSize="Small" />
 
-      <Picker Title="Select the Instructor" SelectedIndex="{Binding InstructorId}" FontSize="Small" 
+      <Picker Title="Select the Instructor" SelectedItem="{Binding Instructor}" FontSize="Small" 
               ItemsSource="{Binding Instructors}" ItemDisplayBinding="{Binding Name}" />
       <Label TextColor="Red" Text="{Binding InstructorIdError}" FontSize="Small" />
 
-      <Picker Title="Select the Term" SelectedIndex="{Binding AcademicTermId}" FontSize="Small" ItemsSource="{Binding Terms}" 
+      <Picker Title="Select the Term" SelectedItem="{Binding Term}" FontSize="Small" ItemsSource="{Binding Terms}" 
               ItemDisplayBinding="{Binding TermTitle}" />
       <Label TextColor="Red" Text="{Binding AcademicTermIdError}" FontSize="Small" />
 

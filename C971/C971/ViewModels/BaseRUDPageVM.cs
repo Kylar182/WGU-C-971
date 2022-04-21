@@ -18,6 +18,7 @@ namespace C971.ViewModels
   /// </typeparam>
   public abstract class BaseRUDPageVM<T> : BaseViewModel where T : BaseModel
   {
+    protected new bool isBusy = true;
     /// <summary>
     /// DB CRUD Service for this Database Model
     /// </summary>

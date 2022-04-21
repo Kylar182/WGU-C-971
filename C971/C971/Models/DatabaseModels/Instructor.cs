@@ -12,7 +12,7 @@ namespace C971.Models.DatabaseModels
     /// Given name of the Instructor
     /// </summary>
     [MaxLength(150), Unique, NotNull]
-    public string Name { get; set; }
+    public string Name { get; set; } = "";
     /// <summary>
     /// The Instructor's Phone Number
     /// </summary>
