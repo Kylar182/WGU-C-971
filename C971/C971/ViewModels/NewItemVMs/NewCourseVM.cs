@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using C971.Extensions;
@@ -110,6 +111,9 @@ namespace C971.ViewModels.NewItemVMs
       }
     }
 
+    /// <inheritdoc cref="Course.AcademicTermId"/>
+    public string AcademicTermIdError => Errors.ContainsKey(nameof(AcademicTermId)) ? Errors[nameof(AcademicTermId)].First() : "";
+
     private int? perfAssessmentId;
     /// <inheritdoc cref="Course.PerfAssessmentId"/>
     public int? PerfAssessmentId
@@ -149,20 +153,15 @@ namespace C971.ViewModels.NewItemVMs
       }
     }
 
-    private List<Instructor> instructors;
     /// <summary>
     /// List of Instructors at WGU
     /// </summary>
-    public List<Instructor> Instructors
-    {
-      get { return instructors; }
-      set
-      {
-        SetOrError(new() { new Tuple<bool, string>(true, "Instructors") }, value);
-      }
-    }
+    public ObservableCollection<Instructor> Instructors { get; set; } = new ObservableCollection<Instructor>();
 
-
+    /// <summary>
+    /// List of Academic Terms at WGU
+    /// </summary>
+    public ObservableCollection<AcademicTerm> Terms { get; set; } = new ObservableCollection<AcademicTerm>();
 
     /// <inheritdoc cref="NewCourseVM" />
     public NewCourseVM()
@@ -170,10 +169,6 @@ namespace C971.ViewModels.NewItemVMs
       IsBusy = true;
       Title = "New Course";
       Name = null;
-      Service = DependencyService.Get<ICourseService>();
-      _termService = DependencyService.Get<IAcademicTermService>();
-      _instructorService = DependencyService.Get<IInstructorService>();
-      _assessmentService = DependencyService.Get<IAssessmentService>();
 
       if (id == null)
       {
@@ -181,6 +176,7 @@ namespace C971.ViewModels.NewItemVMs
         Description = null;
         Notes = null;
         InstructorId = -1;
+        AcademicTermId = -1;
       }
 
       IsBusy = false;
@@ -196,12 +192,15 @@ namespace C971.ViewModels.NewItemVMs
       _instructorService = DependencyService.Get<IInstructorService>();
       _assessmentService = DependencyService.Get<IAssessmentService>();
 
+      LoadAsync().ConfigureAwait(true);
+
       if (id == null)
       {
         Name = null;
         Description = null;
         Notes = null;
         InstructorId = -1;
+        AcademicTermId = -1;
       }
 
       IsBusy = false;
@@ -217,7 +216,8 @@ namespace C971.ViewModels.NewItemVMs
         Name = course.Name;
         Description = course.Description;
         Notes = course.Notes;
-        InstructorId = course?.InstructorId ?? 0;
+        InstructorId = course.InstructorId;
+        AcademicTermId = course.AcademicTermId ?? 0;
         ObjAssessmentId = course.ObjAssessmentId;
         PerfAssessmentId = course.PerfAssessmentId;
       }
@@ -228,12 +228,40 @@ namespace C971.ViewModels.NewItemVMs
         Description = null;
         Notes = null;
         InstructorId = -1;
+        AcademicTermId = -1;
       }
     }
 
     private async Task LoadAsync()
     {
+      List<Instructor> instructors = new();
+      List<AcademicTerm> terms = new();
 
+      await _instructorService.GetAll().ContinueWith(t =>
+      {
+        if (t.Exception == null)
+        {
+          instructors = t.Result;
+        }
+      }).ConfigureAwait(true);
+
+      await _termService.GetAll().ContinueWith(t =>
+      {
+        if (t.Exception == null)
+        {
+          terms = t.Result;
+        }
+      }).ConfigureAwait(true);
+
+      Instructors.Clear();
+
+      foreach (Instructor instructor in instructors)
+        Instructors.Add(instructor);
+
+      Terms.Clear();
+
+      foreach (AcademicTerm term in terms)
+        Terms.Add(term);
     }
   }
 }
