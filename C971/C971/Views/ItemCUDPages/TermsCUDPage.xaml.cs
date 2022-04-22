@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Threading.Tasks;
 using C971.Models.DatabaseModels;
-using C971.ViewModels.NewItemVMs;
+using C971.ViewModels.ItemCUDVMs;
 using SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace C971.Views.NewItemPages
+namespace C971.Views.ItemCUDPages
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
-  public partial class NewTermsPage : BaseNewItemPage<NewTermVM, AcademicTerm>
+  public partial class TermsCUDPage : BaseItemCUDPage<TermCUDVM, AcademicTerm>
   {
-    public NewTermsPage()
+    public TermsCUDPage()
     {
       InitializeComponent();
 
-      BindingContext = _viewModel = new NewTermVM(async () => await OnSaveButtonClicked());
+      BindingContext = _viewModel = new TermCUDVM(async () => await OnSaveButtonClicked());
     }
 
     /// <summary>

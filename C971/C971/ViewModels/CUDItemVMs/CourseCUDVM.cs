@@ -8,12 +8,12 @@ using C971.Models.DatabaseModels;
 using C971.Services;
 using Xamarin.Forms;
 
-namespace C971.ViewModels.NewItemVMs
+namespace C971.ViewModels.ItemCUDVMs
 {
   /// <summary>
-  /// VM For a New Academic Course
+  /// VM For a Academic Course Create / Update / Delete
   /// </summary>
-  public class NewCourseVM : BaseAddPageVM<Course>
+  public class CourseCUDVM : BaseRUDPageVM<Course>
   {
     /// <inheritdoc cref="IAcademicTermService"/>
     private readonly IAcademicTermService _termService;
@@ -45,14 +45,10 @@ namespace C971.ViewModels.NewItemVMs
       get { return description; }
       set
       {
-        bool max = true;
-        if (value.NotEmpty())
-          max = value.Length <= 1000;
-
         SetOrError(new()
         {
           new Tuple<bool, string>(value.NotEmpty(), "A Description is required"),
-          new Tuple<bool, string>(max, "Description Max 1000 Characters")
+          new Tuple<bool, string>(!value.NotEmpty() || value.Length <= 1000, "Description Max 1000 Characters")
         }, value.TrimFix());
 
         SetProperty(ref description, value.TrimFix());
@@ -69,11 +65,9 @@ namespace C971.ViewModels.NewItemVMs
       get { return notes; }
       set
       {
-        bool max = true;
-        if (value.NotEmpty())
-          max = value.Length <= 2500;
-
-        SetOrError(new() { new Tuple<bool, string>(max, "Notes Max 2500 Characters") }, value.TrimFix());
+        SetOrError(new() { new Tuple<bool, string>(
+                                              !value.NotEmpty() || value.Length <= 2500, "Notes Max 2500 Characters") }, 
+                                                                                                      value.TrimFix());
 
         SetProperty(ref notes, value.TrimFix());
       }
@@ -167,31 +161,29 @@ namespace C971.ViewModels.NewItemVMs
     /// </summary>
     public ObservableCollection<AcademicTerm> Terms { get; set; } = new ObservableCollection<AcademicTerm>();
 
-    /// <inheritdoc cref="NewCourseVM" />
-    public NewCourseVM()
+    /// <inheritdoc cref="CourseCUDVM" />
+    public CourseCUDVM()
     {
-      Title = "New Course";
-      Name = null;
-
       if (Id == null)
       {
+        Title = "New Course";
         Name = null;
         Description = null;
         Notes = null;
       }
     }
 
-    /// <inheritdoc cref="NewCourseVM" />
-    public NewCourseVM(Func<Task> save, int? id = null) : base(save)
+    /// <inheritdoc cref="CourseCUDVM" />
+    public CourseCUDVM(Func<Task> save) : base(save)
     {
-      Title = "New Course";
       Service = DependencyService.Get<ICourseService>();
       _termService = DependencyService.Get<IAcademicTermService>();
       _instructorService = DependencyService.Get<IInstructorService>();
       _assessmentService = DependencyService.Get<IAssessmentService>();
 
-      if (id == null)
+      if (Id == null)
       {
+        Title = "New Course";
         Name = null;
         Description = null;
         Notes = null;
@@ -212,6 +204,7 @@ namespace C971.ViewModels.NewItemVMs
 
       if (course != null)
       {
+        Title = $"Course {id}";
         Item = course;
         Id = id;
         Name = course.Name;
@@ -226,6 +219,10 @@ namespace C971.ViewModels.NewItemVMs
         Name = null;
         Description = null;
         Notes = null;
+        SetOrError(new() { new Tuple<bool, string>(-1 > 0, "An Instructor is required") }, -1,
+                                                                                          nameof(Course.InstructorId));
+        SetOrError(new() { new Tuple<bool, string>(-1 > 0, "A Term is required") }, -1,
+                                                                                      nameof(Course.AcademicTermId));
       }
     }
 

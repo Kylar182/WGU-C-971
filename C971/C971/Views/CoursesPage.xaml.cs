@@ -5,7 +5,7 @@ using Xamarin.Forms.Xaml;
 namespace C971.Views
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
-  public partial class CoursesPage : BaseCrudPage<CourseVM, Course>
+  public partial class CoursesPage : BaseCRUDPage<CourseVM, Course>
   {
     public CoursesPage()
     {

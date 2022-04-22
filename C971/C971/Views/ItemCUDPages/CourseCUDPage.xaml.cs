@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Threading.Tasks;
 using C971.Models.DatabaseModels;
-using C971.ViewModels.NewItemVMs;
+using C971.ViewModels.ItemCUDVMs;
 using SQLite;
 using Xamarin.Forms;
 
-namespace C971.Views.NewItemPages
+namespace C971.Views.ItemCUDPages
 {
   [QueryProperty(nameof(CourseId), nameof(CourseId))]
-  public partial class NewCoursePage : BaseNewItemPage<NewCourseVM, Course>
+  public partial class CourseCUDPage : BaseItemCUDPage<CourseCUDVM, Course>
   {
-    public NewCoursePage()
+    public CourseCUDPage()
     {
       InitializeComponent();
 
-      BindingContext = _viewModel = new NewCourseVM(async () => await OnSaveButtonClicked());
+      BindingContext = _viewModel = new CourseCUDVM(async () => await OnSaveButtonClicked());
     }
 
     /// <summary>

@@ -7,6 +7,7 @@ using System.Windows.Input;
 using C971.Extensions;
 using C971.Models.DatabaseModels;
 using C971.Services;
+using Xamarin.Forms;
 
 namespace C971.ViewModels
 {
@@ -16,7 +17,7 @@ namespace C971.ViewModels
   /// <typeparam name="T">
   /// Database Model for CRUD
   /// </typeparam>
-  public abstract class BaseRUDPageVM<T> : BaseViewModel where T : BaseModel
+  public abstract class BaseRUDPageVM<T> : BaseViewModel where T : BaseModel, new()
   {
     protected new bool isBusy = true;
     /// <summary>
@@ -46,6 +47,26 @@ namespace C971.ViewModels
     /// Determines if the Bound Model Properties are Valid
     /// </summary>
     public bool Valid => Errors.Count == 0;
+
+    public BaseRUDPageVM()
+    {
+      Item = new();
+    }
+
+    /// <inheritdoc cref="BaseAddPageVM{}" />
+    public BaseRUDPageVM(Func<Task> save)
+    {
+      Item = new();
+      Save = new Command(async () => await save?.Invoke());
+    }
+
+    /// <summary>
+    /// Initial Page Load Visibility Method
+    /// </summary>
+    public void OnAppearing()
+    {
+      IsBusy = true;
+    }
 
     /// <summary>
     /// Updates the Item Property and Errors related to the Value based on Validity
@@ -159,9 +180,19 @@ namespace C971.ViewModels
     /// <summary>
     /// Trys to Save the Item to the Database if it's Valid
     /// </summary>
-    public virtual Task SaveItem()
+    public virtual async Task SaveItem()
     {
-      return Task.CompletedTask;
+      if (Valid)
+      {
+        if (Item.Id == 0)
+          await Service.Add(Item);
+        else
+          await Service.Update(Item);
+      }
+      else
+      {
+        return;
+      }
     }
   }
 }

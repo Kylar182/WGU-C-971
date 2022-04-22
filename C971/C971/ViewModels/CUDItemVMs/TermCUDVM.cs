@@ -6,12 +6,12 @@ using C971.Models.DatabaseModels;
 using C971.Services;
 using Xamarin.Forms;
 
-namespace C971.ViewModels.NewItemVMs
+namespace C971.ViewModels.ItemCUDVMs
 {
   /// <summary>
-  /// VM For a New Academic Term
+  /// VM For a Academic Term Create / Update / Delete
   /// </summary>
-  public class NewTermVM : BaseAddPageVM<AcademicTerm>
+  public class TermCUDVM : BaseRUDPageVM<AcademicTerm>
   {
     private string termTitle;
     /// <inheritdoc cref="AcademicTerm.TermTitle"/>
@@ -65,8 +65,8 @@ namespace C971.ViewModels.NewItemVMs
     /// <inheritdoc cref="AcademicTerm.End"/>
     public string EndError => Errors.ContainsKey(nameof(End)) ? Errors[nameof(End)].First() : "";
 
-    /// <inheritdoc cref="NewTermVM" />
-    public NewTermVM()
+    /// <inheritdoc cref="TermCUDVM" />
+    public TermCUDVM()
     {
       Title = "New Term";
       TermTitle = null;
@@ -75,8 +75,8 @@ namespace C971.ViewModels.NewItemVMs
                                                               6, 0, 0, DateTimeKind.Utc);
     }
 
-    /// <inheritdoc cref="NewTermVM" />
-    public NewTermVM(Func<Task> save) : base(save)
+    /// <inheritdoc cref="TermCUDVM" />
+    public TermCUDVM(Func<Task> save) : base(save)
     {
       Title = "New Term";
       TermTitle = null;

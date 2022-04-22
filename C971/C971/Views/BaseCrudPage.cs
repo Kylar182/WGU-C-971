@@ -13,14 +13,14 @@ namespace C971.Views
   /// <typeparam name="T">
   /// Database Crud Model
   /// </typeparam>
-  public class BaseCrudPage<VM, T> : ContentPage where VM : BaseCrudPageVM<T> where T : BaseModel
+  public class BaseCRUDPage<VM, T> : ContentPage where VM : BaseCRUDPageVM<T> where T : BaseModel
   {
     /// <summary>
     /// Crud Page View Model for this Database Model T Type
     /// </summary>
     protected VM _viewModel;
 
-    /// <inheritdoc cref="BaseCrudPageVM{T}.OnAppearing"/>
+    /// <inheritdoc cref="BaseCRUDPageVM{T}.OnAppearing"/>
     protected override void OnAppearing()
     {
       base.OnAppearing();

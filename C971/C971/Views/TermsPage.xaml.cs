@@ -5,7 +5,7 @@ using Xamarin.Forms.Xaml;
 namespace C971.Views
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
-  public partial class TermsPage : BaseCrudPage<AcademicTermVM, AcademicTerm>
+  public partial class TermsPage : BaseCRUDPage<AcademicTermVM, AcademicTerm>
   {
     public TermsPage()
     {

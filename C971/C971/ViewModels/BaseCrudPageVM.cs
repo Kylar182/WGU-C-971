@@ -16,7 +16,7 @@ namespace C971.ViewModels
   /// <typeparam name="T">
   /// Database Model for CRUD
   /// </typeparam>
-  public abstract class BaseCrudPageVM<T> : BaseViewModel where T : BaseModel
+  public abstract class BaseCRUDPageVM<T> : BaseViewModel where T : BaseModel
   {
     /// <summary>
     /// DB CRUD Service for this Database Model
@@ -46,8 +46,8 @@ namespace C971.ViewModels
     /// </summary>
     protected new string title = typeof(T).Name.ToPlural();
 
-    protected virtual string NewPage => "New" + typeof(T).Name + "Page";
-    protected virtual string UpdatePage => "Update" + typeof(T).Name + "Page";
+    protected virtual string NewPage => typeof(T).Name +"CUD" + "Page";
+    protected virtual string UpdatePage => typeof(T).Name + "CUD" + "Page";
 
     private T _selected;
     /// <summary>
@@ -63,8 +63,8 @@ namespace C971.ViewModels
       }
     }
 
-    /// <inheritdoc cref="BaseCrudPageVM{T}"/>
-    public BaseCrudPageVM()
+    /// <inheritdoc cref="BaseCRUDPageVM{T}"/>
+    public BaseCRUDPageVM()
     {
       Items = new ObservableCollection<T>();
       LoadItemsCommand = new Command(async () => await ExecuteLoadItems());

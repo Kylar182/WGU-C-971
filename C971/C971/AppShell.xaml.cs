@@ -1,4 +1,4 @@
-﻿using C971.Views.NewItemPages;
+﻿using C971.Views.ItemCUDPages;
 using Xamarin.Forms;
 
 namespace C971
@@ -8,8 +8,8 @@ namespace C971
     public AppShell()
     {
       InitializeComponent();
-      Routing.RegisterRoute(nameof(NewTermsPage), typeof(NewTermsPage));
-      Routing.RegisterRoute(nameof(NewCoursePage), typeof(NewCoursePage));
+      Routing.RegisterRoute(nameof(TermsCUDPage), typeof(TermsCUDPage));
+      Routing.RegisterRoute(nameof(CourseCUDPage), typeof(CourseCUDPage));
     }
   }
 }

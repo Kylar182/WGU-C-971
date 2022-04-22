@@ -1,17 +1,17 @@
 ﻿using C971.Models.DatabaseModels;
-using C971.ViewModels.NewItemVMs;
+using C971.ViewModels;
 using Xamarin.Forms;
 
-namespace C971.Views.NewItemPages
+namespace C971.Views.ItemCUDPages
 {
-  public class BaseNewItemPage<VM, T> : ContentPage where VM : BaseAddPageVM<T> where T : BaseModel, new()
+  public class BaseItemCUDPage<VM, T> : ContentPage where VM : BaseRUDPageVM<T> where T : BaseModel, new()
   {
     /// <summary>
     /// Add Page View Model for this Database Model T Type
     /// </summary>
     protected VM _viewModel;
 
-    /// <inheritdoc cref="BaseAddPageVM{T}.OnAppearing"/>
+    /// <inheritdoc cref="BaseRUDPageVM{T}.OnAppearing"/>
     protected override void OnAppearing()
     {
       base.OnAppearing();

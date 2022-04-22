@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace C971.ViewModels
 {
-  public class InstructorVM : BaseCrudPageVM<Instructor>
+  public class InstructorVM : BaseCRUDPageVM<Instructor>
   {
     public InstructorVM()
     {
