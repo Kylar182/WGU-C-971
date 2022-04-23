@@ -30,6 +30,19 @@ namespace C971.ViewModels
     /// </summary>
     public T Item { get; set; }
 
+    private int? id;
+    /// <inheritdoc cref="BaseModel.Id"/>
+    public int? Id
+    {
+      get { return id; }
+      set
+      {
+        SetOrError(new() { new Tuple<bool, string>(true, $"{typeof(T).Name} Id") }, value);
+
+        SetProperty(ref id, value);
+      }
+    }
+
     /// <summary>
     /// Command to attempt to Save the State of the Current Model if Valid
     /// </summary>

@@ -46,7 +46,7 @@ namespace C971.ViewModels
     /// </summary>
     protected new string title = typeof(T).Name.ToPlural();
 
-    protected virtual string NewPage => typeof(T).Name +"CUD" + "Page";
+    protected virtual string NewPage => typeof(T).Name + "CUD" + "Page";
     protected virtual string UpdatePage => typeof(T).Name + "CUD" + "Page";
 
     private T _selected;

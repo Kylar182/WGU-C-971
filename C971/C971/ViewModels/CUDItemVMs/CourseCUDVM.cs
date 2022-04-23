@@ -65,8 +65,11 @@ namespace C971.ViewModels.ItemCUDVMs
       get { return notes; }
       set
       {
-        SetOrError(new() { new Tuple<bool, string>(
-                                              !value.NotEmpty() || value.Length <= 2500, "Notes Max 2500 Characters") }, 
+        SetOrError(new()
+        {
+          new Tuple<bool, string>(
+                                              !value.NotEmpty() || value.Length <= 2500, "Notes Max 2500 Characters")
+        },
                                                                                                       value.TrimFix());
 
         SetProperty(ref notes, value.TrimFix());
@@ -91,7 +94,7 @@ namespace C971.ViewModels.ItemCUDVMs
     }
 
     /// <inheritdoc cref="Course.InstructorId"/>
-    public string InstructorIdError => Errors.ContainsKey(nameof(Course.InstructorId)) ? 
+    public string InstructorIdError => Errors.ContainsKey(nameof(Course.InstructorId)) ?
                                                                         Errors[nameof(Course.InstructorId)].First() : "";
 
     private AcademicTerm term;
@@ -101,7 +104,7 @@ namespace C971.ViewModels.ItemCUDVMs
       get { return term; }
       set
       {
-        SetOrError(new() { new Tuple<bool, string>(value.Id > 0, "A Term is required") }, value.Id, 
+        SetOrError(new() { new Tuple<bool, string>(value.Id > 0, "A Term is required") }, value.Id,
                                                                                       nameof(Course.AcademicTermId));
 
         SetProperty(ref term, value);
@@ -109,7 +112,7 @@ namespace C971.ViewModels.ItemCUDVMs
     }
 
     /// <inheritdoc cref="Course.AcademicTermId"/>
-    public string AcademicTermIdError => Errors.ContainsKey(nameof(Course.AcademicTermId)) ? 
+    public string AcademicTermIdError => Errors.ContainsKey(nameof(Course.AcademicTermId)) ?
                                                                     Errors[nameof(Course.AcademicTermId)].First() : "";
 
     private int? perfAssessmentId;
@@ -135,19 +138,6 @@ namespace C971.ViewModels.ItemCUDVMs
         SetOrError(new() { new Tuple<bool, string>(true, "Objective Assessment") }, value);
 
         SetProperty(ref objAssessmentId, value);
-      }
-    }
-
-    private int? id;
-    /// <inheritdoc cref="BaseModel.Id"/>
-    public int? Id
-    {
-      get { return id; }
-      set
-      {
-        SetOrError(new() { new Tuple<bool, string>(true, "Couse Id") }, value);
-
-        SetProperty(ref id, value);
       }
     }
 
@@ -198,20 +188,34 @@ namespace C971.ViewModels.ItemCUDVMs
       IsBusy = false;
     }
 
-    public async Task LoadCourseAsync(int? id)
+    public async Task LoadCourse(int id)
     {
-      Course course = await Service.Get(pr => pr.Id == id.Value);
+      IsBusy = true;
+      Id = id;
+      Course course = null;
+
+      await Service.Get(pr => pr.Id == id).ContinueWith(t =>
+      {
+        if (t.Exception == null)
+        {
+          course = t.Result;
+        }
+      }).ConfigureAwait(true);
 
       if (course != null)
       {
-        Title = $"Course {id}";
         Item = course;
-        Id = id;
+        Title = $"Course {id}";
+        Id = course.Id;
         Name = course.Name;
         Description = course.Description;
         Notes = course.Notes;
         ObjAssessmentId = course.ObjAssessmentId;
         PerfAssessmentId = course.PerfAssessmentId;
+        if (Instructors.Count > 0)
+          Instructor = Instructors.FirstOrDefault(t => t.Id == course.InstructorId);
+        if (Terms.Count > 0)
+          Term = Terms.FirstOrDefault(t => t.Id == course.AcademicTermId);
       }
       else
       {

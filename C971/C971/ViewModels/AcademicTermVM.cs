@@ -8,6 +8,7 @@ namespace C971.ViewModels
   public class AcademicTermVM : BaseCRUDPageVM<AcademicTerm>
   {
     protected override string NewPage => nameof(TermsCUDPage);
+    protected override string UpdatePage => nameof(TermsCUDPage);
 
     public AcademicTermVM()
     {

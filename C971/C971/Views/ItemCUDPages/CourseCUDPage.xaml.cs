@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Threading.Tasks;
+using C971.Extensions;
 using C971.Models.DatabaseModels;
+using C971.ViewModels;
 using C971.ViewModels.ItemCUDVMs;
 using SQLite;
 using Xamarin.Forms;
 
 namespace C971.Views.ItemCUDPages
 {
-  [QueryProperty(nameof(CourseId), nameof(CourseId))]
+  [QueryProperty(nameof(CourseId), nameof(BaseRUDPageVM<Course>.Id))]
   public partial class CourseCUDPage : BaseItemCUDPage<CourseCUDVM, Course>
   {
     public CourseCUDPage()
@@ -20,7 +22,7 @@ namespace C971.Views.ItemCUDPages
     /// <summary>
     /// Course Id from Query, if Any
     /// </summary>
-    public int? CourseId
+    public string CourseId
     {
       set
       {
@@ -64,12 +66,12 @@ namespace C971.Views.ItemCUDPages
     /// <param name="id">
     /// Course Id
     /// </param>
-    private async Task LoadCourse(int? id)
+    private async Task LoadCourse(string id)
     {
       try
       {
-        if (id != null && _viewModel != null)
-          await _viewModel.LoadCourseAsync(id);
+        if (id.NotEmpty() && _viewModel != null && int.TryParse(id, out int courseId))
+          await _viewModel.LoadCourse(courseId);
       }
       catch (SQLiteException ex)
       {

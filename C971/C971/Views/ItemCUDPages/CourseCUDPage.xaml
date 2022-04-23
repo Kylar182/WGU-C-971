@@ -27,7 +27,8 @@
       <Entry Text="{Binding Name}" Placeholder="Course Name" HeightRequest="50" FontSize="Small"  />
       <Label TextColor="Red" Text="{Binding NameError}" FontSize="Small" />
 
-      <Editor Text="{Binding Description}" Placeholder="Course Description" FontSize="Small" />
+      <Editor Text="{Binding Description}" Placeholder="Course Description" FontSize="Small"
+              AutoSize="Disabled" HeightRequest="100"/>
       <Label TextColor="Red" Text="{Binding DescriptionError}" FontSize="Small" />
 
       <Editor Text="{Binding Notes}" Placeholder="Notes" FontSize="Small" />
@@ -40,7 +41,6 @@
       <Picker Title="Select the Term" SelectedItem="{Binding Term}" FontSize="Small" ItemsSource="{Binding Terms}" 
               ItemDisplayBinding="{Binding TermTitle}" />
       <Label TextColor="Red" Text="{Binding AcademicTermIdError}" FontSize="Small" />
-
 
       <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}"/>
 

@@ -36,11 +36,18 @@ namespace C971.ViewModels.ItemCUDVMs
       get { return start; }
       set
       {
+        DateTime local = DateTime.Now;
+        TimeZoneInfo timeZone = TimeZoneInfo.Local;
+        TimeSpan offset = timeZone.GetUtcOffset(local);
+
         DateTime val = new(value.Year, value.Month, value.Day,
-                                                6, 0, 0, DateTimeKind.Utc);
+                                                12, 0, 0, DateTimeKind.Utc);
+        val = val.AddHours(offset.Hours);
+        val = val.AddMinutes(offset.Minutes);
+        val = val.AddSeconds(offset.Seconds);
         SetOrError(new() { new Tuple<bool, string>(true, "") }, val);
 
-        SetProperty(ref start, value);
+        SetProperty(ref start, val);
 
         End = val.AddMonths(6).AddTicks(-1);
       }
@@ -56,9 +63,24 @@ namespace C971.ViewModels.ItemCUDVMs
       get { return end; }
       set
       {
-        SetOrError(new() { new Tuple<bool, string>(true, "") }, value);
+        DateTime val = value;
+        if (val.AddMonths(-6).AddTicks(1) != Item.Start)
+        {
+          DateTime local = DateTime.Now;
+          TimeZoneInfo timeZone = TimeZoneInfo.Local;
+          TimeSpan offset = timeZone.GetUtcOffset(local);
 
-        SetProperty(ref end, value);
+          val = new(value.Year, value.Month, value.Day,
+                                                  12, 0, 0, DateTimeKind.Utc);
+          val = val.AddHours(offset.Hours);
+          val = val.AddMinutes(offset.Minutes);
+          val = val.AddSeconds(offset.Seconds);
+          val = val.AddTicks(-1);
+        }
+
+        SetOrError(new() { new Tuple<bool, string>(true, "") }, val);
+
+        SetProperty(ref end, val);
       }
     }
 
@@ -83,6 +105,41 @@ namespace C971.ViewModels.ItemCUDVMs
       Service = DependencyService.Get<IAcademicTermService>();
       Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                               6, 0, 0, DateTimeKind.Utc);
+
+      IsBusy = false;
+    }
+
+    public async Task LoadTerm(int id)
+    {
+      IsBusy = true;
+      Id = id;
+      AcademicTerm term = null;
+
+      await Service.Get(pr => pr.Id == id).ContinueWith(t =>
+      {
+        if (t.Exception == null)
+        {
+          term = t.Result;
+        }
+      }).ConfigureAwait(true);
+
+      if (term != null)
+      {
+        Item = term;
+        Title = $"Term {id}";
+        Id = term.Id;
+        TermTitle = term.TermTitle;
+        Start = term.Start;
+        End = term.End;
+      }
+      else
+      {
+        Title = "New Term";
+        TermTitle = null;
+        Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                                6, 0, 0, DateTimeKind.Utc);
+
+      }
 
       IsBusy = false;
     }
