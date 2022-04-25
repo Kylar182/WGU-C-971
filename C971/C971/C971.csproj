@@ -20,6 +20,9 @@
     <Compile Update="Views\InstructorsPage.xaml.cs">
       <DependentUpon>InstructorsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ItemCUDPages\InstructorCUDPage.xaml.cs">
+      <DependentUpon>InstructorCUDPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ItemCUDPages\CourseCUDPage.xaml.cs">
       <DependentUpon>CourseCUDPage.xaml</DependentUpon>
     </Compile>

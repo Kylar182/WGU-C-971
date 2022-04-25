@@ -22,7 +22,7 @@
   </ContentPage.Resources>
 
   <ContentPage.Content>
-    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20" Spacing="4">
+    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20" Spacing="2">
 
       <Entry Text="{Binding Name}" Placeholder="Course Name" HeightRequest="50" FontSize="Small"  />
       <Label TextColor="Red" Text="{Binding NameError}" FontSize="Small" />
@@ -31,7 +31,7 @@
               AutoSize="Disabled" HeightRequest="100"/>
       <Label TextColor="Red" Text="{Binding DescriptionError}" FontSize="Small" />
 
-      <Editor Text="{Binding Notes}" Placeholder="Notes" FontSize="Small" />
+      <Editor Text="{Binding Notes}" Placeholder="Notes" FontSize="Small" AutoSize="Disabled" HeightRequest="100" />
       <Label TextColor="Red" Text="{Binding NotesError}" FontSize="Small" />
 
       <Picker Title="Select the Instructor" SelectedItem="{Binding Instructor}" FontSize="Small" 

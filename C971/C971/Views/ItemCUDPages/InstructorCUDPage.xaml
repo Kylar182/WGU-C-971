@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<b:BaseItemCUDPage xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:b="clr-namespace:C971.Views.ItemCUDPages;assembly=C971"
+                   x:Class="C971.Views.ItemCUDPages.InstructorCUDPage"
+                   xmlns:vm="clr-namespace:C971.ViewModels.ItemCUDVMs"
+                   xmlns:model="clr-namespace:C971.Models.DatabaseModels"
+                   Title="{Binding Title}"
+                   x:TypeArguments="vm:InstructorCUDVM,model:Instructor"
+                   IsBusy="{Binding IsBusy}">
+
+  <ContentPage.BindingContext>
+    <vm:InstructorCUDVM />
+  </ContentPage.BindingContext>
+    
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Color x:Key="Accent">
+        #96d1ff
+      </Color>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ContentPage.Content>
+    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20" Spacing="4">
+
+      <Entry Text="{Binding Name}" Placeholder="Instructor Name" HeightRequest="50" FontSize="Small"  />
+      <Label TextColor="Red" Text="{Binding NameError}" FontSize="Small" />
+
+      <Entry Text="{Binding PhoneNumber}" Placeholder="Instructor Phone Number" HeightRequest="50" FontSize="Small"  />
+      <Label TextColor="Red" Text="{Binding PhoneNumberError}" FontSize="Small" />
+
+      <Entry Text="{Binding Email}" Placeholder="Instructor Email" HeightRequest="50" FontSize="Small"  />
+      <Label TextColor="Red" Text="{Binding EmailError}" FontSize="Small" />
+
+      <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}"/>
+
+    </StackLayout>
+  </ContentPage.Content>
+
+</b:BaseItemCUDPage>

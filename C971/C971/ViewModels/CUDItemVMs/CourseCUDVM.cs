@@ -67,8 +67,7 @@ namespace C971.ViewModels.ItemCUDVMs
       {
         SetOrError(new()
         {
-          new Tuple<bool, string>(
-                                              !value.NotEmpty() || value.Length <= 2500, "Notes Max 2500 Characters")
+          new Tuple<bool, string>(!value.NotEmpty() || value.Length <= 2500, "Notes Max 2500 Characters")
         },
                                                                                                       value.TrimFix());
 
