@@ -33,7 +33,7 @@ namespace C971.ViewModels.ItemCUDVMs
         SetOrError(new()
         {
           new Tuple<bool, string>(value.NotEmpty(), "A Name is required"),
-          new Tuple<bool, string>(!value.NotEmpty() || value.Length <= 150, "Name Max 150 Characters")
+          new Tuple<bool, string>(value.NotEmpty() && value.Length <= 150, "Name Max 150 Characters")
         }, value.TrimFix());
 
         SetProperty(ref name, value.TrimFix());
@@ -53,7 +53,7 @@ namespace C971.ViewModels.ItemCUDVMs
         SetOrError(new()
         {
           new Tuple<bool, string>(value.NotEmpty(), "A Description is required"),
-          new Tuple<bool, string>(!value.NotEmpty() || value.Length <= 1000, "Description Max 1000 Characters")
+          new Tuple<bool, string>(value.NotEmpty() && value.Length <= 1000, "Description Max 1000 Characters")
         }, value.TrimFix());
 
         SetProperty(ref description, value.TrimFix());
@@ -72,9 +72,8 @@ namespace C971.ViewModels.ItemCUDVMs
       {
         SetOrError(new()
         {
-          new Tuple<bool, string>(!value.NotEmpty() || value.Length <= 2500, "Notes Max 2500 Characters")
-        },
-                                                                                                      value.TrimFix());
+          new Tuple<bool, string>(value.IsEmpty() || value.Length <= 2500, "Notes Max 2500 Characters")
+        }, value.TrimFix());
 
         SetProperty(ref notes, value.TrimFix());
       }

@@ -23,7 +23,7 @@ namespace C971.ViewModels.ItemCUDVMs
         SetOrError(new()
         {
           new Tuple<bool, string>(value.NotEmpty(), "A Title is required"),
-          new Tuple<bool, string>(!value.NotEmpty() || value.Length <= 250, "Title Max 250 Characters")
+          new Tuple<bool, string>(value.NotEmpty() && value.Length <= 250, "Title Max 250 Characters")
         }, value.TrimFix());
 
         SetProperty(ref termTitle, value.TrimFix());
