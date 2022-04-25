@@ -12,14 +12,6 @@
   <ContentPage.BindingContext>
     <vm:TermCUDVM />
   </ContentPage.BindingContext>
-    
-  <ContentPage.Resources>
-    <ResourceDictionary>
-      <Color x:Key="Accent">
-        #96d1ff
-      </Color>
-    </ResourceDictionary>
-  </ContentPage.Resources>
 
   <ContentPage.Content>
     <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20" Spacing="4">
