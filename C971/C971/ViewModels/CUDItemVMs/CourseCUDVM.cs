@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using C971.Extensions;
 using C971.Models.DatabaseModels;
+using C971.Models.Enums;
 using C971.Services;
 using Xamarin.Forms;
 
@@ -29,7 +30,11 @@ namespace C971.ViewModels.ItemCUDVMs
       get { return name; }
       set
       {
-        SetOrError(new() { new Tuple<bool, string>(value.NotEmpty(), "A Name is required") }, value.TrimFix());
+        SetOrError(new()
+        {
+          new Tuple<bool, string>(value.NotEmpty(), "A Name is required"),
+          new Tuple<bool, string>(!value.NotEmpty() || value.Length <= 150, "Name Max 150 Characters")
+        }, value.TrimFix());
 
         SetProperty(ref name, value.TrimFix());
       }
@@ -77,6 +82,58 @@ namespace C971.ViewModels.ItemCUDVMs
 
     /// <inheritdoc cref="Course.Notes"/>
     public string NotesError => Errors.ContainsKey(nameof(Notes)) ? Errors[nameof(Notes)].First() : "";
+
+    private DateTime start;
+    /// <inheritdoc cref="Course.Start"/>
+    public DateTime Start
+    {
+      get { return start; }
+      set
+      {
+        DateTime local = DateTime.Now;
+        TimeZoneInfo timeZone = TimeZoneInfo.Local;
+        TimeSpan offset = timeZone.GetUtcOffset(local);
+
+        DateTime val = new(value.Year, value.Month, value.Day,
+                                                12, 0, 0, DateTimeKind.Utc);
+        val = val.AddHours(offset.Hours);
+        val = val.AddMinutes(offset.Minutes);
+        val = val.AddSeconds(offset.Seconds);
+        SetOrError(new() { new Tuple<bool, string>(val < End, "Start must be earlier than End") }, val);
+
+        SetProperty(ref start, val);
+      }
+    }
+
+    /// <inheritdoc cref="Course.Start"/>
+    public string StartError => Errors.ContainsKey(nameof(Start)) ? Errors[nameof(Start)].First() : "";
+
+    private DateTime end;
+    /// <inheritdoc cref="Course.End"/>
+    public DateTime End
+    {
+      get { return end; }
+      set
+      {
+        DateTime local = DateTime.Now;
+        TimeZoneInfo timeZone = TimeZoneInfo.Local;
+        TimeSpan offset = timeZone.GetUtcOffset(local);
+
+        DateTime val = new(value.Year, value.Month, value.Day,
+                                        12, 0, 0, DateTimeKind.Utc);
+        val = val.AddHours(offset.Hours);
+        val = val.AddMinutes(offset.Minutes);
+        val = val.AddSeconds(offset.Seconds);
+        val = val.AddTicks(-1);
+
+        SetOrError(new() { new Tuple<bool, string>(val > Start, "End must be later than Start") }, val);
+
+        SetProperty(ref end, val);
+      }
+    }
+
+    /// <inheritdoc cref="Course.End"/>
+    public string EndError => Errors.ContainsKey(nameof(End)) ? Errors[nameof(End)].First() : "";
 
     private Instructor instructor;
     /// <inheritdoc cref="Course.InstructorId"/>
@@ -140,6 +197,24 @@ namespace C971.ViewModels.ItemCUDVMs
       }
     }
 
+    private Tuple<CourseStatus, string> status;
+    /// <inheritdoc cref="Course.Status"/>
+    public Tuple<CourseStatus, string> Status
+    {
+      get { return status; }
+      set
+      {
+        SetOrError(new() { new Tuple<bool, string>(true, "Course Status") }, value.Item1);
+
+        SetProperty(ref status, value);
+      }
+    }
+
+    /// <summary>
+    /// List of Instructors at WGU
+    /// </summary>
+    public ObservableCollection<Tuple<CourseStatus, string>> Statuses { get; set; } = new ObservableCollection<Tuple<CourseStatus, string>>(StringExtension.GetEnumTuples<CourseStatus>());
+
     /// <summary>
     /// List of Instructors at WGU
     /// </summary>
@@ -159,6 +234,10 @@ namespace C971.ViewModels.ItemCUDVMs
         Name = null;
         Description = null;
         Notes = null;
+        Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                                12, 0, 0, DateTimeKind.Utc);
+        End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
+                                                                12, 0, 0, DateTimeKind.Utc);
       }
     }
 
@@ -176,6 +255,11 @@ namespace C971.ViewModels.ItemCUDVMs
         Name = null;
         Description = null;
         Notes = null;
+        Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                                12, 0, 0, DateTimeKind.Utc);
+        End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
+                                                                12, 0, 0, DateTimeKind.Utc);
+        Status = Statuses.FirstOrDefault();
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "An Instructor is required") }, -1,
                                                                                           nameof(Course.InstructorId));
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "A Term is required") }, -1,
@@ -209,6 +293,9 @@ namespace C971.ViewModels.ItemCUDVMs
         Name = course.Name;
         Description = course.Description;
         Notes = course.Notes;
+        Start = course.Start;
+        End = course.End;
+        Status = Statuses.Where(pr => pr.Item1 == course.Status).FirstOrDefault();
         ObjAssessmentId = course.ObjAssessmentId;
         PerfAssessmentId = course.PerfAssessmentId;
         if (Instructors.Count > 0)
@@ -222,6 +309,11 @@ namespace C971.ViewModels.ItemCUDVMs
         Name = null;
         Description = null;
         Notes = null;
+        Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                                12, 0, 0, DateTimeKind.Utc);
+        End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
+                                                                12, 0, 0, DateTimeKind.Utc);
+        Status = Statuses.FirstOrDefault();
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "An Instructor is required") }, -1,
                                                                                           nameof(Course.InstructorId));
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "A Term is required") }, -1,

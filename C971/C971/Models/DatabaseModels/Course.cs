@@ -1,4 +1,5 @@
 ﻿using System;
+using C971.Models.Enums;
 using SQLite;
 
 namespace C971.Models.DatabaseModels
@@ -53,5 +54,10 @@ namespace C971.Models.DatabaseModels
     /// </summary>
     [NotNull]
     public DateTime End { get; set; }
+
+    /// <summary>
+    /// WGU Academic Course Status for this Course
+    /// </summary>
+    public CourseStatus Status { get; set; }
   }
 }

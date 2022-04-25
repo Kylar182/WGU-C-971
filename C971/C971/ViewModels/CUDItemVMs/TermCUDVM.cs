@@ -94,7 +94,7 @@ namespace C971.ViewModels.ItemCUDVMs
       TermTitle = null;
       Service = DependencyService.Get<IAcademicTermService>();
       Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
-                                                              6, 0, 0, DateTimeKind.Utc);
+                                                              12, 0, 0, DateTimeKind.Utc);
     }
 
     /// <inheritdoc cref="TermCUDVM" />
@@ -104,7 +104,7 @@ namespace C971.ViewModels.ItemCUDVMs
       TermTitle = null;
       Service = DependencyService.Get<IAcademicTermService>();
       Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
-                                                              6, 0, 0, DateTimeKind.Utc);
+                                                              12, 0, 0, DateTimeKind.Utc);
 
       IsBusy = false;
     }
@@ -137,7 +137,7 @@ namespace C971.ViewModels.ItemCUDVMs
         Title = "New Term";
         TermTitle = null;
         Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
-                                                                6, 0, 0, DateTimeKind.Utc);
+                                                                12, 0, 0, DateTimeKind.Utc);
 
       }
 

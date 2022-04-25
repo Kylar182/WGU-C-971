@@ -22,17 +22,30 @@
   </ContentPage.Resources>
 
   <ContentPage.Content>
-    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20" Spacing="2">
+    <FlexLayout Direction="Column" VerticalOptions="StartAndExpand" Padding="20" 
+                JustifyContent="SpaceEvenly">
 
       <Entry Text="{Binding Name}" Placeholder="Course Name" HeightRequest="50" FontSize="Small"  />
       <Label TextColor="Red" Text="{Binding NameError}" FontSize="Small" />
 
       <Editor Text="{Binding Description}" Placeholder="Course Description" FontSize="Small"
-              AutoSize="Disabled" HeightRequest="100"/>
+              AutoSize="Disabled" HeightRequest="75"/>
       <Label TextColor="Red" Text="{Binding DescriptionError}" FontSize="Small" />
 
-      <Editor Text="{Binding Notes}" Placeholder="Notes" FontSize="Small" AutoSize="Disabled" HeightRequest="100" />
+      <Editor Text="{Binding Notes}" Placeholder="Notes" FontSize="Small" AutoSize="Disabled" HeightRequest="75" />
       <Label TextColor="Red" Text="{Binding NotesError}" FontSize="Small" />
+
+      <Grid Padding="0,20,0,20">
+        <Label Text="Start Date" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="Small" />
+        <DatePicker Date="{Binding Start}" Grid.Column="1" Grid.Row="0" FontSize="Small" />
+        <Label TextColor="Red" Text="{Binding StartError}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+               VerticalOptions="CenterAndExpand" FontSize="Small" />
+
+        <Label Text="End Date" Grid.Column="0" Grid.Row="2" VerticalOptions="Center" FontSize="Small" />
+        <DatePicker Date="{Binding End}" Grid.Column="1" Grid.Row="2" FontSize="Small" />
+        <Label TextColor="Red" Text="{Binding EndError}" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
+               VerticalOptions="CenterAndExpand" FontSize="Small" />
+      </Grid>
 
       <Picker Title="Select the Instructor" SelectedItem="{Binding Instructor}" FontSize="Small" 
               ItemsSource="{Binding Instructors}" ItemDisplayBinding="{Binding Name}" />
@@ -42,9 +55,12 @@
               ItemDisplayBinding="{Binding TermTitle}" />
       <Label TextColor="Red" Text="{Binding AcademicTermIdError}" FontSize="Small" />
 
+      <Picker Title="Select the Status" SelectedItem="{Binding Status}" FontSize="Small" ItemsSource="{Binding Statuses}" 
+              ItemDisplayBinding="{Binding Item2}" />
+
       <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}"/>
 
-    </StackLayout>
+    </FlexLayout>
   </ContentPage.Content>
 
 </b:BaseItemCUDPage>

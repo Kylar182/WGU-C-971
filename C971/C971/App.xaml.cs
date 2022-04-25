@@ -1,5 +1,6 @@
 ﻿using System;
 using C971.Models.DatabaseModels;
+using C971.Models.Enums;
 using C971.Services;
 using C971.Services.Implementations;
 using SQLite;
@@ -87,6 +88,7 @@ namespace C971
           ObjAssessmentId = 2,
           Start = new DateTime(2022, 1, 1, 6, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 1, 20, 5, 59, 59, DateTimeKind.Utc),
+          Status = CourseStatus.Completed
         });
 
         _syncConn.Insert(new Assessment()
@@ -124,6 +126,7 @@ namespace C971
           ObjAssessmentId = 4,
           Start = new DateTime(2022, 1, 20, 6, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 3, 1, 5, 59, 59, DateTimeKind.Utc),
+          Status = CourseStatus.Completed
         });
 
         _syncConn.Insert(new Assessment()
@@ -162,6 +165,7 @@ namespace C971
           ObjAssessmentId = 6,
           Start = new DateTime(2022, 3, 1, 6, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 4, 15, 5, 59, 59, DateTimeKind.Utc),
+          Status = CourseStatus.InProgress
         });
 
         _syncConn.Insert(new Assessment()
@@ -197,6 +201,7 @@ namespace C971
           ObjAssessmentId = 8,
           Start = new DateTime(2022, 4, 15, 6, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 7, 1, 5, 59, 59, DateTimeKind.Utc),
+          Status = CourseStatus.PlanToTake
         });
 
         _syncConn.Insert(new Assessment()
