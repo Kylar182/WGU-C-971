@@ -40,6 +40,7 @@ namespace C971.ViewModels
         SetOrError(new() { new Tuple<bool, string>(true, $"{typeof(T).Name} Id") }, value);
 
         SetProperty(ref id, value);
+        CanDelete = Id != null && Id > 0;
       }
     }
 
@@ -47,6 +48,11 @@ namespace C971.ViewModels
     /// Command to attempt to Save the State of the Current Model if Valid
     /// </summary>
     public ICommand Save { get; protected set; }
+
+    /// <summary>
+    /// Command to attempt to Delete the Current Model
+    /// </summary>
+    public ICommand Delete { get; protected set; }
 
     /// <summary>
     /// Errors of each Property
@@ -61,16 +67,30 @@ namespace C971.ViewModels
     /// </summary>
     public bool Valid => Errors.Count == 0;
 
+    private bool canDelete;
+    /// <summary>
+    /// Determines if the Bound Model Properties are Valid
+    /// </summary>
+    public bool CanDelete
+    {
+      get { return canDelete; }
+      set
+      {
+        SetProperty(ref canDelete, value);
+      }
+    }
+
     public BaseRUDPageVM()
     {
       Item = new();
     }
 
     /// <inheritdoc cref="BaseAddPageVM{}" />
-    public BaseRUDPageVM(Func<Task> save)
+    public BaseRUDPageVM(Func<Task> save, Func<Task> delete)
     {
       Item = new();
       Save = new Command(async () => await save?.Invoke());
+      Delete = new Command(async () => await delete?.Invoke());
     }
 
     /// <summary>
@@ -206,6 +226,17 @@ namespace C971.ViewModels
       {
         return;
       }
+    }
+
+    /// <summary>
+    /// Trys to Delete the Item from the Database if possible
+    /// </summary>
+    public virtual async Task DeleteItem()
+    {
+      if (CanDelete)
+        await Service.Delete(Item);
+      else
+        return;
     }
   }
 }

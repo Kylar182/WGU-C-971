@@ -86,7 +86,7 @@ namespace C971.ViewModels.ItemCUDVMs
     }
 
     /// <inheritdoc cref="TermCUDVM" />
-    public InstructorCUDVM(Func<Task> save) : base(save)
+    public InstructorCUDVM(Func<Task> save, Func<Task> delete) : base(save, delete)
     {
       if (Id == null)
       {

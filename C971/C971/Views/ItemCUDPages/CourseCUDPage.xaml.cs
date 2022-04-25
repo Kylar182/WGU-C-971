@@ -16,7 +16,8 @@ namespace C971.Views.ItemCUDPages
     {
       InitializeComponent();
 
-      BindingContext = _viewModel = new CourseCUDVM(async () => await OnSaveButtonClicked());
+      BindingContext = _viewModel = new CourseCUDVM(async () => await OnSaveClicked(),
+                                                                      async () => await OnDeleteClicked());
     }
 
     /// <summary>
@@ -31,15 +32,9 @@ namespace C971.Views.ItemCUDPages
     }
 
     /// <summary>
-    /// Async Save Event for New Items
+    /// Async Save Event for New / Update Item
     /// </summary>
-    /// <param name="sender">
-    /// Object that called the Event
-    /// </param>
-    /// <param name="args">
-    /// Event Arguments
-    /// </param>
-    private async Task OnSaveButtonClicked()
+    private async Task OnSaveClicked()
     {
       try
       {

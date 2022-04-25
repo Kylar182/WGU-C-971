@@ -102,7 +102,7 @@ namespace C971.ViewModels.ItemCUDVMs
     }
 
     /// <inheritdoc cref="TermCUDVM" />
-    public TermCUDVM(Func<Task> save) : base(save)
+    public TermCUDVM(Func<Task> save, Func<Task> delete) : base(save, delete)
     {
       Title = "New Term";
       TermTitle = null;

@@ -241,7 +241,7 @@ namespace C971.ViewModels.ItemCUDVMs
     }
 
     /// <inheritdoc cref="CourseCUDVM" />
-    public CourseCUDVM(Func<Task> save) : base(save)
+    public CourseCUDVM(Func<Task> save, Func<Task> delete) : base(save, delete)
     {
       Service = DependencyService.Get<ICourseService>();
       _termService = DependencyService.Get<IAcademicTermService>();

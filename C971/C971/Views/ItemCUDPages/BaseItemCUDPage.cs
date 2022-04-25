@@ -1,4 +1,6 @@
-﻿using C971.Models.DatabaseModels;
+﻿using System;
+using System.Threading.Tasks;
+using C971.Models.DatabaseModels;
 using C971.ViewModels;
 using Xamarin.Forms;
 
@@ -16,6 +18,22 @@ namespace C971.Views.ItemCUDPages
     {
       base.OnAppearing();
       _viewModel.OnAppearing();
+    }
+
+    /// <summary>
+    /// Async Delete Event for Item
+    /// </summary>
+    protected virtual async Task OnDeleteClicked()
+    {
+      try
+      {
+        await _viewModel.DeleteItem();
+        await Shell.Current.GoToAsync("..");
+      }
+      catch (Exception ex)
+      {
+        await DisplayAlert("Error", ex.Message, "OK");
+      }
     }
   }
 }

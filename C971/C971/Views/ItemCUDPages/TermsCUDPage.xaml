@@ -37,7 +37,11 @@
                VerticalOptions="CenterAndExpand" FontSize="Small" />
       </Grid>
 
-      <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}" Margin="0,10,0,0" />
+      <Grid>
+        <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}" Grid.Column="0" Grid.Row="0" />
+        <Button Text="DELETE" Command="{Binding Delete}" IsEnabled="{Binding CanDelete}" Grid.Column="1" Grid.Row="0"
+                Style="{StaticResource Delete}" />
+      </Grid>
 
     </StackLayout>
   </ContentPage.Content>
