@@ -20,7 +20,11 @@ namespace C971.ViewModels.ItemCUDVMs
       get { return termTitle; }
       set
       {
-        SetOrError(new() { new Tuple<bool, string>(value.NotEmpty(), "A Title is required") }, value.TrimFix());
+        SetOrError(new()
+        {
+          new Tuple<bool, string>(value.NotEmpty(), "A Title is required"),
+          new Tuple<bool, string>(!value.NotEmpty() || value.Length <= 250, "Title Max 250 Characters")
+        }, value.TrimFix());
 
         SetProperty(ref termTitle, value.TrimFix());
       }
@@ -78,7 +82,7 @@ namespace C971.ViewModels.ItemCUDVMs
           val = val.AddTicks(-1);
         }
 
-        SetOrError(new() { new Tuple<bool, string>(true, "") }, val);
+        SetOrError(new() { new Tuple<bool, string>(val > Start, "End must be later than Start") }, val);
 
         SetProperty(ref end, val);
       }

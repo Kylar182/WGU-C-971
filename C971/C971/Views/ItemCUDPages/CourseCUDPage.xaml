@@ -37,7 +37,7 @@
       <Editor Text="{Binding Notes}" Placeholder="Notes" FontSize="Small" AutoSize="Disabled" HeightRequest="75" />
       <Label TextColor="Red" Text="{Binding NotesError}" FontSize="Small" />
 
-      <Grid Padding="0,20,0,20">
+      <Grid Padding="0,10,0,0">
         <Label Text="Start Date" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="Small" />
         <DatePicker Date="{Binding Start}" Grid.Column="1" Grid.Row="0" FontSize="Small" />
         <Label TextColor="Red" Text="{Binding StartError}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
@@ -60,7 +60,7 @@
       <Picker Title="Select the Status" SelectedItem="{Binding Status}" FontSize="Small" ItemsSource="{Binding Statuses}" 
               ItemDisplayBinding="{Binding ., Converter={StaticResource EnumString}}" />
 
-      <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}"/>
+      <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}" Margin="0,10,0,0" />
 
     </FlexLayout>
   </ContentPage.Content>
