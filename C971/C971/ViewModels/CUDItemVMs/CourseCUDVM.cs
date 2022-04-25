@@ -197,14 +197,14 @@ namespace C971.ViewModels.ItemCUDVMs
       }
     }
 
-    private Tuple<CourseStatus, string> status;
+    private CourseStatus status;
     /// <inheritdoc cref="Course.Status"/>
-    public Tuple<CourseStatus, string> Status
+    public CourseStatus Status
     {
       get { return status; }
       set
       {
-        SetOrError(new() { new Tuple<bool, string>(true, "Course Status") }, value.Item1);
+        SetOrError(new() { new Tuple<bool, string>(true, "Course Status") }, value);
 
         SetProperty(ref status, value);
       }
@@ -213,7 +213,7 @@ namespace C971.ViewModels.ItemCUDVMs
     /// <summary>
     /// List of Instructors at WGU
     /// </summary>
-    public ObservableCollection<Tuple<CourseStatus, string>> Statuses { get; set; } = new ObservableCollection<Tuple<CourseStatus, string>>(StringExtension.GetEnumTuples<CourseStatus>());
+    public ObservableCollection<CourseStatus> Statuses { get; set; } = new ObservableCollection<CourseStatus>(StringExtension.GetEnumList<CourseStatus>());
 
     /// <summary>
     /// List of Instructors at WGU
@@ -295,7 +295,7 @@ namespace C971.ViewModels.ItemCUDVMs
         Notes = course.Notes;
         Start = course.Start;
         End = course.End;
-        Status = Statuses.Where(pr => pr.Item1 == course.Status).FirstOrDefault();
+        Status = Statuses.Where(pr => pr == course.Status).FirstOrDefault();
         ObjAssessmentId = course.ObjAssessmentId;
         PerfAssessmentId = course.PerfAssessmentId;
         if (Instructors.Count > 0)

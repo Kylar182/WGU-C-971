@@ -4,6 +4,7 @@
                    xmlns:b="clr-namespace:C971.Views.ItemCUDPages;assembly=C971"
                    x:Class="C971.Views.ItemCUDPages.CourseCUDPage"
                    xmlns:vm="clr-namespace:C971.ViewModels.ItemCUDVMs"
+                   xmlns:converters="clr-namespace:C971.Converters"
                    xmlns:model="clr-namespace:C971.Models.DatabaseModels"
                    Title="{Binding Title}"
                    x:TypeArguments="vm:CourseCUDVM,model:Course"
@@ -18,6 +19,7 @@
       <Color x:Key="Accent">
         #96d1ff
       </Color>
+      <converters:EnumConverter x:Key="EnumString"/>
     </ResourceDictionary>
   </ContentPage.Resources>
 
@@ -56,7 +58,7 @@
       <Label TextColor="Red" Text="{Binding AcademicTermIdError}" FontSize="Small" />
 
       <Picker Title="Select the Status" SelectedItem="{Binding Status}" FontSize="Small" ItemsSource="{Binding Statuses}" 
-              ItemDisplayBinding="{Binding Item2}" />
+              ItemDisplayBinding="{Binding ., Converter={StaticResource EnumString}}" />
 
       <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}"/>
 

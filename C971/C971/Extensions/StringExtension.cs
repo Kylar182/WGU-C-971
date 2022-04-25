@@ -86,6 +86,21 @@ namespace C971.Extensions
     }
 
     /// <summary>
+    /// Creates Tuples from the given Enum type using the Enum values and their Display values
+    /// </summary>
+    /// <typeparam name="TValue">
+    /// Enum types to get a List of Tuples for
+    /// </typeparam>
+    public static Dictionary<TValue, string> GetEnumDictionary<TValue>() where TValue : Enum
+    {
+      Dictionary<TValue, string> dictionaryNums = new();
+      foreach (TValue tupleNum in GetEnumList<TValue>())
+        dictionaryNums.Add(tupleNum, tupleNum.ToString("g").SplitPascal());
+
+      return dictionaryNums;
+    }
+
+    /// <summary>
     /// If string is not null/empty and longer than specified length, 
     /// it will be cut and returned as the specified length
     /// If it's not as long as the specified length it's returned as is
