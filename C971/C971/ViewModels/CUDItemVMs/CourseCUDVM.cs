@@ -209,6 +209,28 @@ namespace C971.ViewModels.ItemCUDVMs
       }
     }
 
+    private Assessment perfAssessment;
+    /// <inheritdoc cref="Course.PerfAssessmentId"/>
+    public Assessment PerfAssessment
+    {
+      get { return perfAssessment; }
+      set
+      {
+        SetProperty(ref perfAssessment, value);
+      }
+    }
+
+    private Assessment objAssessment;
+    /// <inheritdoc cref="Course.ObjAssessmentId"/>
+    public Assessment ObjAssessment
+    {
+      get { return objAssessment; }
+      set
+      {
+        SetProperty(ref objAssessment, value);
+      }
+    }
+
     /// <summary>
     /// List of Instructors at WGU
     /// </summary>
@@ -257,6 +279,8 @@ namespace C971.ViewModels.ItemCUDVMs
         Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                                 12, 0, 0, DateTimeKind.Utc);
         End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
+                                                                12, 0, 0, DateTimeKind.Utc);
+        Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                                 12, 0, 0, DateTimeKind.Utc);
         Status = Statuses.FirstOrDefault();
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "An Instructor is required") }, -1,
@@ -312,11 +336,32 @@ namespace C971.ViewModels.ItemCUDVMs
                                                                 12, 0, 0, DateTimeKind.Utc);
         End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
                                                                 12, 0, 0, DateTimeKind.Utc);
+        Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                                12, 0, 0, DateTimeKind.Utc);
         Status = Statuses.FirstOrDefault();
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "An Instructor is required") }, -1,
                                                                                           nameof(Course.InstructorId));
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "A Term is required") }, -1,
                                                                                       nameof(Course.AcademicTermId));
+      }
+
+      if (ObjAssessmentId.HasValue && PerfAssessmentId.HasValue)
+      {
+        Task<Assessment> oaTask = _assessmentService.Get(pr => pr.Id == ObjAssessmentId.Value);
+        Task<Assessment> perfTask = _assessmentService.Get(pr => pr.Id == PerfAssessmentId.Value);
+
+        await Task.WhenAll(oaTask, perfTask).ConfigureAwait(true);
+
+        ObjAssessment = oaTask.Result;
+        PerfAssessment = perfTask.Result;
+      }
+      else if (ObjAssessmentId.HasValue && !PerfAssessmentId.HasValue)
+      {
+        ObjAssessment = await _assessmentService.Get(pr => pr.Id == ObjAssessmentId.Value).ConfigureAwait(true);
+      }
+      else if (PerfAssessmentId.HasValue && !ObjAssessmentId.HasValue)
+      {
+        PerfAssessment = await _assessmentService.Get(pr => pr.Id == PerfAssessmentId.Value).ConfigureAwait(true);
       }
     }
 
@@ -328,21 +373,16 @@ namespace C971.ViewModels.ItemCUDVMs
       List<Instructor> instructors = new();
       List<AcademicTerm> terms = new();
 
-      await _instructorService.GetAll().ContinueWith(t =>
-      {
-        if (t.Exception == null)
-        {
-          instructors = t.Result;
-        }
-      }).ConfigureAwait(true);
+      Task<List<Instructor>> instructorTask = _instructorService.GetAll();
+      Task<List<AcademicTerm>> termTask = _termService.GetAll();
 
-      await _termService.GetAll().ContinueWith(t =>
-      {
-        if (t.Exception == null)
-        {
-          terms = t.Result;
-        }
-      }).ConfigureAwait(true);
+      await Task.WhenAll(instructorTask, termTask).ConfigureAwait(true);
+
+      if (instructorTask.Exception == null)
+        instructors = instructorTask.Result;
+
+      if (termTask.Exception == null)
+        terms = termTask.Result;
 
       foreach (Instructor instructor in instructors.OrderBy(pr => pr.Name))
         Instructors.Add(instructor);
@@ -357,6 +397,7 @@ namespace C971.ViewModels.ItemCUDVMs
       }
       else
       {
+        Status = Statuses.FirstOrDefault();
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "An Instructor is required") }, -1,
                                                                                             nameof(Course.InstructorId));
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "A Term is required") }, -1,
