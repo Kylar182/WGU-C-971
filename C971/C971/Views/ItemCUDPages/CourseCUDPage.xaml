@@ -26,7 +26,7 @@
     <FlexLayout Direction="Column" Padding="10,0,10,10" VerticalOptions="StartAndExpand"
                   JustifyContent="SpaceEvenly">
 
-      <Entry Text="{Binding Name}" Placeholder="Course Name" HeightRequest="44" FontSize="Small"  />
+      <Entry Text="{Binding Name}" Placeholder="Course Name" HeightRequest="44" />
       <Label TextColor="Red" Text="{Binding NameError}" FontSize="Small" />
 
       <Editor Text="{Binding Description}" Placeholder="Course Description" FontSize="Small"
@@ -44,40 +44,49 @@
           <RowDefinition Height="15" />
         </Grid.RowDefinitions>
         <Label Text="Start Date" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="Small" />
-        <DatePicker Date="{Binding Start}" Grid.Column="1" Grid.Row="0" FontSize="Small" />
+        <DatePicker Date="{Binding Start}" Grid.Column="1" Grid.Row="0" />
         <Label TextColor="Red" Text="{Binding StartError}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
                VerticalOptions="Start" FontSize="Small" HorizontalOptions="Center" Padding="0" Margin="0" />
 
         <Label Text="End Date" Grid.Column="0" Grid.Row="2" VerticalOptions="Center" FontSize="Small" />
-        <DatePicker Date="{Binding End}" Grid.Column="1" Grid.Row="2" FontSize="Small" />
+        <DatePicker Date="{Binding End}" Grid.Column="1" Grid.Row="2" />
         <Label TextColor="Red" Text="{Binding EndError}" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
                VerticalOptions="Start" FontSize="Small" HorizontalOptions="Center" Padding="0" Margin="0" />
       </Grid>
 
-      <Picker Title="Select the Instructor" SelectedItem="{Binding Instructor}" FontSize="Small"
+      <Picker Title="Select the Instructor" SelectedItem="{Binding Instructor}"
               ItemsSource="{Binding Instructors}" ItemDisplayBinding="{Binding Name}" />
       <Label TextColor="Red" Text="{Binding InstructorIdError}" FontSize="Small" />
 
-      <Picker Title="Select the Term" SelectedItem="{Binding Term}" FontSize="Small" ItemsSource="{Binding Terms}"
+      <Picker Title="Select the Term" SelectedItem="{Binding Term}" ItemsSource="{Binding Terms}"
               ItemDisplayBinding="{Binding TermTitle}" />
       <Label TextColor="Red" Text="{Binding AcademicTermIdError}" FontSize="Small" />
 
       <Grid Margin="0,10,0,10" RowSpacing="0">
         <Label Text="Status" FontSize="Small" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
-        <Picker Title="Select the Status" SelectedItem="{Binding Status}" FontSize="Small" ItemsSource="{Binding Statuses}"
-                ItemDisplayBinding="{Binding ., Converter={StaticResource EnumString}}" Grid.Row="0" Grid.Column="1"
-                Grid.ColumnSpan="5" />
+        <Picker Title="Select the Status" SelectedItem="{Binding Status}" ItemsSource="{Binding Statuses}" Grid.ColumnSpan="5"
+                ItemDisplayBinding="{Binding ., Converter={StaticResource EnumString}}" Grid.Row="0" Grid.Column="1" />
       </Grid>
 
       <Grid Margin="0,10,0,10" RowSpacing="0">
-        <Label Text="{Binding PerfAssessment.Name}" Grid.Column="0" Grid.Row="0" VerticalOptions="CenterAndExpand" FontSize="Small"
-               IsVisible="{Binding PerfAssessment, Converter={StaticResource NullBool}}" HorizontalOptions="CenterAndExpand" />
-        <Button Text="ADD PA" IsVisible="{Binding PerfAssessment, Converter={StaticResource NotNullBool}}"
-                Grid.Column="0" Grid.Row="0"/>
-        <Label Text="{Binding ObjAssessment.Name}" Grid.Column="1" Grid.Row="0" VerticalOptions="CenterAndExpand" FontSize="Small"
-               IsVisible="{Binding ObjAssessment, Converter={StaticResource NullBool}}" HorizontalOptions="CenterAndExpand" />
-        <Button Text="ADD OA" IsVisible="{Binding ObjAssessment, Converter={StaticResource NotNullBool}}"
-                Grid.Column="1" Grid.Row="0"/>
+        <Frame BorderColor="{StaticResource WGUBlue}" CornerRadius="3" Grid.Column="0" Grid.Row="0" Padding="10">
+          <Label Text="{Binding PerfAssessment.Name}" VerticalOptions="CenterAndExpand" FontSize="Small"
+               IsVisible="{Binding PerfAssessment, Converter={StaticResource NullBool}}" HorizontalOptions="CenterAndExpand"
+               TextColor="{StaticResource WGUBlue}">
+
+          </Label>
+        </Frame>
+        <Button Text="PERFORMANCE ASSESSMENT" IsVisible="{Binding PerfAssessment, Converter={StaticResource NotNullBool}}"
+                Grid.Column="0" Grid.Row="0" Padding="0" />
+        <Frame BorderColor="{StaticResource WGUBlue}" CornerRadius="3" Grid.Column="1" Grid.Row="0" Padding="10">
+          <Label Text="{Binding ObjAssessment.Name}" VerticalOptions="CenterAndExpand" FontSize="Small"
+                 IsVisible="{Binding ObjAssessment, Converter={StaticResource NullBool}}" HorizontalOptions="CenterAndExpand"
+                 TextColor="{StaticResource WGUBlue}">
+
+          </Label>
+        </Frame>
+        <Button Text="OBJECTIVE&#x0d;&#x0a;ASSESSMENT" IsVisible="{Binding ObjAssessment, Converter={StaticResource NotNullBool}}"
+                Grid.Column="1" Grid.Row="0" Padding="0" />
       </Grid>
 
       <Grid Margin="0,10,0,0" RowSpacing="0">

@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+  <Color x:Key="Grey60Color">#60868E96</Color>
+  <Color x:Key="Grey30Color">#30868E96</Color>
+  <Color x:Key="Grey15Color">#15868E96</Color>
+  <Color x:Key="AppGreyColor">#868E96</Color>
+  <Color x:Key="WGUBlue">#002F51</Color>
+  <Color x:Key="WGULight">#82BCD4</Color>
+  <Color x:Key="WGURed">#840028</Color>
+  <SolidColorBrush x:Key="Grey15" Color="{StaticResource Grey15Color}"/>
+  <SolidColorBrush x:Key="Grey30" Color="{StaticResource Grey30Color}"/>
+  <SolidColorBrush x:Key="Grey60" Color="{StaticResource Grey60Color}"/>
+  <SolidColorBrush x:Key="AppGrey" Color="{StaticResource AppGreyColor}"/>
+
+  <SolidColorBrush x:Key="WGU" Color="{StaticResource WGUBlue}" />
+  <SolidColorBrush x:Key="Light" Color="{StaticResource WGULight}" />
+  <SolidColorBrush x:Key="AlarmRed" Color="{StaticResource WGURed}" />
+
+</ResourceDictionary>

@@ -7,10 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Styles\roboto-slab\RobotoSlab-Bold.ttf" />
+    <None Remove="Styles\roboto-slab\RobotoSlab-Light.ttf" />
+    <None Remove="Styles\roboto-slab\RobotoSlab-Regular.ttf" />
+    <None Remove="Styles\roboto-slab\RobotoSlab-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Styles\roboto-slab\RobotoSlab-Bold.ttf" />
+    <Resource Include="Styles\roboto-slab\RobotoSlab-Light.ttf" />
+    <Resource Include="Styles\roboto-slab\RobotoSlab-Regular.ttf" />
+    <Resource Include="Styles\roboto-slab\RobotoSlab-Thin.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,5 +46,11 @@
     <Compile Update="Views\TermsPage.xaml.cs">
       <DependentUpon>TermsPage.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Styles\roboto-slab\Apache License.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

@@ -21,10 +21,10 @@
 
       <Grid Padding="0,10,0,0">
         <Label Text="Start Date" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="Small" />
-        <DatePicker Date="{Binding Start}" Grid.Column="1" Grid.Row="0" FontSize="Small" />
+        <DatePicker Date="{Binding Start}" Grid.Column="1" Grid.Row="0" />
 
         <Label Text="End Date" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" FontSize="Small" />
-        <DatePicker Date="{Binding End}" Grid.Column="1" Grid.Row="1" FontSize="Small" />
+        <DatePicker Date="{Binding End}" Grid.Column="1" Grid.Row="1" />
         <Label TextColor="Red" Text="{Binding EndError}" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"
                VerticalOptions="CenterAndExpand" FontSize="Small" />
       </Grid>
