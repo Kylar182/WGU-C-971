@@ -48,7 +48,7 @@ namespace C971.ViewModels.ItemCUDVMs
     /// </summary>
     public string OAPA
     {
-      get { return name; }
+      get { return oapa; }
       set
       {
         if (value.IsEmpty())
@@ -57,6 +57,21 @@ namespace C971.ViewModels.ItemCUDVMs
           RemoveError(nameof(OAPA), "OAPA is required");
 
         SetProperty(ref oapa, value.TrimFix());
+
+        if (Title != null && value != null && !Title.Contains(value))
+        {
+          if (Title.Contains("New"))
+            Title = $"New {value} Assessment";
+          else if (Id != null && !Title.Contains("New"))
+            Title = $"{value} Assessment {Id}";
+        }
+        else if (value != null)
+        {
+          if (Id == null)
+            Title = $"New {value} Assessment";
+          else if (Id != null)
+            Title = $"{value} Assessment {Id}";
+        }
       }
     }
 
@@ -122,7 +137,7 @@ namespace C971.ViewModels.ItemCUDVMs
     {
       if (Id == null)
       {
-        Title = "New Assessment";
+        Title = $"New {OAPA} Assessment";
         Name = null;
         Due = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
                                                               12, 0, 0, DateTimeKind.Utc);
@@ -151,7 +166,7 @@ namespace C971.ViewModels.ItemCUDVMs
       if (assessment != null)
       {
         Item = assessment;
-        Title = $"Assessment {id}";
+        Title = $"{OAPA} Assessment {id}";
         Id = assessment.Id;
         Name = assessment.Name;
         Due = assessment.Due;
@@ -159,7 +174,7 @@ namespace C971.ViewModels.ItemCUDVMs
       }
       else
       {
-        Title = "New Assessment";
+        Title = $"New {OAPA} Assessment";
         Name = null;
         Due = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
                                                               12, 0, 0, DateTimeKind.Utc);
@@ -172,7 +187,7 @@ namespace C971.ViewModels.ItemCUDVMs
     {
       await base.SaveItem();
 
-      if (OAPA == "OA")
+      if (OAPA == "Objective")
         Course.ObjAssessmentId = Id;
       else
         Course.PerfAssessmentId = Id;

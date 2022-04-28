@@ -14,9 +14,22 @@
   </ContentPage.BindingContext>
 
   <ContentPage.Content>
+
     <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20" Spacing="4">
 
+      <Entry Text="{Binding Name}" Placeholder="Title of New Term" HeightRequest="50" />
+      <Label TextColor="Red" Text="{Binding NameError}" FontSize="Small" />
 
+      <Grid Padding="0,10,0,0">
+        <Label Text="Start Date" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="Small" />
+        <DatePicker Date="{Binding Due}" Grid.Column="1" Grid.Row="0" />
+      </Grid>
+
+      <Grid>
+        <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}" Grid.Column="0" Grid.Row="0" />
+        <Button Text="DELETE" Command="{Binding Delete}" IsEnabled="{Binding CanDelete}" Grid.Column="1" Grid.Row="0"
+                Style="{StaticResource Delete}" />
+      </Grid>
 
     </StackLayout>
   </ContentPage.Content>

@@ -428,13 +428,13 @@ namespace C971.ViewModels.ItemCUDVMs
     private async Task OnPANavigate()
     {
       if (Item.Id > 0)
-        await Shell.Current.GoToAsync($"{nameof(AssessmentCUDPage)}?CourseId={Item.Id}&Id={Item.PerfAssessmentId}&OAPA=PA");
+        await Shell.Current.GoToAsync($"{nameof(AssessmentCUDPage)}?CourseId={Item.Id}&Id={Item.PerfAssessmentId}&OAPA=Performance");
     }
 
     private async Task OnOANavigate()
     {
       if (Item.Id > 0)
-        await Shell.Current.GoToAsync($"{nameof(AssessmentCUDPage)}?CourseId={Item.Id}&Id={Item.ObjAssessmentId}&OAPA=OA");
+        await Shell.Current.GoToAsync($"{nameof(AssessmentCUDPage)}?CourseId={Item.Id}&Id={Item.ObjAssessmentId}&OAPA=Objective");
     }
   }
 }
