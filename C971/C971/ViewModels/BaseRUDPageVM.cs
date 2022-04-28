@@ -218,7 +218,10 @@ namespace C971.ViewModels
       if (Valid)
       {
         if (Item.Id == 0)
+        {
           await Service.Add(Item);
+          Id = Item.Id;
+        }
         else
           await Service.Update(Item);
       }

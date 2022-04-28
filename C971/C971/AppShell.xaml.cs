@@ -11,6 +11,7 @@ namespace C971
       Routing.RegisterRoute(nameof(TermsCUDPage), typeof(TermsCUDPage));
       Routing.RegisterRoute(nameof(InstructorCUDPage), typeof(InstructorCUDPage));
       Routing.RegisterRoute(nameof(CourseCUDPage), typeof(CourseCUDPage));
+      Routing.RegisterRoute(nameof(AssessmentCUDPage), typeof(AssessmentCUDPage));
     }
   }
 }

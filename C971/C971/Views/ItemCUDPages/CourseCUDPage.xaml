@@ -72,21 +72,25 @@
         <Frame BorderColor="{StaticResource WGUBlue}" CornerRadius="3" Grid.Column="0" Grid.Row="0" Padding="10">
           <Label Text="{Binding PerfAssessment.Name}" VerticalOptions="CenterAndExpand" FontSize="Small"
                IsVisible="{Binding PerfAssessment, Converter={StaticResource NullBool}}" HorizontalOptions="CenterAndExpand"
-               TextColor="{StaticResource WGUBlue}">
-
-          </Label>
+               TextColor="{StaticResource WGUBlue}" />
+          <Frame.GestureRecognizers>
+            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding PACommand}" />
+          </Frame.GestureRecognizers>
         </Frame>
         <Button Text="PERFORMANCE ASSESSMENT" IsVisible="{Binding PerfAssessment, Converter={StaticResource NotNullBool}}"
-                Grid.Column="0" Grid.Row="0" Padding="0" />
+                Grid.Column="0" Grid.Row="0" Padding="0" Command="{Binding PACommand}"
+                IsEnabled="{Binding CanDelete}"/>
         <Frame BorderColor="{StaticResource WGUBlue}" CornerRadius="3" Grid.Column="1" Grid.Row="0" Padding="10">
           <Label Text="{Binding ObjAssessment.Name}" VerticalOptions="CenterAndExpand" FontSize="Small"
                  IsVisible="{Binding ObjAssessment, Converter={StaticResource NullBool}}" HorizontalOptions="CenterAndExpand"
-                 TextColor="{StaticResource WGUBlue}">
-
-          </Label>
+                 TextColor="{StaticResource WGUBlue}" />
+          <Frame.GestureRecognizers>
+            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding OACommand}" />
+          </Frame.GestureRecognizers>
         </Frame>
         <Button Text="OBJECTIVE&#x0d;&#x0a;ASSESSMENT" IsVisible="{Binding ObjAssessment, Converter={StaticResource NotNullBool}}"
-                Grid.Column="1" Grid.Row="0" Padding="0" HorizontalOptions="FillAndExpand" />
+                Grid.Column="1" Grid.Row="0" Padding="0" HorizontalOptions="FillAndExpand" Command="{Binding OACommand}"
+                IsEnabled="{Binding CanDelete}"/>
       </Grid>
 
       <Grid Margin="0,10,0,0" RowSpacing="0">

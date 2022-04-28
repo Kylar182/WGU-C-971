@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using C971.Extensions;
 using C971.Models.DatabaseModels;
 using C971.Models.Enums;
 using C971.Services;
+using C971.Views.ItemCUDPages;
 using Xamarin.Forms;
 
 namespace C971.ViewModels.ItemCUDVMs
@@ -39,6 +41,18 @@ namespace C971.ViewModels.ItemCUDVMs
         SetProperty(ref name, value.TrimFix());
       }
     }
+
+    /// <summary>
+    /// Command to Navigate to the Assessment Create / Update / Delete <para />
+    /// Page for the Performance Assessment related to this Course (if Any)
+    /// </summary>
+    public ICommand PACommand { get; }
+
+    /// <summary>
+    /// Command to Navigate to the Assessment Create / Update / Delete <para />
+    /// Page for the Objective Assessment related to this Course (if Any)
+    /// </summary>
+    public ICommand OACommand { get; }
 
     /// <inheritdoc cref="Course.Name"/>
     public string NameError => Errors.ContainsKey(nameof(Name)) ? Errors[nameof(Name)].First() : "";
@@ -232,7 +246,7 @@ namespace C971.ViewModels.ItemCUDVMs
     }
 
     /// <summary>
-    /// List of Instructors at WGU
+    /// All Course Status Types as a List
     /// </summary>
     public ObservableCollection<CourseStatus> Statuses { get; set; } = new ObservableCollection<CourseStatus>(StringExtension.GetEnumList<CourseStatus>());
 
@@ -260,6 +274,9 @@ namespace C971.ViewModels.ItemCUDVMs
         End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
                                                                 12, 0, 0, DateTimeKind.Utc);
       }
+
+      PACommand = new Command(async () => await OnPANavigate());
+      OACommand = new Command(async () => await OnOANavigate());
     }
 
     /// <inheritdoc cref="CourseCUDVM" />
@@ -269,6 +286,8 @@ namespace C971.ViewModels.ItemCUDVMs
       _termService = DependencyService.Get<IAcademicTermService>();
       _instructorService = DependencyService.Get<IInstructorService>();
       _assessmentService = DependencyService.Get<IAssessmentService>();
+
+      LoadAsync().ConfigureAwait(true);
 
       if (Id == null)
       {
@@ -289,7 +308,8 @@ namespace C971.ViewModels.ItemCUDVMs
                                                                                       nameof(Course.AcademicTermId));
       }
 
-      LoadAsync().ConfigureAwait(true);
+      PACommand = new Command(async () => await OnPANavigate());
+      OACommand = new Command(async () => await OnOANavigate());
 
       IsBusy = false;
     }
@@ -403,6 +423,18 @@ namespace C971.ViewModels.ItemCUDVMs
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "A Term is required") }, -1,
                                                                                         nameof(Course.AcademicTermId));
       }
+    }
+
+    private async Task OnPANavigate()
+    {
+      if (Item.Id > 0)
+        await Shell.Current.GoToAsync($"{nameof(AssessmentCUDPage)}?CourseId={Item.Id}&Id={Item.PerfAssessmentId}&OAPA=PA");
+    }
+
+    private async Task OnOANavigate()
+    {
+      if (Item.Id > 0)
+        await Shell.Current.GoToAsync($"{nameof(AssessmentCUDPage)}?CourseId={Item.Id}&Id={Item.ObjAssessmentId}&OAPA=OA");
     }
   }
 }

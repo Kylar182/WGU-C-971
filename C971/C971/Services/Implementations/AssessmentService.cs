@@ -3,5 +3,5 @@
 namespace C971.Services.Implementations
 {
   /// <inheritdoc cref="IAssessmentService"/>
-  public class AssessmentService : DBService<Assessment>, IAssessmentService { }
+  public class AssessmentService : CRUDDBService<Assessment>, IAssessmentService { }
 }

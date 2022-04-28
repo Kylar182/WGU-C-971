@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using C971.Extensions;
 using C971.Models.DatabaseModels;
 using C971.Services;
@@ -31,11 +32,11 @@ namespace C971.ViewModels
     /// <summary>
     /// Command to Load / Refresh the Page's Collection Data
     /// </summary>
-    public Command LoadItemsCommand { get; }
+    public ICommand LoadItemsCommand { get; }
     /// <summary>
     /// Command to Navigate to the New Item Page for this T Type
     /// </summary>
-    public Command AddItemCommand { get; }
+    public ICommand AddItemCommand { get; }
     /// <summary>
     /// Command to Navigate to the Update Item Page for the selected Item
     /// </summary>
@@ -68,7 +69,7 @@ namespace C971.ViewModels
     {
       Items = new ObservableCollection<T>();
       LoadItemsCommand = new Command(async () => await ExecuteLoadItems());
-      AddItemCommand = new Command(OnAddItem);
+      AddItemCommand = new Command(async () => await OnAddItem());
       ItemTapped = new Command<T>(OnSelected);
     }
 
@@ -111,7 +112,7 @@ namespace C971.ViewModels
     /// <summary>
     /// Task to Navigate to the New Item Page for this T Type
     /// </summary>
-    protected async void OnAddItem(object obj)
+    protected async Task OnAddItem()
     {
       await Shell.Current.GoToAsync(NewPage);
     }
