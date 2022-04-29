@@ -49,7 +49,8 @@ namespace C971.ViewModels.ItemCUDVMs
         val = val.AddHours(offset.Hours);
         val = val.AddMinutes(offset.Minutes);
         val = val.AddSeconds(offset.Seconds);
-        SetOrError(new() { new Tuple<bool, string>(true, "") }, val);
+
+        SetOrError(new() { new Tuple<bool, string>(true, "Start must be earlier than End") }, val);
 
         SetProperty(ref start, val);
 
@@ -82,6 +83,7 @@ namespace C971.ViewModels.ItemCUDVMs
           val = val.AddTicks(-1);
         }
 
+        SetOrError(new() { new Tuple<bool, string>(Start < val, "Start must be earlier than End") }, Start, nameof(Start));
         SetOrError(new() { new Tuple<bool, string>(val > Start, "End must be later than Start") }, val);
 
         SetProperty(ref end, val);

@@ -67,7 +67,7 @@ namespace C971.ViewModels.ItemCUDVMs
         SetOrError(new()
         {
           new Tuple<bool, string>(value.NotEmpty(), "A Description is required"),
-          new Tuple<bool, string>(value.NotEmpty() && value.Length <= 1000, "Description Max 1000 Characters")
+          new Tuple<bool, string>(value.NotEmpty() && value.Length <= 1500, "Description Max 1000 Characters")
         }, value.TrimFix());
 
         SetProperty(ref description, value.TrimFix());
@@ -112,6 +112,8 @@ namespace C971.ViewModels.ItemCUDVMs
         val = val.AddHours(offset.Hours);
         val = val.AddMinutes(offset.Minutes);
         val = val.AddSeconds(offset.Seconds);
+
+        SetOrError(new() { new Tuple<bool, string>(val < End, "End must be later than Start") }, End, nameof(End));
         SetOrError(new() { new Tuple<bool, string>(val < End, "Start must be earlier than End") }, val);
 
         SetProperty(ref start, val);
@@ -139,6 +141,7 @@ namespace C971.ViewModels.ItemCUDVMs
         val = val.AddSeconds(offset.Seconds);
         val = val.AddTicks(-1);
 
+        SetOrError(new() { new Tuple<bool, string>(Start < val, "Start must be earlier than End") }, Start, nameof(Start));
         SetOrError(new() { new Tuple<bool, string>(val > Start, "End must be later than Start") }, val);
 
         SetProperty(ref end, val);
@@ -299,8 +302,6 @@ namespace C971.ViewModels.ItemCUDVMs
                                                                 12, 0, 0, DateTimeKind.Utc);
         End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
                                                                 12, 0, 0, DateTimeKind.Utc);
-        Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
-                                                                12, 0, 0, DateTimeKind.Utc);
         Status = Statuses.FirstOrDefault();
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "An Instructor is required") }, -1,
                                                                                           nameof(Course.InstructorId));
@@ -355,8 +356,6 @@ namespace C971.ViewModels.ItemCUDVMs
         Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                                 12, 0, 0, DateTimeKind.Utc);
         End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
-                                                                12, 0, 0, DateTimeKind.Utc);
-        Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                                 12, 0, 0, DateTimeKind.Utc);
         Status = Statuses.FirstOrDefault();
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "An Instructor is required") }, -1,

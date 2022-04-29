@@ -17,13 +17,13 @@
     <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20" Spacing="4">
 
       <Entry Text="{Binding Name}" Placeholder="Instructor Name" HeightRequest="50"  />
-      <Label TextColor="Red" Text="{Binding NameError}" FontSize="Small" />
+      <Label TextColor="{StaticResource WGURed}" Text="{Binding NameError}" FontSize="Small" />
 
       <Entry Text="{Binding PhoneNumber}" Placeholder="Instructor Phone Number" HeightRequest="50" />
-      <Label TextColor="Red" Text="{Binding PhoneNumberError}" FontSize="Small" />
+      <Label TextColor="{StaticResource WGURed}" Text="{Binding PhoneNumberError}" FontSize="Small" />
 
       <Entry Text="{Binding Email}" Placeholder="Instructor Email" HeightRequest="50"  />
-      <Label TextColor="Red" Text="{Binding EmailError}" FontSize="Small" />
+      <Label TextColor="{StaticResource WGURed}" Text="{Binding EmailError}" FontSize="Small" />
 
       <Grid Margin="0,10,0,0">
         <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}" Grid.Column="0" Grid.Row="0" />

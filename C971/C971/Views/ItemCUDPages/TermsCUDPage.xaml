@@ -17,15 +17,17 @@
     <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20" Spacing="4">
 
       <Entry Text="{Binding TermTitle}" Placeholder="Title of New Term" HeightRequest="50" />
-      <Label TextColor="Red" Text="{Binding TermTitleError}" FontSize="Small" />
+      <Label TextColor="{StaticResource WGURed}" Text="{Binding TermTitleError}" FontSize="Small" />
 
       <Grid Padding="0,10,0,0">
         <Label Text="Start Date" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="Small" />
         <DatePicker Date="{Binding Start}" Grid.Column="1" Grid.Row="0" />
+        <Label TextColor="{StaticResource WGURed}" Text="{Binding StartError}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+               VerticalOptions="CenterAndExpand" FontSize="Small" />
 
-        <Label Text="End Date" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" FontSize="Small" />
-        <DatePicker Date="{Binding End}" Grid.Column="1" Grid.Row="1" />
-        <Label TextColor="Red" Text="{Binding EndError}" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"
+        <Label Text="End Date" Grid.Column="0" Grid.Row="2" VerticalOptions="Center" FontSize="Small" />
+        <DatePicker Date="{Binding End}" Grid.Column="1" Grid.Row="2" />
+        <Label TextColor="{StaticResource WGURed}" Text="{Binding EndError}" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
                VerticalOptions="CenterAndExpand" FontSize="Small" />
       </Grid>
 

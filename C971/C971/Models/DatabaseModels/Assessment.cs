@@ -21,9 +21,15 @@ namespace C971.Models.DatabaseModels
     public int CourseId { get; set; }
 
     /// <summary>
+    /// Date / Time the Assessment is started (WGU / Utah) Local Time
+    /// </summary>
+    [NotNull]
+    public DateTime Start { get; set; }
+
+    /// <summary>
     /// Date / Time the Assessment is due (WGU / Utah) Local Time
     /// </summary>
     [NotNull]
-    public DateTime Due { get; set; }
+    public DateTime End { get; set; }
   }
 }

@@ -95,14 +95,16 @@ namespace C971
         {
           Name = "Pre-Assessment: Advanced Data Management (FJO1)",
           CourseId = 1,
-          Due = new DateTime(2022, 1, 17, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 1, 18, 5, 59, 59, DateTimeKind.Utc),
+          End = new DateTime(2022, 1, 17, 5, 59, 59, DateTimeKind.Utc)
         });
 
         _syncConn.Insert(new Assessment()
         {
           Name = "Objective Assessment: Advanced Data Management",
           CourseId = 1,
-          Due = new DateTime(2022, 1, 20, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 1, 19, 5, 59, 59, DateTimeKind.Utc),
+          End = new DateTime(2022, 1, 20, 5, 59, 59, DateTimeKind.Utc)
         });
 
         _syncConn.Insert(new Instructor()
@@ -133,14 +135,16 @@ namespace C971
         {
           Name = "Pre-Assessment: Data Structures and Algorithms I (GJO1)",
           CourseId = 2,
-          Due = new DateTime(2022, 2, 24, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 2, 23, 5, 59, 59, DateTimeKind.Utc),
+          End = new DateTime(2022, 2, 24, 5, 59, 59, DateTimeKind.Utc)
         });
 
         _syncConn.Insert(new Assessment()
         {
           Name = "Objective Assessment: Data Structures and Algorithms I",
           CourseId = 2,
-          Due = new DateTime(2022, 3, 1, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 2, 27, 5, 59, 59, DateTimeKind.Utc),
+          End = new DateTime(2022, 3, 1, 5, 59, 59, DateTimeKind.Utc)
         });
 
         _syncConn.Insert(new Instructor()
@@ -172,14 +176,16 @@ namespace C971
         {
           Name = "Performance Assessment: Mobile Application Development Using C# (LAP1)",
           CourseId = 3,
-          Due = new DateTime(2022, 4, 12, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 4, 11, 5, 59, 59, DateTimeKind.Utc),
+          End = new DateTime(2022, 4, 12, 5, 59, 59, DateTimeKind.Utc)
         });
 
         _syncConn.Insert(new Assessment()
         {
           Name = "Objective Assessment: Mobile Application Development Using C#",
           CourseId = 3,
-          Due = new DateTime(2022, 4, 15, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 4, 14, 5, 59, 59, DateTimeKind.Utc),
+          End = new DateTime(2022, 4, 15, 5, 59, 59, DateTimeKind.Utc)
         });
 
         _syncConn.Insert(new Instructor()
@@ -208,14 +214,16 @@ namespace C971
         {
           Name = "Performance Assessment: Software Development Capstone (RYM2)",
           CourseId = 4,
-          Due = new DateTime(2022, 6, 15, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 6, 14, 5, 59, 59, DateTimeKind.Utc),
+          End = new DateTime(2022, 6, 15, 5, 59, 59, DateTimeKind.Utc)
         });
 
         _syncConn.Insert(new Assessment()
         {
           Name = "Objective Assessment: Software Development Capstone",
           CourseId = 4,
-          Due = new DateTime(2022, 7, 1, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 6, 28, 5, 59, 59, DateTimeKind.Utc),
+          End = new DateTime(2022, 7, 1, 5, 59, 59, DateTimeKind.Utc)
         });
 
         Preferences.Set(nameof(Initial), Initial);

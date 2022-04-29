@@ -95,11 +95,11 @@ namespace C971.ViewModels.ItemCUDVMs
     /// <inheritdoc cref="Assessment.Name"/>
     public string NameError => Errors.ContainsKey(nameof(Name)) ? Errors[nameof(Name)].First() : "";
 
-    private DateTime due;
-    /// <inheritdoc cref="Assessment.Due"/>
-    public DateTime Due
+    private DateTime start;
+    /// <inheritdoc cref="Assessment.Start"/>
+    public DateTime Start
     {
-      get { return due; }
+      get { return start; }
       set
       {
         DateTime local = DateTime.Now;
@@ -111,14 +111,43 @@ namespace C971.ViewModels.ItemCUDVMs
         val = val.AddHours(offset.Hours);
         val = val.AddMinutes(offset.Minutes);
         val = val.AddSeconds(offset.Seconds);
-        SetOrError(new() { new Tuple<bool, string>(true, "") }, val);
 
-        SetProperty(ref due, val);
+        SetOrError(new() { new Tuple<bool, string>(val <= End, "End must be later than Start") }, End, nameof(End));
+        SetOrError(new() { new Tuple<bool, string>(val <= End, "Start must be earlier than End") }, val);
+
+        SetProperty(ref start, val);
       }
     }
 
-    /// <inheritdoc cref="Assessment.Due"/>
-    public string DueError => Errors.ContainsKey(nameof(Due)) ? Errors[nameof(Due)].First() : "";
+    /// <inheritdoc cref="Assessment.Start"/>
+    public string StartError => Errors.ContainsKey(nameof(Start)) ? Errors[nameof(Start)].First() : "";
+
+    private DateTime end;
+    /// <inheritdoc cref="Assessment.End"/>
+    public DateTime End
+    {
+      get { return end; }
+      set
+      {
+        DateTime local = DateTime.Now;
+        TimeZoneInfo timeZone = TimeZoneInfo.Local;
+        TimeSpan offset = timeZone.GetUtcOffset(local);
+
+        DateTime val = new(value.Year, value.Month, value.Day,
+                                                12, 0, 0, DateTimeKind.Utc);
+        val = val.AddHours(offset.Hours);
+        val = val.AddMinutes(offset.Minutes);
+        val = val.AddSeconds(offset.Seconds);
+
+        SetOrError(new() { new Tuple<bool, string>(Start <= val, "Start must be earlier than End") }, Start, nameof(Start));
+        SetOrError(new() { new Tuple<bool, string>(val >= Start, "End must be later than Start") }, val);
+
+        SetProperty(ref end, val);
+      }
+    }
+
+    /// <inheritdoc cref="Assessment.End"/>
+    public string EndError => Errors.ContainsKey(nameof(End)) ? Errors[nameof(End)].First() : "";
 
     /// <inheritdoc cref="AssessmentCUDVM" />
     public AssessmentCUDVM()
@@ -127,7 +156,9 @@ namespace C971.ViewModels.ItemCUDVMs
       {
         Title = "New Assessment";
         Name = null;
-        Due = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
+        Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                              12, 0, 0, DateTimeKind.Utc);
+        End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
                                                               12, 0, 0, DateTimeKind.Utc);
       }
     }
@@ -139,7 +170,9 @@ namespace C971.ViewModels.ItemCUDVMs
       {
         Title = $"New {OAPA} Assessment";
         Name = null;
-        Due = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
+        Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                              12, 0, 0, DateTimeKind.Utc);
+        End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
                                                               12, 0, 0, DateTimeKind.Utc);
       }
 
@@ -169,14 +202,17 @@ namespace C971.ViewModels.ItemCUDVMs
         Title = $"{OAPA} Assessment {id}";
         Id = assessment.Id;
         Name = assessment.Name;
-        Due = assessment.Due;
+        Start = assessment.Start;
+        End = assessment.End;
         CourseId = assessment.CourseId;
       }
       else
       {
         Title = $"New {OAPA} Assessment";
         Name = null;
-        Due = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
+        Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                                                              12, 0, 0, DateTimeKind.Utc);
+        End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
                                                               12, 0, 0, DateTimeKind.Utc);
       }
 
