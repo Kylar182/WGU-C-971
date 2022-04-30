@@ -21,9 +21,9 @@ namespace C971.ViewModels
   {
     protected new bool isBusy = true;
     /// <summary>
-    /// DB CRUD Service for this Database Model
+    /// DB Service for this Database Model
     /// </summary>
-    protected ICRUDService<T> Service;
+    protected IDBService<T> Service;
 
     /// <summary>
     /// Database Item to Add or Update

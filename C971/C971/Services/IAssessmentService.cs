@@ -5,7 +5,7 @@ namespace C971.Services
   /// <summary>
   /// Course Assessment Database Service
   /// </summary>
-  public interface IAssessmentService : ICRUDService<Assessment>
+  public interface IAssessmentService : IDBService<Assessment>
   {
   }
 }

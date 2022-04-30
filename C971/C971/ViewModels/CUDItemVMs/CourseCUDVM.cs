@@ -113,8 +113,8 @@ namespace C971.ViewModels.ItemCUDVMs
         val = val.AddMinutes(offset.Minutes);
         val = val.AddSeconds(offset.Seconds);
 
-        SetOrError(new() { new Tuple<bool, string>(val < End, "End must be later than Start") }, End, nameof(End));
-        SetOrError(new() { new Tuple<bool, string>(val < End, "Start must be earlier than End") }, val);
+        SetOrError(new() { new Tuple<bool, string>(val <= End, "End must be later than Start") }, End, nameof(End));
+        SetOrError(new() { new Tuple<bool, string>(val <= End, "Start must be earlier than End") }, val);
 
         SetProperty(ref start, val);
       }
@@ -139,10 +139,9 @@ namespace C971.ViewModels.ItemCUDVMs
         val = val.AddHours(offset.Hours);
         val = val.AddMinutes(offset.Minutes);
         val = val.AddSeconds(offset.Seconds);
-        val = val.AddTicks(-1);
 
-        SetOrError(new() { new Tuple<bool, string>(Start < val, "Start must be earlier than End") }, Start, nameof(Start));
-        SetOrError(new() { new Tuple<bool, string>(val > Start, "End must be later than Start") }, val);
+        SetOrError(new() { new Tuple<bool, string>(Start <= val, "Start must be earlier than End") }, Start, nameof(Start));
+        SetOrError(new() { new Tuple<bool, string>(val >= Start, "End must be later than Start") }, val);
 
         SetProperty(ref end, val);
       }
@@ -325,29 +324,27 @@ namespace C971.ViewModels.ItemCUDVMs
       {
         if (t.Exception == null)
         {
+          Id = t.Result.Id;
+          Item = t.Result;
           course = t.Result;
+          End = t.Result.End;
+          Title = $"Course {id}";
+          Name = t.Result.Name;
+          Description = t.Result.Description;
+          Notes = t.Result.Notes;
+          Start = t.Result.Start;
+          End = t.Result.End;
+          Status = Statuses.Where(pr => pr == t.Result.Status).FirstOrDefault();
+          ObjAssessmentId = t.Result.ObjAssessmentId;
+          PerfAssessmentId = t.Result.PerfAssessmentId;
+          if (Instructors.Count > 0)
+            Instructor = Instructors.FirstOrDefault(pr => pr.Id == t.Result.InstructorId);
+          if (Terms.Count > 0)
+            Term = Terms.FirstOrDefault(pr => pr.Id == t.Result.AcademicTermId);
         }
       }).ConfigureAwait(true);
 
-      if (course != null)
-      {
-        Item = course;
-        Title = $"Course {id}";
-        Id = course.Id;
-        Name = course.Name;
-        Description = course.Description;
-        Notes = course.Notes;
-        Start = course.Start;
-        End = course.End;
-        Status = Statuses.Where(pr => pr == course.Status).FirstOrDefault();
-        ObjAssessmentId = course.ObjAssessmentId;
-        PerfAssessmentId = course.PerfAssessmentId;
-        if (Instructors.Count > 0)
-          Instructor = Instructors.FirstOrDefault(t => t.Id == course.InstructorId);
-        if (Terms.Count > 0)
-          Term = Terms.FirstOrDefault(t => t.Id == course.AcademicTermId);
-      }
-      else
+      if (course == null)
       {
         Title = "New Course";
         Name = null;

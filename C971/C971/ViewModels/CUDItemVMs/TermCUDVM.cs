@@ -54,7 +54,8 @@ namespace C971.ViewModels.ItemCUDVMs
 
         SetProperty(ref start, val);
 
-        End = val.AddMonths(6).AddTicks(-1);
+        if (End == null || End < value)
+          End = val.AddMonths(6).AddSeconds(-1);
       }
     }
 
@@ -69,7 +70,7 @@ namespace C971.ViewModels.ItemCUDVMs
       set
       {
         DateTime val = value;
-        if (val.AddMonths(-6).AddTicks(1) != Item.Start)
+        if (val.AddMonths(-6).AddSeconds(1) != Item.Start)
         {
           DateTime local = DateTime.Now;
           TimeZoneInfo timeZone = TimeZoneInfo.Local;
@@ -80,11 +81,11 @@ namespace C971.ViewModels.ItemCUDVMs
           val = val.AddHours(offset.Hours);
           val = val.AddMinutes(offset.Minutes);
           val = val.AddSeconds(offset.Seconds);
-          val = val.AddTicks(-1);
+          val = val.AddSeconds(-1);
         }
 
-        SetOrError(new() { new Tuple<bool, string>(Start < val, "Start must be earlier than End") }, Start, nameof(Start));
-        SetOrError(new() { new Tuple<bool, string>(val > Start, "End must be later than Start") }, val);
+        SetOrError(new() { new Tuple<bool, string>(Start <= val, "Start must be earlier than End") }, Start, nameof(Start));
+        SetOrError(new() { new Tuple<bool, string>(val >= Start, "End must be later than Start") }, val);
 
         SetProperty(ref end, val);
       }

@@ -192,21 +192,18 @@ namespace C971.ViewModels.ItemCUDVMs
       {
         if (t.Exception == null)
         {
+          Id = t.Result.Id;
+          Item = t.Result;
+          Title = $"{OAPA} Assessment {id}";
+          Name = t.Result.Name;
+          Start = t.Result.Start;
+          End = t.Result.End;
+          CourseId = t.Result.CourseId;
           assessment = t.Result;
         }
       }).ConfigureAwait(true);
 
-      if (assessment != null)
-      {
-        Item = assessment;
-        Title = $"{OAPA} Assessment {id}";
-        Id = assessment.Id;
-        Name = assessment.Name;
-        Start = assessment.Start;
-        End = assessment.End;
-        CourseId = assessment.CourseId;
-      }
-      else
+      if (assessment == null)
       {
         Title = $"New {OAPA} Assessment";
         Name = null;
