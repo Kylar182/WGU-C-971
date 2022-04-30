@@ -3,6 +3,7 @@ using C971.Models.DatabaseModels;
 using C971.Models.Enums;
 using C971.Services;
 using C971.Services.Implementations;
+using Plugin.LocalNotifications;
 using SQLite;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -57,9 +58,12 @@ namespace C971
         _syncConn.Insert(new AcademicTerm()
         {
           TermTitle = "Spring 2022",
-          Start = new DateTime(2022, 1, 01, 6, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 7, 01, 5, 59, 59, DateTimeKind.Utc),
+          Start = new DateTime(2022, 1, 01, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 6, 30, 11, 59, 59, DateTimeKind.Utc),
         });
+
+        CrossLocalNotifications.Current.Show("Spring 2022", "Spring 2022 starts today!", 1, 
+                            new DateTime(2022, 1, 01, 12, 0, 0, DateTimeKind.Utc));
 
         _syncConn.Insert(new Instructor()
         {
@@ -86,26 +90,38 @@ namespace C971
           InstructorId = 1,
           PerfAssessmentId = 1,
           ObjAssessmentId = 2,
-          Start = new DateTime(2022, 1, 1, 6, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 1, 20, 5, 59, 59, DateTimeKind.Utc),
+          Start = new DateTime(2022, 1, 1, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 1, 20, 11, 59, 59, DateTimeKind.Utc),
           Status = CourseStatus.Completed
         });
+
+        CrossLocalNotifications.Current.Show("D191 - Advanced Data Management", 
+                                                "D191 - Advanced Data Management starts today!", 1, 
+                                                        new DateTime(2022, 1, 1, 12, 0, 0, DateTimeKind.Utc));
 
         _syncConn.Insert(new Assessment()
         {
           Name = "Pre-Assessment: Advanced Data Management (FJO1)",
           CourseId = 1,
-          Start = new DateTime(2022, 1, 18, 5, 59, 59, DateTimeKind.Utc),
-          End = new DateTime(2022, 1, 17, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 1, 18, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 1, 17, 12, 0, 0, DateTimeKind.Utc)
         });
+
+        CrossLocalNotifications.Current.Show("Pre-Assessment: Advanced Data Management (FJO1)",
+                                                    "Pre-Assessment: Advanced Data Management (FJO1) starts today!", 1,
+                                                        new DateTime(2022, 1, 18, 12, 0, 0, DateTimeKind.Utc));
 
         _syncConn.Insert(new Assessment()
         {
           Name = "Objective Assessment: Advanced Data Management",
           CourseId = 1,
-          Start = new DateTime(2022, 1, 19, 5, 59, 59, DateTimeKind.Utc),
-          End = new DateTime(2022, 1, 20, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 1, 19, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 1, 20, 12, 0, 0, DateTimeKind.Utc)
         });
+
+        CrossLocalNotifications.Current.Show("Objective Assessment: Advanced Data Management",
+                                                "Objective Assessment: Advanced Data Management starts today!", 2,
+                                                  new DateTime(2022, 1, 19, 12, 0, 0, DateTimeKind.Utc));
 
         _syncConn.Insert(new Instructor()
         {
@@ -126,26 +142,38 @@ namespace C971
           InstructorId = 2,
           PerfAssessmentId = 3,
           ObjAssessmentId = 4,
-          Start = new DateTime(2022, 1, 20, 6, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 3, 1, 5, 59, 59, DateTimeKind.Utc),
+          Start = new DateTime(2022, 1, 20, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 3, 1, 11, 59, 59, DateTimeKind.Utc),
           Status = CourseStatus.Completed
         });
+
+        CrossLocalNotifications.Current.Show("C949 - Data Structures and Algorithms I",
+                                                "C949 - Data Structures and Algorithms I starts today!", 1,
+                                                        new DateTime(2022, 1, 20, 12, 0, 0, DateTimeKind.Utc));
 
         _syncConn.Insert(new Assessment()
         {
           Name = "Pre-Assessment: Data Structures and Algorithms I (GJO1)",
           CourseId = 2,
-          Start = new DateTime(2022, 2, 23, 5, 59, 59, DateTimeKind.Utc),
-          End = new DateTime(2022, 2, 24, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 2, 23, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 2, 24, 12, 0, 0, DateTimeKind.Utc)
         });
+
+        CrossLocalNotifications.Current.Show("Pre-Assessment: Data Structures and Algorithms I (GJO1)",
+                                                "Pre-Assessment: Data Structures and Algorithms I (GJO1) starts today!", 1,
+                                                        new DateTime(2022, 2, 23, 12, 0, 0, DateTimeKind.Utc));
 
         _syncConn.Insert(new Assessment()
         {
           Name = "Objective Assessment: Data Structures and Algorithms I",
           CourseId = 2,
-          Start = new DateTime(2022, 2, 27, 5, 59, 59, DateTimeKind.Utc),
-          End = new DateTime(2022, 3, 1, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 2, 27, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 3, 1, 11, 59, 59, DateTimeKind.Utc)
         });
+
+        CrossLocalNotifications.Current.Show("Objective Assessment: Data Structures and Algorithms I",
+                                                "Objective Assessment: Data Structures and Algorithms I starts today!", 1,
+                                                        new DateTime(2022, 2, 27, 12, 0, 0, DateTimeKind.Utc));
 
         _syncConn.Insert(new Instructor()
         {
@@ -167,26 +195,38 @@ namespace C971
           InstructorId = 3,
           PerfAssessmentId = 5,
           ObjAssessmentId = 6,
-          Start = new DateTime(2022, 3, 1, 6, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 4, 15, 5, 59, 59, DateTimeKind.Utc),
+          Start = new DateTime(2022, 3, 1, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 4, 15, 11, 59, 59, DateTimeKind.Utc),
           Status = CourseStatus.InProgress
         });
+
+        CrossLocalNotifications.Current.Show("C971 - Mobile Application Development Using C#",
+                                                "C971 - Mobile Application Development Using C# starts today!", 1,
+                                                        new DateTime(2022, 3, 1, 12, 0, 0, DateTimeKind.Utc));
 
         _syncConn.Insert(new Assessment()
         {
           Name = "Performance Assessment: Mobile Application Development Using C# (LAP1)",
           CourseId = 3,
-          Start = new DateTime(2022, 4, 11, 5, 59, 59, DateTimeKind.Utc),
-          End = new DateTime(2022, 4, 12, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 4, 11, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 4, 12, 11, 59, 59, DateTimeKind.Utc)
         });
+
+        CrossLocalNotifications.Current.Show("Performance Assessment: Mobile Application Development Using C# (LAP1)",
+                                                "Performance Assessment: Mobile Application Development Using C# (LAP1) starts today!", 1,
+                                                        new DateTime(2022, 4, 11, 12, 0, 0, DateTimeKind.Utc));
 
         _syncConn.Insert(new Assessment()
         {
           Name = "Objective Assessment: Mobile Application Development Using C#",
           CourseId = 3,
-          Start = new DateTime(2022, 4, 14, 5, 59, 59, DateTimeKind.Utc),
-          End = new DateTime(2022, 4, 15, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 4, 14, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 4, 15, 11, 59, 59, DateTimeKind.Utc)
         });
+
+        CrossLocalNotifications.Current.Show("Objective Assessment: Mobile Application Development Using C#",
+                                                "Objective Assessment: Mobile Application Development Using C# starts today!", 1,
+                                                        new DateTime(2022, 4, 14, 12, 0, 0, DateTimeKind.Utc));
 
         _syncConn.Insert(new Instructor()
         {
@@ -205,10 +245,14 @@ namespace C971
           InstructorId = 4,
           PerfAssessmentId = 7,
           ObjAssessmentId = 8,
-          Start = new DateTime(2022, 4, 15, 6, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 7, 1, 5, 59, 59, DateTimeKind.Utc),
+          Start = new DateTime(2022, 4, 15, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 6, 30, 11, 59, 59, DateTimeKind.Utc),
           Status = CourseStatus.PlanToTake
         });
+
+        CrossLocalNotifications.Current.Show("C868 - Software Development Capstone",
+                                                "C868 - Software Development Capstone# starts today!", 1,
+                                                        new DateTime(2022, 4, 15, 12, 0, 0, DateTimeKind.Utc));
 
         _syncConn.Insert(new Assessment()
         {
@@ -218,13 +262,22 @@ namespace C971
           End = new DateTime(2022, 6, 15, 5, 59, 59, DateTimeKind.Utc)
         });
 
+        CrossLocalNotifications.Current.Show("Performance Assessment: Software Development Capstone (RYM2)",
+                                                "Performance Assessment: Software Development Capstone (RYM2) starts today!", 1,
+                                                        new DateTime(2022, 6, 14, 12, 0, 0, DateTimeKind.Utc));
+
         _syncConn.Insert(new Assessment()
         {
           Name = "Objective Assessment: Software Development Capstone",
           CourseId = 4,
-          Start = new DateTime(2022, 6, 28, 5, 59, 59, DateTimeKind.Utc),
-          End = new DateTime(2022, 7, 1, 5, 59, 59, DateTimeKind.Utc)
+          Start = new DateTime(2022, 6, 28, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 6, 30, 11, 59, 59, DateTimeKind.Utc)
         });
+
+
+        CrossLocalNotifications.Current.Show("Objective Assessment: Software Development Capstone",
+                                                "Objective Assessment: Software Development Capstone starts today!", 1,
+                                                        new DateTime(2022, 6, 28, 12, 0, 0, DateTimeKind.Utc));
 
         Preferences.Set(nameof(Initial), Initial);
       }
