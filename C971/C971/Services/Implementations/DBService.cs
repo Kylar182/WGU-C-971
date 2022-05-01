@@ -23,6 +23,17 @@ namespace C971.Services.Implementations
     public virtual async Task<T> Add(T item)
     {
       _ = await _conn.InsertAsync(item);
+
+      if (item is INotify notify)
+      {
+        Notification notification = notify.Notification();
+        _ = await _conn.InsertAsync(notification);
+        notify.NotificationId = notification.Id;
+        _ = await _conn.UpdateAsync(notify);
+
+        notification.Insert();
+      }
+
       return item;
     }
 
@@ -35,12 +46,29 @@ namespace C971.Services.Implementations
     /// <inheritdoc />
     public virtual async Task<int> Update(T item)
     {
+      if (item is INotify notify)
+      {
+        Notification notification = notify.Notification();
+        _ = await _conn.UpdateAsync(notification);
+
+        notification.Update();
+
+        return await _conn.UpdateAsync(notify);
+      }
+
       return await _conn.UpdateAsync(item);
     }
 
     /// <inheritdoc />
     public virtual async Task<int> Delete(T item)
     {
+      if (item is INotify notify)
+      {
+        Notification notification = notify.Notification();
+        notification.Cancel();
+        _ = await _conn.DeleteAsync(notification);
+      }
+
       return await _conn.DeleteAsync(item);
     }
   }
