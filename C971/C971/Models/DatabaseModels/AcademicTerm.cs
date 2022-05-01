@@ -10,7 +10,7 @@ namespace C971.Models.DatabaseModels
   /// Typically Six Month Increments
   /// </remarks>
   [Table(nameof(AcademicTerm) + "s")]
-  public class AcademicTerm : BaseModel
+  public class AcademicTerm : BaseModel, INotify
   {
     /// <summary>
     /// The Term Title, must be Unique
@@ -19,14 +19,28 @@ namespace C971.Models.DatabaseModels
     public string TermTitle { get; set; } = "";
 
     /// <summary>
-    /// Date / Time of the Academic Term's Start (WGU / Utah) Local Time
+    /// Date / Time of the Academic Term's Start, Universal Time
     /// </summary>
     [MaxLength(150), NotNull]
     public DateTime Start { get; set; }
     /// <summary>
-    /// Date / Time of the Academic Term's End (WGU / Utah) Local Time
+    /// Date / Time of the Academic Term's End, Universal Time
     /// </summary>
     [MaxLength(150), NotNull]
     public DateTime End { get; set; }
+
+    /// <inheritdoc />
+    public int NotificationId { get; set; }
+
+    /// <inheritdoc />
+    public Notification Notification()
+    {
+      return new()
+      {
+        Id = NotificationId,
+        Title = TermTitle,
+        Start = Start
+      };
+    }
   }
 }

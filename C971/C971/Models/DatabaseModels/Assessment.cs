@@ -7,7 +7,7 @@ namespace C971.Models.DatabaseModels
   /// A WGU Academic Course
   /// </summary>
   [Table(nameof(Assessment) + "s")]
-  public class Assessment : BaseModel
+  public class Assessment : BaseModel, INotify
   {
     /// <summary>
     /// Name of the Assessment
@@ -21,15 +21,29 @@ namespace C971.Models.DatabaseModels
     public int CourseId { get; set; }
 
     /// <summary>
-    /// Date / Time the Assessment is started (WGU / Utah) Local Time
+    /// Date / Time the Assessment is started, Universal Time
     /// </summary>
     [NotNull]
     public DateTime Start { get; set; }
 
     /// <summary>
-    /// Date / Time the Assessment is due (WGU / Utah) Local Time
+    /// Date / Time the Assessment is due, Universal Time
     /// </summary>
     [NotNull]
     public DateTime End { get; set; }
+
+    /// <inheritdoc />
+    public int NotificationId { get; set; }
+
+    /// <inheritdoc />
+    public Notification Notification()
+    {
+      return new()
+      {
+        Id = NotificationId,
+        Title = Name,
+        Start = Start
+      };
+    }
   }
 }

@@ -3,7 +3,6 @@ using C971.Models.DatabaseModels;
 using C971.Models.Enums;
 using C971.Services;
 using C971.Services.Implementations;
-using Plugin.LocalNotifications;
 using SQLite;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -45,25 +44,28 @@ namespace C971
     private void InitializeDB(string dbPath)
     {
       SQLiteConnection _syncConn = new(dbPath);
-      _syncConn.CreateTable<AcademicTerm>();
-      _syncConn.CreateTable<Course>();
-      _syncConn.CreateTable<Assessment>();
-      _syncConn.CreateTable<Instructor>();
 
       bool Initial = Preferences.Get(nameof(Initial), true);
       if (Initial)
       {
+        _syncConn.CreateTable<AcademicTerm>();
+        _syncConn.CreateTable<Course>();
+        _syncConn.CreateTable<Assessment>();
+        _syncConn.CreateTable<Instructor>();
+        _syncConn.CreateTable<Notification>();
+
         Initial = false;
 
-        _syncConn.Insert(new AcademicTerm()
+        AcademicTerm term = new()
         {
           TermTitle = "Spring 2022",
           Start = new DateTime(2022, 1, 01, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 6, 30, 11, 59, 59, DateTimeKind.Utc),
-        });
+          NotificationId = 1
+        };
 
-        CrossLocalNotifications.Current.Show("Spring 2022", "Spring 2022 starts today!", 1, 
-                            new DateTime(2022, 1, 01, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(term);
+        _syncConn.Insert(term.Notification());
 
         _syncConn.Insert(new Instructor()
         {
@@ -72,7 +74,7 @@ namespace C971
           Email = "Janis.Hasbro@wgu.edu"
         });
 
-        _syncConn.Insert(new Course()
+        Course D191 = new()
         {
           Name = "D191 - Advanced Data Management",
           Description = "Advanced Data Management enables organizations to extract and analyze raw data. " +
@@ -92,36 +94,36 @@ namespace C971
           ObjAssessmentId = 2,
           Start = new DateTime(2022, 1, 1, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 1, 20, 11, 59, 59, DateTimeKind.Utc),
-          Status = CourseStatus.Completed
-        });
+          Status = CourseStatus.Completed,
+          NotificationId = 2
+        };
 
-        CrossLocalNotifications.Current.Show("D191 - Advanced Data Management", 
-                                                "D191 - Advanced Data Management starts today!", 1, 
-                                                        new DateTime(2022, 1, 1, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(D191);
+        _syncConn.Insert(D191.Notification());
 
-        _syncConn.Insert(new Assessment()
+        Assessment paADM = new()
         {
           Name = "Pre-Assessment: Advanced Data Management (FJO1)",
           CourseId = 1,
           Start = new DateTime(2022, 1, 18, 12, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 1, 17, 12, 0, 0, DateTimeKind.Utc)
-        });
+          End = new DateTime(2022, 1, 17, 12, 0, 0, DateTimeKind.Utc),
+          NotificationId = 3
+        };
 
-        CrossLocalNotifications.Current.Show("Pre-Assessment: Advanced Data Management (FJO1)",
-                                                    "Pre-Assessment: Advanced Data Management (FJO1) starts today!", 1,
-                                                        new DateTime(2022, 1, 18, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(paADM);
+        _syncConn.Insert(paADM.Notification());
 
-        _syncConn.Insert(new Assessment()
+        Assessment oaDM = new()
         {
           Name = "Objective Assessment: Advanced Data Management",
           CourseId = 1,
           Start = new DateTime(2022, 1, 19, 12, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 1, 20, 12, 0, 0, DateTimeKind.Utc)
-        });
+          End = new DateTime(2022, 1, 20, 12, 0, 0, DateTimeKind.Utc),
+          NotificationId = 4
+        };
 
-        CrossLocalNotifications.Current.Show("Objective Assessment: Advanced Data Management",
-                                                "Objective Assessment: Advanced Data Management starts today!", 2,
-                                                  new DateTime(2022, 1, 19, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(oaDM);
+        _syncConn.Insert(oaDM.Notification());
 
         _syncConn.Insert(new Instructor()
         {
@@ -130,7 +132,7 @@ namespace C971
           Email = "Clyford.Nosborough@wgu.edu"
         });
 
-        _syncConn.Insert(new Course()
+        Course C949 = new()
         {
           Name = "C949 - Data Structures and Algorithms I",
           Description = "Data Structures and Algorithms I covers the fundamentals of dynamic data structures, " +
@@ -144,36 +146,36 @@ namespace C971
           ObjAssessmentId = 4,
           Start = new DateTime(2022, 1, 20, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 3, 1, 11, 59, 59, DateTimeKind.Utc),
-          Status = CourseStatus.Completed
-        });
+          Status = CourseStatus.Completed,
+          NotificationId = 5
+        };
 
-        CrossLocalNotifications.Current.Show("C949 - Data Structures and Algorithms I",
-                                                "C949 - Data Structures and Algorithms I starts today!", 1,
-                                                        new DateTime(2022, 1, 20, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(C949);
+        _syncConn.Insert(C949.Notification());
 
-        _syncConn.Insert(new Assessment()
+        Assessment paDS = new()
         {
           Name = "Pre-Assessment: Data Structures and Algorithms I (GJO1)",
           CourseId = 2,
           Start = new DateTime(2022, 2, 23, 12, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 2, 24, 12, 0, 0, DateTimeKind.Utc)
-        });
+          End = new DateTime(2022, 2, 24, 12, 0, 0, DateTimeKind.Utc),
+          NotificationId = 6
+        };
 
-        CrossLocalNotifications.Current.Show("Pre-Assessment: Data Structures and Algorithms I (GJO1)",
-                                                "Pre-Assessment: Data Structures and Algorithms I (GJO1) starts today!", 1,
-                                                        new DateTime(2022, 2, 23, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(paDS);
+        _syncConn.Insert(paDS.Notification());
 
-        _syncConn.Insert(new Assessment()
+        Assessment oaDS = new()
         {
           Name = "Objective Assessment: Data Structures and Algorithms I",
           CourseId = 2,
           Start = new DateTime(2022, 2, 27, 12, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 3, 1, 11, 59, 59, DateTimeKind.Utc)
-        });
+          End = new DateTime(2022, 3, 1, 11, 59, 59, DateTimeKind.Utc),
+          NotificationId = 7
+        };
 
-        CrossLocalNotifications.Current.Show("Objective Assessment: Data Structures and Algorithms I",
-                                                "Objective Assessment: Data Structures and Algorithms I starts today!", 1,
-                                                        new DateTime(2022, 2, 27, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(oaDS);
+        _syncConn.Insert(oaDS.Notification());
 
         _syncConn.Insert(new Instructor()
         {
@@ -182,7 +184,7 @@ namespace C971
           Email = "Greylan.Beerman@wgu.edu"
         });
 
-        _syncConn.Insert(new Course()
+        Course C971 = new()
         {
           Name = "C971 - Mobile Application Development Using C#",
           Description = "Mobile Application Development Using C# introduces students to programming for mobile devices. " +
@@ -197,36 +199,36 @@ namespace C971
           ObjAssessmentId = 6,
           Start = new DateTime(2022, 3, 1, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 4, 15, 11, 59, 59, DateTimeKind.Utc),
-          Status = CourseStatus.InProgress
-        });
+          Status = CourseStatus.InProgress,
+          NotificationId = 8
+        };
 
-        CrossLocalNotifications.Current.Show("C971 - Mobile Application Development Using C#",
-                                                "C971 - Mobile Application Development Using C# starts today!", 1,
-                                                        new DateTime(2022, 3, 1, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(C971);
+        _syncConn.Insert(C971.Notification());
 
-        _syncConn.Insert(new Assessment()
+        Assessment paMA = new()
         {
           Name = "Performance Assessment: Mobile Application Development Using C# (LAP1)",
           CourseId = 3,
           Start = new DateTime(2022, 4, 11, 12, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 4, 12, 11, 59, 59, DateTimeKind.Utc)
-        });
+          End = new DateTime(2022, 4, 12, 11, 59, 59, DateTimeKind.Utc),
+          NotificationId = 9
+        };
 
-        CrossLocalNotifications.Current.Show("Performance Assessment: Mobile Application Development Using C# (LAP1)",
-                                                "Performance Assessment: Mobile Application Development Using C# (LAP1) starts today!", 1,
-                                                        new DateTime(2022, 4, 11, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(paMA);
+        _syncConn.Insert(paMA.Notification());
 
-        _syncConn.Insert(new Assessment()
+        Assessment oaMA = new()
         {
           Name = "Objective Assessment: Mobile Application Development Using C#",
           CourseId = 3,
           Start = new DateTime(2022, 4, 14, 12, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 4, 15, 11, 59, 59, DateTimeKind.Utc)
-        });
+          End = new DateTime(2022, 4, 15, 11, 59, 59, DateTimeKind.Utc),
+          NotificationId = 10
+        };
 
-        CrossLocalNotifications.Current.Show("Objective Assessment: Mobile Application Development Using C#",
-                                                "Objective Assessment: Mobile Application Development Using C# starts today!", 1,
-                                                        new DateTime(2022, 4, 14, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(oaMA);
+        _syncConn.Insert(oaMA.Notification());
 
         _syncConn.Insert(new Instructor()
         {
@@ -235,7 +237,7 @@ namespace C971
           Email = "abeema5@wgu.edu"
         });
 
-        _syncConn.Insert(new Course()
+        Course C868 = new()
         {
           Name = "C868 - Software Development Capstone",
           Description = "The capstone assessment challenges students to demonstrate mastery of all the " +
@@ -247,37 +249,38 @@ namespace C971
           ObjAssessmentId = 8,
           Start = new DateTime(2022, 4, 15, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 6, 30, 11, 59, 59, DateTimeKind.Utc),
-          Status = CourseStatus.PlanToTake
-        });
+          Status = CourseStatus.PlanToTake,
+          NotificationId = 11
+        };
 
-        CrossLocalNotifications.Current.Show("C868 - Software Development Capstone",
-                                                "C868 - Software Development Capstone# starts today!", 1,
-                                                        new DateTime(2022, 4, 15, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(C868);
+        _syncConn.Insert(C868.Notification());
 
-        _syncConn.Insert(new Assessment()
+        Assessment paSD = new()
         {
           Name = "Performance Assessment: Software Development Capstone (RYM2)",
           CourseId = 4,
           Start = new DateTime(2022, 6, 14, 5, 59, 59, DateTimeKind.Utc),
-          End = new DateTime(2022, 6, 15, 5, 59, 59, DateTimeKind.Utc)
-        });
+          End = new DateTime(2022, 6, 15, 5, 59, 59, DateTimeKind.Utc),
+          NotificationId = 12
+        };
 
-        CrossLocalNotifications.Current.Show("Performance Assessment: Software Development Capstone (RYM2)",
-                                                "Performance Assessment: Software Development Capstone (RYM2) starts today!", 1,
-                                                        new DateTime(2022, 6, 14, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Insert(paSD);
+        _syncConn.Insert(paSD.Notification());
 
-        _syncConn.Insert(new Assessment()
+        Assessment oaSD = new()
         {
           Name = "Objective Assessment: Software Development Capstone",
           CourseId = 4,
           Start = new DateTime(2022, 6, 28, 12, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 6, 30, 11, 59, 59, DateTimeKind.Utc)
-        });
+          End = new DateTime(2022, 6, 30, 11, 59, 59, DateTimeKind.Utc),
+          NotificationId = 13
+        };
 
+        _syncConn.Insert(oaSD);
+        _syncConn.Insert(oaSD.Notification());
 
-        CrossLocalNotifications.Current.Show("Objective Assessment: Software Development Capstone",
-                                                "Objective Assessment: Software Development Capstone starts today!", 1,
-                                                        new DateTime(2022, 6, 28, 12, 0, 0, DateTimeKind.Utc));
+        _syncConn.Table<Notification>().ToList().ForEach(o => o.Insert());
 
         Preferences.Set(nameof(Initial), Initial);
       }

@@ -8,7 +8,7 @@ namespace C971.Models.DatabaseModels
   /// A WGU Academic Course
   /// </summary>
   [Table(nameof(Course) + "s")]
-  public class Course : BaseModel
+  public class Course : BaseModel, INotify
   {
     /// <summary>
     /// Name of the Course
@@ -45,12 +45,12 @@ namespace C971.Models.DatabaseModels
     public int InstructorId { get; set; }
 
     /// <summary>
-    /// Date / Time of the Academic Course's Start (WGU / Utah) Local Time
+    /// Date / Time of the Academic Course's Start, Universal Time
     /// </summary>
     [NotNull]
     public DateTime Start { get; set; }
     /// <summary>
-    /// Date / Time of the Academic Course's End (WGU / Utah) Local Time
+    /// Date / Time of the Academic Course's End, Universal Time
     /// </summary>
     [NotNull]
     public DateTime End { get; set; }
@@ -59,5 +59,19 @@ namespace C971.Models.DatabaseModels
     /// WGU Academic Course Status for this Course
     /// </summary>
     public CourseStatus Status { get; set; }
+
+    /// <inheritdoc />
+    public int NotificationId { get; set; }
+
+    /// <inheritdoc />
+    public Notification Notification()
+    {
+      return new()
+      {
+        Id = NotificationId,
+        Title = Name,
+        Start = Start
+      };
+    }
   }
 }
