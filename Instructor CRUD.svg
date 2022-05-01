@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="414" height="736" viewBox="0 0 414 736">
+  <defs>
+    <filter id="Instructors" x="154" y="690" width="105" height="42" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Instructor_CRUD">
+      <rect width="414" height="736"/>
+    </clipPath>
+  </defs>
+  <g id="Instructor_CRUD" data-name="Instructor CRUD" clip-path="url(#clip-Instructor_CRUD)">
+    <rect width="414" height="736" fill="#fff"/>
+    <g id="Title_Bar" data-name="Title Bar" transform="translate(0 15)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="60" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="59" fill="none"/>
+    </g>
+    <g id="Device_Bar" data-name="Device Bar" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="15" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="14" fill="none"/>
+    </g>
+    <text id="New_Instructor_Id_Instructor" data-name="New / (Instructor Id) Instructor" transform="translate(56 50)" fill="#707070" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">New / (Instructor Id) Instructor</tspan></text>
+    <g id="Tab_Footer" data-name="Tab Footer" transform="translate(0 675)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="61" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="60" fill="none"/>
+    </g>
+    <text id="Terms" transform="translate(42 715)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Terms</tspan></text>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Instructors)">
+      <text id="Instructors-2" data-name="Instructors" transform="translate(163 715)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Instructors</tspan></text>
+    </g>
+    <text id="Courses" transform="translate(320 715)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Courses</tspan></text>
+    <g id="Name_Input" data-name="Name Input" transform="translate(32.5 99)">
+      <text id="Instructor_Name_Input" data-name="Instructor Name Input" transform="translate(0.5 19)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Instructor Name Input</tspan></text>
+      <line id="Input_Line" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+      <text id="Error_Message_if_any_" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+    </g>
+    <g id="Phone_Number_Input" data-name="Phone Number Input" transform="translate(33 191)">
+      <text id="Instructor_Phone_Number_Input" data-name="Instructor Phone Number Input" transform="translate(0.5 19)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Phone Number Input</tspan></text>
+      <line id="Input_Line-2" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+      <text id="Error_Message_if_any_2" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+    </g>
+    <g id="Email_Input" data-name="Email Input" transform="translate(33 283)">
+      <text id="Instructor_Email_Input" data-name="Instructor Email Input" transform="translate(0.5 19)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Instructor Email Input</tspan></text>
+      <line id="Input_Line-3" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+      <text id="Error_Message_if_any_3" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+    </g>
+    <g id="Button" transform="translate(81 374)">
+      <g id="Button_Outline" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+        <rect width="96" height="40" rx="6" stroke="none"/>
+        <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+      </g>
+      <text id="SAVE" transform="translate(31 26)" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">SAVE</tspan></text>
+    </g>
+    <g id="Button-2" data-name="Button" transform="translate(240 374)">
+      <g id="Button_Outline-2" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+        <rect width="96" height="40" rx="6" stroke="none"/>
+        <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+      </g>
+      <text id="Delete" transform="translate(24 26)" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">DELETE</tspan></text>
+    </g>
+    <path id="back-button" d="M4.791,14.8l6.72-6.576L9.782,6.5,0,16l9.782,9.582,1.729-1.721-6.72-6.663H19.563V14.8Z" transform="translate(19.218 29.423)" fill-rule="evenodd"/>
+  </g>
+</svg>

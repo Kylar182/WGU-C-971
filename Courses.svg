@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="414" height="736" viewBox="0 0 414 736">
+  <defs>
+    <filter id="Courses" x="307" y="690" width="81" height="42" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Courses-2">
+      <rect width="414" height="736"/>
+    </clipPath>
+  </defs>
+  <g id="Courses-2" data-name="Courses" clip-path="url(#clip-Courses-2)">
+    <rect width="414" height="736" fill="#fff"/>
+    <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(0 15)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="60" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="59" fill="none"/>
+    </g>
+    <g id="Rectangle_2" data-name="Rectangle 2" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="15" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="14" fill="none"/>
+    </g>
+    <text id="Courses-3" data-name="Courses" transform="translate(22 54)" fill="#707070" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Courses</tspan></text>
+    <text id="Add" transform="translate(347 51)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Add</tspan></text>
+    <g id="Rectangle_3" data-name="Rectangle 3" transform="translate(0 675)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="61" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="60" fill="none"/>
+    </g>
+    <text id="Terms" transform="translate(46 715)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Terms</tspan></text>
+    <text id="Instructors" transform="translate(162 715)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructors</tspan></text>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Courses)">
+      <text id="Courses-4" data-name="Courses" transform="translate(316 715)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Courses</tspan></text>
+    </g>
+    <g id="Rectangle_4" data-name="Rectangle 4" transform="translate(0 74)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id" transform="translate(33 109)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Course_Name" data-name="Course Name" transform="translate(153 109)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+  </g>
+</svg>
