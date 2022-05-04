@@ -325,8 +325,6 @@ namespace C971.ViewModels.ItemCUDVMs
         if (t.Exception == null)
         {
           Id = t.Result.Id;
-          Item = t.Result;
-          course = t.Result;
           End = t.Result.End;
           Title = $"Course {id}";
           Name = t.Result.Name;
@@ -341,6 +339,8 @@ namespace C971.ViewModels.ItemCUDVMs
             Instructor = Instructors.FirstOrDefault(pr => pr.Id == t.Result.InstructorId);
           if (Terms.Count > 0)
             Term = Terms.FirstOrDefault(pr => pr.Id == t.Result.AcademicTermId);
+          Item = t.Result;
+          course = t.Result;
         }
       }).ConfigureAwait(true);
 

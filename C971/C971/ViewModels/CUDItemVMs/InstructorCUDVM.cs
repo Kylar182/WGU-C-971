@@ -111,20 +111,17 @@ namespace C971.ViewModels.ItemCUDVMs
       {
         if (t.Exception == null)
         {
+          Id = t.Result.Id;
+          Name = t.Result.Name;
+          PhoneNumber = t.Result.PhoneNumber;
+          Email = t.Result.Email;
+          Title = $"Instructor {id}";
+          Item = t.Result;
           instructor = t.Result;
         }
       }).ConfigureAwait(true);
 
-      if (instructor != null)
-      {
-        Item = instructor;
-        Title = $"Instructor {id}";
-        Id = instructor.Id;
-        Name = instructor.Name;
-        PhoneNumber = instructor.PhoneNumber;
-        Email = instructor.Email;
-      }
-      else
+      if (instructor == null)
       {
         Title = "New Instructor";
         Name = null;

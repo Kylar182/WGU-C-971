@@ -186,19 +186,19 @@ namespace C971.ViewModels.ItemCUDVMs
     {
       IsBusy = true;
       Id = id;
-      Assessment assessment = new();
+      Assessment assessment = null;
 
       await Service.Get(pr => pr.Id == id).ContinueWith(t =>
       {
         if (t.Exception == null)
         {
           Id = t.Result.Id;
-          Item = t.Result;
           Title = $"{OAPA} Assessment {id}";
           Name = t.Result.Name;
           Start = t.Result.Start;
           End = t.Result.End;
           CourseId = t.Result.CourseId;
+          Item = t.Result;
           assessment = t.Result;
         }
       }).ConfigureAwait(true);

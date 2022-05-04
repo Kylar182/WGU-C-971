@@ -126,26 +126,22 @@ namespace C971.ViewModels.ItemCUDVMs
       {
         if (t.Exception == null)
         {
+          Id = t.Result.Id;
+          Title = $"Term {id}";
+          TermTitle = t.Result.TermTitle;
+          Start = t.Result.Start;
+          End = t.Result.End;
+          Item = t.Result;
           term = t.Result;
         }
       }).ConfigureAwait(true);
 
-      if (term != null)
-      {
-        Item = term;
-        Title = $"Term {id}";
-        Id = term.Id;
-        TermTitle = term.TermTitle;
-        Start = term.Start;
-        End = term.End;
-      }
-      else
+      if (term == null)
       {
         Title = "New Term";
         TermTitle = null;
         Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                                 12, 0, 0, DateTimeKind.Utc);
-
       }
 
       IsBusy = false;
