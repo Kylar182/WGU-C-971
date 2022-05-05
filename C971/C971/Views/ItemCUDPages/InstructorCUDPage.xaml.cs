@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace C971.Views.ItemCUDPages
 {
-  [QueryProperty(nameof(InstructorId), nameof(BaseRUDPageVM<Instructor>.Id))]
+  [QueryProperty(nameof(InstructorId), nameof(BaseCUDPageVM<Instructor>.Id))]
   public partial class InstructorCUDPage : BaseItemCUDPage<InstructorCUDVM, Instructor>
   {
     public InstructorCUDPage()

@@ -11,7 +11,7 @@ namespace C971.Views.ItemCUDPages
 {
   [QueryProperty(nameof(OAPA), nameof(OAPA))]
   [QueryProperty(nameof(CourseId), nameof(CourseId))]
-  [QueryProperty(nameof(AssessmentId), nameof(BaseRUDPageVM<Assessment>.Id))]
+  [QueryProperty(nameof(AssessmentId), nameof(BaseCUDPageVM<Assessment>.Id))]
   public partial class AssessmentCUDPage : BaseItemCUDPage<AssessmentCUDVM, Assessment>
   {
     public AssessmentCUDPage()

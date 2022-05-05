@@ -11,7 +11,7 @@ namespace C971.ViewModels.ItemCUDVMs
   /// <summary>
   /// VM For a Course Assessment Create / Update / Delete
   /// </summary>
-  public class AssessmentCUDVM : BaseRUDPageVM<Assessment>
+  public class AssessmentCUDVM : BaseCUDPageVM<Assessment>
   {
     private readonly ICourseService CourseService;
 

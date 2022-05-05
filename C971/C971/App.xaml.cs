@@ -105,8 +105,8 @@ namespace C971
         {
           Name = "Pre-Assessment: Advanced Data Management (FJO1)",
           CourseId = 1,
-          Start = new DateTime(2022, 1, 18, 12, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 1, 17, 12, 0, 0, DateTimeKind.Utc),
+          Start = new DateTime(2022, 1, 17, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 1, 18, 11, 59, 59, DateTimeKind.Utc),
           NotificationId = 3
         };
 
@@ -118,7 +118,7 @@ namespace C971
           Name = "Objective Assessment: Advanced Data Management",
           CourseId = 1,
           Start = new DateTime(2022, 1, 19, 12, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 1, 20, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 1, 20, 11, 59, 59, DateTimeKind.Utc),
           NotificationId = 4
         };
 
@@ -158,7 +158,7 @@ namespace C971
           Name = "Pre-Assessment: Data Structures and Algorithms I (GJO1)",
           CourseId = 2,
           Start = new DateTime(2022, 2, 23, 12, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 2, 24, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 2, 24, 11, 59, 59, DateTimeKind.Utc),
           NotificationId = 6
         };
 
@@ -260,8 +260,8 @@ namespace C971
         {
           Name = "Performance Assessment: Software Development Capstone (RYM2)",
           CourseId = 4,
-          Start = new DateTime(2022, 6, 14, 5, 59, 59, DateTimeKind.Utc),
-          End = new DateTime(2022, 6, 15, 5, 59, 59, DateTimeKind.Utc),
+          Start = new DateTime(2022, 6, 14, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 6, 15, 11, 59, 59, DateTimeKind.Utc),
           NotificationId = 12
         };
 
@@ -279,6 +279,121 @@ namespace C971
 
         _syncConn.Insert(oaSD);
         _syncConn.Insert(oaSD.Notification());
+
+        _syncConn.Insert(new Instructor()
+        {
+          Name = "Dr. Elsa Nelias",
+          PhoneNumber = "385-428-5844",
+          Email = "Elsa.Nelias@wgu.edu"
+        });
+
+        Course C393 = new()
+        {
+          Name = "C393 - IT Foundations",
+          Description = "IT Foundations is the first course in a two-part series that will prepare you for the " +
+                        "CompTIA A+ exam, Part I. This course focuses mostly on hardware and will afford you the " +
+                        "skills you need to support five core components: Mobile Devices; Networking; Hardware; " +
+                        "Virtualization and Cloud Computing; and Network and Hardware Troubleshooting. " +
+                        "These are essential skills to set up and troubleshoot any system. Whether you work in a " +
+                        "data center or an office, most of your work as an IT professional will execute in a " +
+                        "hardware platform; understanding the hardware layer of the IT infrastructure will " +
+                        "allow you to work more efficiently, provide solutions for business requirements, " +
+                        "and be a key contributor in your company.",
+          AcademicTermId = 1,
+          InstructorId = 5,
+          PerfAssessmentId = 9,
+          ObjAssessmentId = 10,
+          Start = new DateTime(2022, 1, 25, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 2, 28, 11, 59, 59, DateTimeKind.Utc),
+          Status = CourseStatus.Completed,
+          NotificationId = 12
+        };
+
+        _syncConn.Insert(C393);
+        _syncConn.Insert(C393.Notification());
+
+        Assessment paITF = new()
+        {
+          Name = "Performance Assessment: CompTIA A+ - 1",
+          CourseId = 5,
+          Start = new DateTime(2022, 2, 14, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 2, 15, 11, 59, 59, DateTimeKind.Utc),
+          NotificationId = 13
+        };
+
+        _syncConn.Insert(paITF);
+        _syncConn.Insert(paITF.Notification());
+
+        Assessment oaITF = new()
+        {
+          Name = "Objective Assessment: Third Party Assessment - CompTIA A+ Part 1/2",
+          CourseId = 5,
+          Start = new DateTime(2022, 2, 26, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 2, 28, 11, 59, 59, DateTimeKind.Utc),
+          NotificationId = 14
+        };
+
+        _syncConn.Insert(oaITF);
+        _syncConn.Insert(oaITF.Notification());
+
+        _syncConn.Insert(new Instructor()
+        {
+          Name = "Dr. Joey Tall",
+          PhoneNumber = "385-428-8588",
+          Email = "Joey.Tall@wgu.edu"
+        });
+
+        Course C394 = new()
+        {
+          Name = "C394 - IT Applications",
+          Description = "IT Applications explores personal computer components and their functions in a desktop system. " +
+                        "Topics cover computer data storage and retrieval, including classifying, installing, configuring, " +
+                        "optimizing, upgrading, and troubleshooting printers, laptops, portable devices, operating systems, " +
+                        "networks, and system security. Other areas in this course include recommending appropriate tools, " +
+                        "diagnostic procedures, preventive maintenance, and troubleshooting techniques for personal computer " +
+                        "components in a desktop system. The course then finishes with strategies for identifying, preventing, " +
+                        "and reporting safety hazards in a technological environment; effective communication with colleagues " +
+                        "and clients; and job-related professional behavior. This course is designed to build the skills to " +
+                        "support four core components: operating systems, security, software troubleshooting, and operational " +
+                        "procedures. These are core competencies for IT professionals from cloud engineers to data analysts, " +
+                        "and these competencies will empower students with a better understanding of the tools used during " +
+                        "their careers.",
+          AcademicTermId = 1,
+          InstructorId = 6,
+          PerfAssessmentId = 11,
+          ObjAssessmentId = 12,
+          Start = new DateTime(2022, 3, 1, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 3, 30, 11, 59, 59, DateTimeKind.Utc),
+          Status = CourseStatus.Completed,
+          NotificationId = 15
+        };
+
+        _syncConn.Insert(C394);
+        _syncConn.Insert(C394.Notification());
+
+        Assessment paITA = new()
+        {
+          Name = "Performance Assessment: CompTIA A+ - 2",
+          CourseId = 6,
+          Start = new DateTime(2022, 3, 14, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 3, 15, 11, 59, 59, DateTimeKind.Utc),
+          NotificationId = 16
+        };
+
+        _syncConn.Insert(paITA);
+        _syncConn.Insert(paITA.Notification());
+
+        Assessment oaITA = new()
+        {
+          Name = "Objective Assessment: Third Party Assessment - CompTIA A+ Part 2/2",
+          CourseId = 6,
+          Start = new DateTime(2022, 3, 28, 12, 0, 0, DateTimeKind.Utc),
+          End = new DateTime(2022, 3, 30, 11, 59, 59, DateTimeKind.Utc),
+          NotificationId = 17
+        };
+
+        _syncConn.Insert(oaITA);
+        _syncConn.Insert(oaITA.Notification());
 
         _syncConn.Table<Notification>().ToList().ForEach(o => o.Insert());
 

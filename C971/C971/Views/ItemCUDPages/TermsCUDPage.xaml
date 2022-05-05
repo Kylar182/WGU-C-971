@@ -14,12 +14,18 @@
   </ContentPage.BindingContext>
 
   <ContentPage.Content>
-    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20" Spacing="4">
+    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20,10,20,10" Spacing="2">
 
-      <Entry Text="{Binding TermTitle}" Placeholder="Title of New Term" HeightRequest="50" />
+      <Entry Text="{Binding TermTitle}" Placeholder="Title of New Term" HeightRequest="44" />
       <Label TextColor="{StaticResource WGURed}" Text="{Binding TermTitleError}" FontSize="Small" />
 
-      <Grid Padding="0,10,0,0">
+      <Grid Margin="0" Padding="0" RowSpacing="0" MinimumHeightRequest="100">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="15" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
         <Label Text="Start Date" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="Small" />
         <DatePicker Date="{Binding Start}" Grid.Column="1" Grid.Row="0" />
         <Label TextColor="{StaticResource WGURed}" Text="{Binding StartError}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
@@ -31,12 +37,23 @@
                VerticalOptions="CenterAndExpand" FontSize="Small" />
       </Grid>
 
-      <Grid>
+      <Grid Margin="0,0,0,5" MinimumHeightRequest="55">
         <Button Text="SAVE" Command="{Binding Save}" IsEnabled="{Binding Valid}" Grid.Column="0" Grid.Row="0" />
         <Button Text="DELETE" Command="{Binding Delete}" IsEnabled="{Binding CanDelete}" Grid.Column="1" Grid.Row="0"
                 Style="{StaticResource Delete}" />
       </Grid>
-
+      <CollectionView ItemsSource="{Binding Courses}"
+                      SelectionMode="None">
+        <CollectionView.ItemTemplate>
+          <DataTemplate>
+            <Grid Padding="10" x:DataType="model:Course">
+              <Label Text="{Binding Id}" LineBreakMode="NoWrap" FontSize="14" Grid.Column="0" Grid.Row="0" />
+              <Label Text="{Binding Name}" LineBreakMode="NoWrap" FontSize="14" Grid.Column="1" Grid.ColumnSpan="9" 
+                   Grid.Row="0" HorizontalTextAlignment="Start" />
+            </Grid>
+          </DataTemplate>
+        </CollectionView.ItemTemplate>
+      </CollectionView>
     </StackLayout>
   </ContentPage.Content>
 

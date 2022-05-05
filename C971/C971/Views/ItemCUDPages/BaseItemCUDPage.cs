@@ -6,14 +6,14 @@ using Xamarin.Forms;
 
 namespace C971.Views.ItemCUDPages
 {
-  public class BaseItemCUDPage<VM, T> : ContentPage where VM : BaseRUDPageVM<T> where T : BaseModel, new()
+  public class BaseItemCUDPage<VM, T> : ContentPage where VM : BaseCUDPageVM<T> where T : BaseModel, new()
   {
     /// <summary>
     /// Add Page View Model for this Database Model T Type
     /// </summary>
     protected VM _viewModel;
 
-    /// <inheritdoc cref="BaseRUDPageVM{T}.OnAppearing"/>
+    /// <inheritdoc cref="BaseCUDPageVM{T}.OnAppearing"/>
     protected override void OnAppearing()
     {
       base.OnAppearing();

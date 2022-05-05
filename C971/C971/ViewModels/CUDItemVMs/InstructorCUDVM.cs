@@ -11,7 +11,7 @@ namespace C971.ViewModels.ItemCUDVMs
   /// <summary>
   /// VM For a Course Instructor Create / Update / Delete
   /// </summary>
-  public class InstructorCUDVM : BaseRUDPageVM<Instructor>
+  public class InstructorCUDVM : BaseCUDPageVM<Instructor>
   {
     private string name;
     /// <inheritdoc cref="Instructor.Name"/>

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using C971.Extensions;
@@ -11,8 +13,11 @@ namespace C971.ViewModels.ItemCUDVMs
   /// <summary>
   /// VM For a Academic Term Create / Update / Delete
   /// </summary>
-  public class TermCUDVM : BaseRUDPageVM<AcademicTerm>
+  public class TermCUDVM : BaseCUDPageVM<AcademicTerm>
   {
+    /// <inheritdoc cref="ICourseService"/>
+    private readonly ICourseService _courseService;
+
     private string termTitle;
     /// <inheritdoc cref="AcademicTerm.TermTitle"/>
     public string TermTitle
@@ -94,12 +99,19 @@ namespace C971.ViewModels.ItemCUDVMs
     /// <inheritdoc cref="AcademicTerm.End"/>
     public string EndError => Errors.ContainsKey(nameof(End)) ? Errors[nameof(End)].First() : "";
 
+    /// <summary>
+    /// Courses in this Term
+    /// </summary>
+    public ObservableCollection<Course> Courses { get; }
+
     /// <inheritdoc cref="TermCUDVM" />
     public TermCUDVM()
     {
       Title = "New Term";
       TermTitle = null;
+      Courses = new ObservableCollection<Course>();
       Service = DependencyService.Get<IAcademicTermService>();
+      _courseService = DependencyService.Get<ICourseService>();
       Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                               12, 0, 0, DateTimeKind.Utc);
     }
@@ -109,7 +121,9 @@ namespace C971.ViewModels.ItemCUDVMs
     {
       Title = "New Term";
       TermTitle = null;
+      Courses = new ObservableCollection<Course>();
       Service = DependencyService.Get<IAcademicTermService>();
+      _courseService = DependencyService.Get<ICourseService>();
       Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                               12, 0, 0, DateTimeKind.Utc);
 
@@ -142,6 +156,19 @@ namespace C971.ViewModels.ItemCUDVMs
         TermTitle = null;
         Start = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                                                                 12, 0, 0, DateTimeKind.Utc);
+      }
+      else
+      {
+        await _courseService.GetByTerm(id).ContinueWith(t =>
+        {
+          if (t.Exception == null)
+          {
+            List<Course> courses = t.Result;
+
+            foreach (Course course in courses)
+              Courses.Add(course);
+          }
+        }).ConfigureAwait(true);
       }
 
       IsBusy = false;

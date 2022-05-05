@@ -16,7 +16,7 @@ namespace C971.ViewModels.ItemCUDVMs
   /// <summary>
   /// VM For a Academic Course Create / Update / Delete
   /// </summary>
-  public class CourseCUDVM : BaseRUDPageVM<Course>
+  public class CourseCUDVM : BaseCUDPageVM<Course>
   {
     /// <inheritdoc cref="IAcademicTermService"/>
     private readonly IAcademicTermService _termService;

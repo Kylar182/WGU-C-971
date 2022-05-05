@@ -17,7 +17,7 @@ namespace C971.ViewModels
   /// <typeparam name="T">
   /// Database Model for CRUD
   /// </typeparam>
-  public abstract class BaseRUDPageVM<T> : BaseViewModel where T : BaseModel, new()
+  public abstract class BaseCUDPageVM<T> : BaseViewModel where T : BaseModel, new()
   {
     protected new bool isBusy = true;
     /// <summary>
@@ -80,13 +80,13 @@ namespace C971.ViewModels
       }
     }
 
-    public BaseRUDPageVM()
+    public BaseCUDPageVM()
     {
       Item = new();
     }
 
     /// <inheritdoc cref="BaseAddPageVM{}" />
-    public BaseRUDPageVM(Func<Task> save, Func<Task> delete)
+    public BaseCUDPageVM(Func<Task> save, Func<Task> delete)
     {
       Item = new();
       Save = new Command(async () => await save?.Invoke());
