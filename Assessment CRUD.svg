@@ -54,13 +54,13 @@
     <g id="Date_Input" data-name="Date Input" transform="translate(32.5 190)">
       <line id="Date_Input_Line" data-name="Date Input Line" x2="164" transform="translate(173.5 22.5)" fill="none" stroke="#707070" stroke-width="1"/>
       <text id="Date_Error_Message_if_any_" data-name="Date Error Message (if any)" transform="translate(0 46)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
-      <text id="Date_Input-2" data-name="Date Input" transform="translate(188 17)" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Date Input</tspan></text>
+      <text id="MM_DD_YYYY" data-name="MM/DD/YYYY" transform="translate(188 17)" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MM/DD/YYYY</tspan></text>
       <text id="Start_Date" data-name="Start Date" transform="translate(0 17)" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Start Date</tspan></text>
     </g>
-    <g id="Date_Input-3" data-name="Date Input" transform="translate(32.5 282)">
+    <g id="Date_Input-2" data-name="Date Input" transform="translate(32.5 282)">
       <line id="Date_Input_Line-2" data-name="Date Input Line" x2="164" transform="translate(173.5 22.5)" fill="none" stroke="#707070" stroke-width="1"/>
       <text id="Date_Error_Message_if_any_2" data-name="Date Error Message (if any)" transform="translate(0 46)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
-      <text id="Date_Input-4" data-name="Date Input" transform="translate(188 17)" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Date Input</tspan></text>
+      <text id="MM_DD_YYYY-2" data-name="MM/DD/YYYY" transform="translate(188 17)" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MM/DD/YYYY</tspan></text>
       <text id="End_Date" data-name="End Date" transform="translate(0 17)" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">End Date</tspan></text>
     </g>
   </g>

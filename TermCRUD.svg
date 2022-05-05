@@ -31,31 +31,31 @@
     </g>
     <text id="Instructors" transform="translate(163 715)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructors</tspan></text>
     <text id="Courses" transform="translate(318 715)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Courses</tspan></text>
-    <g id="Input" transform="translate(32.5 99)">
+    <g id="Input" transform="translate(35 85)">
       <text id="Term_Title_Input" data-name="Term Title Input" transform="translate(0.5 19)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Term Title Input</tspan></text>
       <line id="Input_Line" data-name="Input Line" y1="2" x2="344" transform="translate(0 23.5)" fill="none" stroke="#707070" stroke-width="1"/>
       <text id="Error_Message_if_any_" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
     </g>
-    <g id="Date_Input" data-name="Date Input" transform="translate(39 190)">
+    <g id="Date_Input" data-name="Date Input" transform="translate(39 150)">
       <line id="Date_Input_Line" data-name="Date Input Line" x2="164" transform="translate(173.5 22.5)" fill="none" stroke="#707070" stroke-width="1"/>
       <text id="Date_Error_Message_if_any_" data-name="Date Error Message (if any)" transform="translate(0 46)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
-      <text id="Date_Input-2" data-name="Date Input" transform="translate(188 17)" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Date Input</tspan></text>
+      <text id="MM_DD_YYYY" data-name="MM/DD/YYYY" transform="translate(188 17)" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MM/DD/YYYY</tspan></text>
       <text id="Start_Date" data-name="Start Date" transform="translate(0 17)" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Start Date</tspan></text>
     </g>
-    <g id="Date_Input-3" data-name="Date Input" transform="translate(40.25 282)">
+    <g id="Date_Input-2" data-name="Date Input" transform="translate(40.25 205)">
       <line id="Date_Input_Line-2" data-name="Date Input Line" x2="164" transform="translate(173.5 22.5)" fill="none" stroke="#707070" stroke-width="1"/>
       <text id="Date_Error_Message_if_any_2" data-name="Date Error Message (if any)" transform="translate(0 46)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
-      <text id="Date_Input-4" data-name="Date Input" transform="translate(188 17)" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Date Input</tspan></text>
+      <text id="MM_DD_YYYY-2" data-name="MM/DD/YYYY" transform="translate(188 17)" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MM/DD/YYYY</tspan></text>
       <text id="End_Date" data-name="End Date" transform="translate(0 17)" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">End Date</tspan></text>
     </g>
-    <g id="Button" transform="translate(81 374)">
+    <g id="Button" transform="translate(80 278)">
       <g id="Button_Outline" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
         <rect width="96" height="40" rx="6" stroke="none"/>
         <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
       </g>
       <text id="SAVE" transform="translate(31 26)" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">SAVE</tspan></text>
     </g>
-    <g id="Button-2" data-name="Button" transform="translate(240 374)">
+    <g id="Button-2" data-name="Button" transform="translate(239 278)">
       <g id="Button_Outline-2" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
         <rect width="96" height="40" rx="6" stroke="none"/>
         <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
@@ -63,5 +63,41 @@
       <text id="Delete" transform="translate(24 26)" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">DELETE</tspan></text>
     </g>
     <path id="back-button" d="M4.791,14.8l6.72-6.576L9.782,6.5,0,16l9.782,9.582,1.729-1.721-6.72-6.663H19.563V14.8Z" transform="translate(19.218 29.423)" fill-rule="evenodd"/>
+    <g id="Rectangle_4" data-name="Rectangle 4" transform="translate(0 335)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id" transform="translate(33 370)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Course_Name" data-name="Course Name" transform="translate(153 370)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+    <g id="Rectangle_6" data-name="Rectangle 6" transform="translate(0 391)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id-2" data-name="Id" transform="translate(33 426)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Course_Name-2" data-name="Course Name" transform="translate(153 426)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+    <g id="Rectangle_7" data-name="Rectangle 7" transform="translate(0 447)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id-3" data-name="Id" transform="translate(33 482)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Course_Name-3" data-name="Course Name" transform="translate(153 482)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+    <g id="Rectangle_8" data-name="Rectangle 8" transform="translate(0 503)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id-4" data-name="Id" transform="translate(33 538)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Course_Name-4" data-name="Course Name" transform="translate(153 538)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+    <g id="Rectangle_9" data-name="Rectangle 9" transform="translate(0 559)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id-5" data-name="Id" transform="translate(33 594)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Course_Name-5" data-name="Course Name" transform="translate(153 594)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+    <g id="Rectangle_10" data-name="Rectangle 10" transform="translate(0 615)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id-6" data-name="Id" transform="translate(33 650)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Course_Name-6" data-name="Course Name" transform="translate(153 650)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
   </g>
 </svg>

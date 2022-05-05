@@ -38,5 +38,35 @@
     </g>
     <text id="Id" transform="translate(33 109)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
     <text id="Instructor_Name" data-name="Instructor Name" transform="translate(143 109)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
+    <g id="Rectangle_11" data-name="Rectangle 11" transform="translate(0 130)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id-2" data-name="Id" transform="translate(33 165)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Instructor_Name-2" data-name="Instructor Name" transform="translate(143 165)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
+    <g id="Rectangle_12" data-name="Rectangle 12" transform="translate(0 186)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id-3" data-name="Id" transform="translate(33 221)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Instructor_Name-3" data-name="Instructor Name" transform="translate(143 221)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
+    <g id="Rectangle_13" data-name="Rectangle 13" transform="translate(0 242)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id-4" data-name="Id" transform="translate(33 277)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Instructor_Name-4" data-name="Instructor Name" transform="translate(143 277)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
+    <g id="Rectangle_14" data-name="Rectangle 14" transform="translate(0 298)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id-5" data-name="Id" transform="translate(33 333)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Instructor_Name-5" data-name="Instructor Name" transform="translate(143 333)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
+    <g id="Rectangle_15" data-name="Rectangle 15" transform="translate(0 354)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="414" height="56" stroke="none"/>
+      <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+    </g>
+    <text id="Id-6" data-name="Id" transform="translate(33 389)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+    <text id="Instructor_Name-6" data-name="Instructor Name" transform="translate(143 389)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
   </g>
 </svg>
