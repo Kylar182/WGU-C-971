@@ -74,18 +74,18 @@
       <text id="End_Date" data-name="End Date" transform="translate(0 17)" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">End Date</tspan></text>
     </g>
     <g id="Course_Instructor_Input" data-name="Course Instructor Input" transform="translate(33 374)">
-      <text id="Course_Instructor_Input-2" data-name="Course Instructor Input" transform="translate(0.5 19)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Instructor Input</tspan></text>
+      <text id="Course_Instructor_Picker" data-name="Course Instructor Picker" transform="translate(0.5 19)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Instructor Picker</tspan></text>
       <line id="Input_Line-4" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
       <text id="Error_Message_if_any_4" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
     </g>
     <g id="Course_Term_Input" data-name="Course Term Input" transform="translate(33 434)">
-      <text id="Course_Term_Input-2" data-name="Course Term Input" transform="translate(0.5 19)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Term Input</tspan></text>
+      <text id="Course_Term_Picker" data-name="Course Term Picker" transform="translate(0.5 19)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Term Picker</tspan></text>
       <line id="Input_Line-5" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
       <text id="Error_Message_if_any_5" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
     </g>
     <g id="Course_Status_Input" data-name="Course Status Input" transform="translate(33.25 494)">
       <g id="Course_Status_Input-2" data-name="Course Status Input">
-        <text id="Course_Status_Input-3" data-name="Course Status Input" transform="translate(65 19)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Status Input</tspan></text>
+        <text id="Course_Status_Picker" data-name="Course Status Picker" transform="translate(65 19)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Status Picker</tspan></text>
         <line id="Input_Line-6" data-name="Input Line" x2="282.5" transform="translate(65 24)" fill="none" stroke="#707070" stroke-width="1"/>
         <text id="Error_Message_if_any_6" data-name="Error Message (if any)" transform="translate(0 44.5)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
       </g>

@@ -6,6 +6,7 @@ using C971.ViewModels;
 using C971.ViewModels.ItemCUDVMs;
 using SQLite;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace C971.Views.ItemCUDPages
 {
@@ -17,7 +18,8 @@ namespace C971.Views.ItemCUDPages
       InitializeComponent();
 
       BindingContext = _viewModel = new CourseCUDVM(async () => await OnSaveClicked(),
-                                                                      async () => await OnDeleteClicked());
+                                                                      async () => await OnDeleteClicked(),
+                                                                      async () => await OnShareNotes());
     }
 
     /// <summary>
@@ -71,6 +73,25 @@ namespace C971.Views.ItemCUDPages
       catch (SQLiteException ex)
       {
         await DisplayAlert("SQL Error", ex.Message, "OK");
+      }
+      catch (Exception ex)
+      {
+        await DisplayAlert("Error", ex.Message, "OK");
+      }
+    }
+
+    private async Task OnShareNotes()
+    {
+      try
+      {
+        if (_viewModel != null && _viewModel.Notes.NotEmpty() && _viewModel.NotesError.IsEmpty())
+        {
+          await Share.RequestAsync(new ShareTextRequest
+          {
+            Text = _viewModel.Notes,
+            Title = "Share Notes"
+          });
+        }
       }
       catch (Exception ex)
       {

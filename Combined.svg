@@ -1,0 +1,530 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1998" height="1544" viewBox="0 0 1998 1544">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_17" data-name="Rectangle 17" width="414" height="736" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <filter id="Terms" x="51" y="702" width="67" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_19" data-name="Rectangle 19" width="414" height="736" transform="translate(484)" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <filter id="Instructors" x="651" y="702" width="105" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-3">
+      <rect id="Rectangle_21" data-name="Rectangle 21" width="414" height="736" transform="translate(968)" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <filter id="Courses" x="1289" y="702" width="83" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-4">
+      <rect id="Rectangle_23" data-name="Rectangle 23" width="414" height="736" transform="translate(0 783)" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <filter id="Terms-2" x="51" y="1485" width="67" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-5">
+      <rect id="Rectangle_25" data-name="Rectangle 25" width="414" height="736" transform="translate(484 783)" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <filter id="Instructors-2" x="652" y="1485" width="107" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-5"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-6">
+      <rect id="Rectangle_27" data-name="Rectangle 27" width="414" height="736" transform="translate(968 783)" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <filter id="Courses-2" x="1295" y="1485" width="87" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-6"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-7">
+      <rect id="Rectangle_29" data-name="Rectangle 29" width="414" height="736" transform="translate(1452 783)" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <filter id="Courses-3" x="1777" y="1485" width="87" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-7"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Combined">
+      <rect width="1998" height="1544"/>
+    </clipPath>
+  </defs>
+  <g id="Combined" clip-path="url(#clip-Combined)">
+    <rect width="1998" height="1544" fill="#fff"/>
+    <g id="Terms-3" data-name="Terms" transform="translate(15 13)" clip-path="url(#clip-path)">
+      <rect id="Rectangle_16" data-name="Rectangle 16" width="414" height="736" fill="#fff" stroke="#707070" stroke-width="1"/>
+      <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(0 15)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="59" fill="none"/>
+      </g>
+      <g id="Rectangle_2" data-name="Rectangle 2" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="15" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="14" fill="none"/>
+      </g>
+      <text id="Terms-4" data-name="Terms" transform="translate(22 54)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Terms</tspan></text>
+      <text id="Add" transform="translate(347 51)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Add</tspan></text>
+      <g id="Rectangle_3" data-name="Rectangle 3" transform="translate(0 675)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="61" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="60" fill="none"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -15, -13)" filter="url(#Terms)">
+        <text id="Terms-5" data-name="Terms" transform="translate(61 728)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Terms</tspan></text>
+      </g>
+      <text id="Instructors-3" data-name="Instructors" transform="translate(162 715)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructors</tspan></text>
+      <text id="Courses-4" data-name="Courses" transform="translate(316 715)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Courses</tspan></text>
+      <g id="Rectangle_4" data-name="Rectangle 4" transform="translate(0 74)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id" transform="translate(33 109)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Term_Title" data-name="Term Title" transform="translate(169 109)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Term Title</tspan></text>
+    </g>
+    <g id="Instructors-4" data-name="Instructors" transform="translate(15 13)" clip-path="url(#clip-path-2)">
+      <rect id="Rectangle_18" data-name="Rectangle 18" width="414" height="736" transform="translate(484)" fill="#fff" stroke="#707070" stroke-width="1"/>
+      <g id="Rectangle_1-2" data-name="Rectangle 1" transform="translate(484 15)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="59" fill="none"/>
+      </g>
+      <g id="Rectangle_2-2" data-name="Rectangle 2" transform="translate(484)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="15" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="14" fill="none"/>
+      </g>
+      <text id="Instructors-5" data-name="Instructors" transform="translate(506 54)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructors</tspan></text>
+      <text id="Add-2" data-name="Add" transform="translate(831 51)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Add</tspan></text>
+      <g id="Rectangle_3-2" data-name="Rectangle 3" transform="translate(484 675)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="61" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="60" fill="none"/>
+      </g>
+      <text id="Terms-6" data-name="Terms" transform="translate(530 715)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Terms</tspan></text>
+      <g transform="matrix(1, 0, 0, 1, -15, -13)" filter="url(#Instructors)">
+        <text id="Instructors-6" data-name="Instructors" transform="translate(661 728)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructors</tspan></text>
+      </g>
+      <text id="Courses-5" data-name="Courses" transform="translate(800 715)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Courses</tspan></text>
+      <g id="Rectangle_4-2" data-name="Rectangle 4" transform="translate(484 74)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-2" data-name="Id" transform="translate(517 109)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Instructor_Name" data-name="Instructor Name" transform="translate(627 109)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
+      <g id="Rectangle_11" data-name="Rectangle 11" transform="translate(484 130)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-3" data-name="Id" transform="translate(517 165)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Instructor_Name-2" data-name="Instructor Name" transform="translate(627 165)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
+      <g id="Rectangle_12" data-name="Rectangle 12" transform="translate(484 186)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-4" data-name="Id" transform="translate(517 221)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Instructor_Name-3" data-name="Instructor Name" transform="translate(627 221)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
+      <g id="Rectangle_13" data-name="Rectangle 13" transform="translate(484 242)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-5" data-name="Id" transform="translate(517 277)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Instructor_Name-4" data-name="Instructor Name" transform="translate(627 277)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
+      <g id="Rectangle_14" data-name="Rectangle 14" transform="translate(484 298)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-6" data-name="Id" transform="translate(517 333)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Instructor_Name-5" data-name="Instructor Name" transform="translate(627 333)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
+      <g id="Rectangle_15" data-name="Rectangle 15" transform="translate(484 354)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-7" data-name="Id" transform="translate(517 389)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Instructor_Name-6" data-name="Instructor Name" transform="translate(627 389)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Name</tspan></text>
+    </g>
+    <g id="Courses-6" data-name="Courses" transform="translate(15 13)" clip-path="url(#clip-path-3)">
+      <rect id="Rectangle_20" data-name="Rectangle 20" width="414" height="736" transform="translate(968)" fill="#fff" stroke="#707070" stroke-width="1"/>
+      <g id="Rectangle_1-3" data-name="Rectangle 1" transform="translate(968 15)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="59" fill="none"/>
+      </g>
+      <g id="Rectangle_2-3" data-name="Rectangle 2" transform="translate(968)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="15" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="14" fill="none"/>
+      </g>
+      <text id="Courses-7" data-name="Courses" transform="translate(990 54)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Courses</tspan></text>
+      <text id="Add-3" data-name="Add" transform="translate(1315 51)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Add</tspan></text>
+      <g id="Rectangle_3-3" data-name="Rectangle 3" transform="translate(968 675)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="61" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="60" fill="none"/>
+      </g>
+      <text id="Terms-7" data-name="Terms" transform="translate(1014 715)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Terms</tspan></text>
+      <text id="Instructors-7" data-name="Instructors" transform="translate(1130 715)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructors</tspan></text>
+      <g transform="matrix(1, 0, 0, 1, -15, -13)" filter="url(#Courses)">
+        <text id="Courses-8" data-name="Courses" transform="translate(1299 728)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Courses</tspan></text>
+      </g>
+      <g id="Rectangle_4-3" data-name="Rectangle 4" transform="translate(968 74)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-8" data-name="Id" transform="translate(1001 109)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name" data-name="Course Name" transform="translate(1121 109)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+      <g id="Rectangle_6" data-name="Rectangle 6" transform="translate(968 130)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-9" data-name="Id" transform="translate(1001 165)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name-2" data-name="Course Name" transform="translate(1121 165)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+      <g id="Rectangle_7" data-name="Rectangle 7" transform="translate(968 186)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-10" data-name="Id" transform="translate(1001 221)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name-3" data-name="Course Name" transform="translate(1121 221)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+      <g id="Rectangle_8" data-name="Rectangle 8" transform="translate(968 242)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-11" data-name="Id" transform="translate(1001 277)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name-4" data-name="Course Name" transform="translate(1121 277)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+      <g id="Rectangle_9" data-name="Rectangle 9" transform="translate(968 298)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-12" data-name="Id" transform="translate(1001 333)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name-5" data-name="Course Name" transform="translate(1121 333)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+      <g id="Rectangle_10" data-name="Rectangle 10" transform="translate(968 354)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-13" data-name="Id" transform="translate(1001 389)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name-6" data-name="Course Name" transform="translate(1121 389)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+    </g>
+    <g id="TermCRUD" transform="translate(15 13)" clip-path="url(#clip-path-4)">
+      <rect id="Rectangle_22" data-name="Rectangle 22" width="414" height="736" transform="translate(0 783)" fill="#fff" stroke="#707070" stroke-width="1"/>
+      <g id="Title_Bar" data-name="Title Bar" transform="translate(0 798)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="59" fill="none"/>
+      </g>
+      <g id="Rectangle_2-4" data-name="Rectangle 2" transform="translate(0 783)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="15" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="14" fill="none"/>
+      </g>
+      <text id="New_Term_Id_Term" data-name="New / (Term Id) Term" transform="translate(65 834)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">New / (Term Id) Term</tspan></text>
+      <g id="Rectangle_3-4" data-name="Rectangle 3" transform="translate(0 1458)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="61" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="60" fill="none"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -15, -13)" filter="url(#Terms-2)">
+        <text id="Terms-8" data-name="Terms" transform="translate(61 1511)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Terms</tspan></text>
+      </g>
+      <text id="Instructors-8" data-name="Instructors" transform="translate(163 1498)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructors</tspan></text>
+      <text id="Courses-9" data-name="Courses" transform="translate(318 1498)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Courses</tspan></text>
+      <g id="Input" transform="translate(35 868)">
+        <text id="Term_Title_Input" data-name="Term Title Input" transform="translate(0.5 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Term Title Input</tspan></text>
+        <line id="Input_Line" data-name="Input Line" y1="2" x2="344" transform="translate(0 23.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Error_Message_if_any_" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+      </g>
+      <g id="Date_Input" data-name="Date Input" transform="translate(39 933)">
+        <line id="Date_Input_Line" data-name="Date Input Line" x2="164" transform="translate(173.5 22.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Date_Error_Message_if_any_" data-name="Date Error Message (if any)" transform="translate(0 46)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+        <text id="MM_DD_YYYY" data-name="MM/DD/YYYY" transform="translate(188 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MM/DD/YYYY</tspan></text>
+        <text id="Start_Date" data-name="Start Date" transform="translate(0 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Start Date</tspan></text>
+      </g>
+      <g id="Date_Input-2" data-name="Date Input" transform="translate(40.25 988)">
+        <line id="Date_Input_Line-2" data-name="Date Input Line" x2="164" transform="translate(173.5 22.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Date_Error_Message_if_any_2" data-name="Date Error Message (if any)" transform="translate(0 46)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+        <text id="MM_DD_YYYY-2" data-name="MM/DD/YYYY" transform="translate(188 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MM/DD/YYYY</tspan></text>
+        <text id="End_Date" data-name="End Date" transform="translate(0 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">End Date</tspan></text>
+      </g>
+      <g id="Button" transform="translate(80 1061)">
+        <g id="Button_Outline" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+          <rect width="96" height="40" rx="6" stroke="none"/>
+          <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+        </g>
+        <text id="SAVE" transform="translate(31 26)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">SAVE</tspan></text>
+      </g>
+      <g id="Button-2" data-name="Button" transform="translate(239 1061)">
+        <g id="Button_Outline-2" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+          <rect width="96" height="40" rx="6" stroke="none"/>
+          <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+        </g>
+        <text id="Delete" transform="translate(24 26)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">DELETE</tspan></text>
+      </g>
+      <path id="back-button" d="M4.791,14.8l6.72-6.576L9.782,6.5,0,16l9.782,9.582,1.729-1.721L4.791,17.2H19.563V14.8Z" transform="translate(19.218 812.423)" stroke="#707070" stroke-width="1" fill-rule="evenodd"/>
+      <g id="Rectangle_4-4" data-name="Rectangle 4" transform="translate(0 1118)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-14" data-name="Id" transform="translate(33 1153)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name-7" data-name="Course Name" transform="translate(153 1153)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+      <g id="Rectangle_6-2" data-name="Rectangle 6" transform="translate(0 1174)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-15" data-name="Id" transform="translate(33 1209)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name-8" data-name="Course Name" transform="translate(153 1209)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+      <g id="Rectangle_7-2" data-name="Rectangle 7" transform="translate(0 1230)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-16" data-name="Id" transform="translate(33 1265)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name-9" data-name="Course Name" transform="translate(153 1265)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+      <g id="Rectangle_8-2" data-name="Rectangle 8" transform="translate(0 1286)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-17" data-name="Id" transform="translate(33 1321)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name-10" data-name="Course Name" transform="translate(153 1321)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+      <g id="Rectangle_9-2" data-name="Rectangle 9" transform="translate(0 1342)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-18" data-name="Id" transform="translate(33 1377)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name-11" data-name="Course Name" transform="translate(153 1377)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+      <g id="Rectangle_10-2" data-name="Rectangle 10" transform="translate(0 1398)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="56" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="55" fill="none"/>
+      </g>
+      <text id="Id-19" data-name="Id" transform="translate(33 1433)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Id</tspan></text>
+      <text id="Course_Name-12" data-name="Course Name" transform="translate(153 1433)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Name</tspan></text>
+    </g>
+    <g id="Instructor_CRUD" data-name="Instructor CRUD" transform="translate(15 13)" clip-path="url(#clip-path-5)">
+      <rect id="Rectangle_24" data-name="Rectangle 24" width="414" height="736" transform="translate(484 783)" fill="#fff" stroke="#707070" stroke-width="1"/>
+      <g id="Title_Bar-2" data-name="Title Bar" transform="translate(484 798)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="59" fill="none"/>
+      </g>
+      <g id="Device_Bar" data-name="Device Bar" transform="translate(484 783)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="15" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="14" fill="none"/>
+      </g>
+      <text id="New_Instructor_Id_Instructor" data-name="New / (Instructor Id) Instructor" transform="translate(540 833)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">New / (Instructor Id) Instructor</tspan></text>
+      <g id="Tab_Footer" data-name="Tab Footer" transform="translate(484 1458)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="61" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="60" fill="none"/>
+      </g>
+      <text id="Terms-9" data-name="Terms" transform="translate(526 1498)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Terms</tspan></text>
+      <g transform="matrix(1, 0, 0, 1, -15, -13)" filter="url(#Instructors-2)">
+        <text id="Instructors-9" data-name="Instructors" transform="translate(662 1511)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Instructors</tspan></text>
+      </g>
+      <text id="Courses-10" data-name="Courses" transform="translate(804 1498)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Courses</tspan></text>
+      <g id="Name_Input" data-name="Name Input" transform="translate(516.5 882)">
+        <text id="Instructor_Name_Input" data-name="Instructor Name Input" transform="translate(0.5 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Instructor Name Input</tspan></text>
+        <line id="Input_Line-2" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Error_Message_if_any_2" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+      </g>
+      <g id="Phone_Number_Input" data-name="Phone Number Input" transform="translate(517 974)">
+        <text id="Instructor_Phone_Number_Input" data-name="Instructor Phone Number Input" transform="translate(0.5 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Instructor Phone Number Input</tspan></text>
+        <line id="Input_Line-3" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Error_Message_if_any_3" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+      </g>
+      <g id="Email_Input" data-name="Email Input" transform="translate(517 1066)">
+        <text id="Instructor_Email_Input" data-name="Instructor Email Input" transform="translate(0.5 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Instructor Email Input</tspan></text>
+        <line id="Input_Line-4" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Error_Message_if_any_4" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+      </g>
+      <g id="Button-3" data-name="Button" transform="translate(565 1157)">
+        <g id="Button_Outline-3" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+          <rect width="96" height="40" rx="6" stroke="none"/>
+          <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+        </g>
+        <text id="SAVE-2" data-name="SAVE" transform="translate(31 26)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">SAVE</tspan></text>
+      </g>
+      <g id="Button-4" data-name="Button" transform="translate(724 1157)">
+        <g id="Button_Outline-4" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+          <rect width="96" height="40" rx="6" stroke="none"/>
+          <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+        </g>
+        <text id="Delete-2" data-name="Delete" transform="translate(24 26)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">DELETE</tspan></text>
+      </g>
+      <path id="back-button-2" data-name="back-button" d="M4.791,14.8l6.72-6.576L9.782,6.5,0,16l9.782,9.582,1.729-1.721L4.791,17.2H19.563V14.8Z" transform="translate(503.218 812.423)" stroke="#707070" stroke-width="1" fill-rule="evenodd"/>
+    </g>
+    <g id="Course_CRUD" data-name="Course CRUD" transform="translate(17 13)" clip-path="url(#clip-path-6)">
+      <rect id="Rectangle_26" data-name="Rectangle 26" width="414" height="736" transform="translate(968 783)" fill="#fff" stroke="#707070" stroke-width="1"/>
+      <g id="Title_Bar-3" data-name="Title Bar" transform="translate(968 798)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="59" fill="none"/>
+      </g>
+      <g id="Device_Bar-2" data-name="Device Bar" transform="translate(968 783)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="15" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="14" fill="none"/>
+      </g>
+      <text id="New_Course_Id_Course" data-name="New / (Course Id) Course" transform="translate(1024 833)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">New / (Course Id) Course</tspan></text>
+      <g id="Tab_Footer-2" data-name="Tab Footer" transform="translate(968 1458)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="61" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="60" fill="none"/>
+      </g>
+      <text id="Terms-10" data-name="Terms" transform="translate(1010 1498)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Terms</tspan></text>
+      <text id="Instructors-10" data-name="Instructors" transform="translate(1131 1498)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Instructors</tspan></text>
+      <g transform="matrix(1, 0, 0, 1, -17, -13)" filter="url(#Courses-2)">
+        <text id="Courses-11" data-name="Courses" transform="translate(1305 1511)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Courses</tspan></text>
+      </g>
+      <g id="Name_Input-2" data-name="Name Input" transform="translate(1001 866)">
+        <text id="Course_Name_Input" data-name="Course Name Input" transform="translate(0.5 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Name Input</tspan></text>
+        <line id="Input_Line-5" data-name="Input Line" y1="1" x2="348" transform="translate(0 23.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Error_Message_if_any_5" data-name="Error Message (if any)" transform="translate(0.5 44)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+      </g>
+      <g id="Course_Description_Input" data-name="Course Description Input" transform="translate(1001 933)">
+        <text id="Course_Description_Input-2" data-name="Course Description Input" transform="translate(0.5 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Course Description Input</tspan></text>
+        <line id="Input_Line-6" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Error_Message_if_any_6" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+      </g>
+      <g id="Course_Notes_Input" data-name="Course Notes Input" transform="translate(1001 1001)">
+        <text id="Course_Notes_Input-2" data-name="Course Notes Input" transform="translate(0.5 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Notes Input</tspan></text>
+        <line id="Input_Line-7" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Error_Message_if_any_7" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+      </g>
+      <g id="Button-5" data-name="Button" transform="translate(1048 1408)">
+        <g id="Button_Outline-5" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+          <rect width="96" height="40" rx="6" stroke="none"/>
+          <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+        </g>
+        <text id="SAVE-3" data-name="SAVE" transform="translate(31 26)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">SAVE</tspan></text>
+      </g>
+      <g id="Button-6" data-name="Button" transform="translate(1207 1408)">
+        <g id="Button_Outline-6" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+          <rect width="96" height="40" rx="6" stroke="none"/>
+          <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+        </g>
+        <text id="Delete-3" data-name="Delete" transform="translate(24 26)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">DELETE</tspan></text>
+      </g>
+      <path id="back-button-3" data-name="back-button" d="M4.791,14.8l6.72-6.576L9.782,6.5,0,16l9.782,9.582,1.729-1.721L4.791,17.2H19.563V14.8Z" transform="translate(987.218 812.423)" stroke="#707070" stroke-width="1" fill-rule="evenodd"/>
+      <g id="Date_Input-3" data-name="Date Input" transform="translate(1001 1054)">
+        <line id="Date_Input_Line-3" data-name="Date Input Line" x2="164" transform="translate(173.5 22.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Date_Error_Message_if_any_3" data-name="Date Error Message (if any)" transform="translate(0 40)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+        <text id="MM_DD_YYYY-3" data-name="MM/DD/YYYY" transform="translate(188 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MM/DD/YYYY</tspan></text>
+        <text id="Start_Date-2" data-name="Start Date" transform="translate(0 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Start Date</tspan></text>
+      </g>
+      <g id="Date_Input-4" data-name="Date Input" transform="translate(1001 1102)">
+        <line id="Date_Input_Line-4" data-name="Date Input Line" x2="164" transform="translate(173.5 22.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Date_Error_Message_if_any_4" data-name="Date Error Message (if any)" transform="translate(0 40)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+        <text id="MM_DD_YYYY-4" data-name="MM/DD/YYYY" transform="translate(188 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MM/DD/YYYY</tspan></text>
+        <text id="End_Date-2" data-name="End Date" transform="translate(0 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">End Date</tspan></text>
+      </g>
+      <g id="Course_Instructor_Input" data-name="Course Instructor Input" transform="translate(1001 1157)">
+        <text id="Course_Instructor_Input-2" data-name="Course Instructor Input" transform="translate(0.5 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Instructor Picker</tspan></text>
+        <line id="Input_Line-8" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Error_Message_if_any_8" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+      </g>
+      <g id="Course_Term_Input" data-name="Course Term Input" transform="translate(1001 1217)">
+        <text id="Course_Term_Input-2" data-name="Course Term Input" transform="translate(0.5 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Term Picker</tspan></text>
+        <line id="Input_Line-9" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Error_Message_if_any_9" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+      </g>
+      <g id="Course_Status_Input" data-name="Course Status Input" transform="translate(1001.25 1277)">
+        <g id="Course_Status_Input-2" data-name="Course Status Input">
+          <text id="Course_Status_Input-3" data-name="Course Status Input" transform="translate(65 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Status Picker</tspan></text>
+          <line id="Input_Line-10" data-name="Input Line" x2="282.5" transform="translate(65 24)" fill="none" stroke="#707070" stroke-width="1"/>
+          <text id="Error_Message_if_any_10" data-name="Error Message (if any)" transform="translate(0 44.5)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+        </g>
+        <text id="Status" transform="translate(0.75 19.75)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Status</tspan></text>
+      </g>
+      <g id="PA_Button" data-name="PA Button" transform="translate(987 1341)">
+        <g id="Rectangle_5" data-name="Rectangle 5" fill="#fff" stroke="#707070" stroke-width="1">
+          <rect width="176" height="57" rx="5" stroke="none"/>
+          <rect x="0.5" y="0.5" width="175" height="56" rx="4.5" fill="none"/>
+        </g>
+        <g id="Group" transform="translate(44.271 -0.5)">
+          <text id="PERFORMANCE_" data-name="PERFORMANCE " transform="translate(-0.771 26)" fill="#707070" stroke="#707070" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">PERFORMANCE </tspan></text>
+          <text id="ASSESSMENT" transform="translate(3.932 42)" fill="#707070" stroke="#707070" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">ASSESSMENT</tspan></text>
+        </g>
+      </g>
+      <g id="PA_Button-2" data-name="PA Button" transform="translate(1188 1341)">
+        <g id="Rectangle_5-2" data-name="Rectangle 5" fill="#fff" stroke="#707070" stroke-width="1">
+          <rect width="176" height="57" rx="5" stroke="none"/>
+          <rect x="0.5" y="0.5" width="175" height="56" rx="4.5" fill="none"/>
+        </g>
+        <g id="Group-2" data-name="Group" transform="translate(39.068 -0.5)">
+          <text id="OBJECTIVE" transform="translate(18.159 26)" fill="#707070" stroke="#707070" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">OBJECTIVE</tspan></text>
+          <text id="ASSESSMENT-2" data-name="ASSESSMENT" transform="translate(10.932 42)" fill="#707070" stroke="#707070" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">ASSESSMENT</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g id="Assessment_CRUD" data-name="Assessment CRUD" transform="translate(15 13)" clip-path="url(#clip-path-7)">
+      <rect id="Rectangle_28" data-name="Rectangle 28" width="414" height="736" transform="translate(1452 783)" fill="#fff" stroke="#707070" stroke-width="1"/>
+      <g id="Title_Bar-4" data-name="Title Bar" transform="translate(1452 798)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="60" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="59" fill="none"/>
+      </g>
+      <g id="Device_Bar-3" data-name="Device Bar" transform="translate(1452 783)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="15" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="14" fill="none"/>
+      </g>
+      <text id="New_Assessment_Id_Assessment" data-name="New / (Assessment Id) Assessment" transform="translate(1508 833)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="20" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">New / (Assessment Id) Assessment</tspan></text>
+      <g id="Tab_Footer-3" data-name="Tab Footer" transform="translate(1452 1458)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="414" height="61" stroke="none"/>
+        <rect x="0.5" y="0.5" width="413" height="60" fill="none"/>
+      </g>
+      <text id="Terms-11" data-name="Terms" transform="translate(1494 1498)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Terms</tspan></text>
+      <text id="Instructors-11" data-name="Instructors" transform="translate(1615 1498)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Instructors</tspan></text>
+      <g transform="matrix(1, 0, 0, 1, -15, -13)" filter="url(#Courses-3)">
+        <text id="Courses-12" data-name="Courses" transform="translate(1787 1511)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Courses</tspan></text>
+      </g>
+      <g id="Name_Input-3" data-name="Name Input" transform="translate(1484.5 882)">
+        <text id="Assessment_Name_Input" data-name="Assessment Name Input" transform="translate(0.5 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Assessment Name Input</tspan></text>
+        <line id="Input_Line-11" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Error_Message_if_any_11" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+      </g>
+      <g id="Button-7" data-name="Button" transform="translate(1533 1157)">
+        <g id="Button_Outline-7" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+          <rect width="96" height="40" rx="6" stroke="none"/>
+          <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+        </g>
+        <text id="SAVE-4" data-name="SAVE" transform="translate(31 26)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">SAVE</tspan></text>
+      </g>
+      <g id="Button-8" data-name="Button" transform="translate(1692 1157)">
+        <g id="Button_Outline-8" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+          <rect width="96" height="40" rx="6" stroke="none"/>
+          <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+        </g>
+        <text id="Delete-4" data-name="Delete" transform="translate(24 26)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">DELETE</tspan></text>
+      </g>
+      <path id="back-button-4" data-name="back-button" d="M4.791,14.8l6.72-6.576L9.782,6.5,0,16l9.782,9.582,1.729-1.721L4.791,17.2H19.563V14.8Z" transform="translate(1471.218 812.423)" stroke="#707070" stroke-width="1" fill-rule="evenodd"/>
+      <g id="Date_Input-5" data-name="Date Input" transform="translate(1484.5 973)">
+        <line id="Date_Input_Line-5" data-name="Date Input Line" x2="164" transform="translate(173.5 22.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Date_Error_Message_if_any_5" data-name="Date Error Message (if any)" transform="translate(0 46)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+        <text id="MM_DD_YYYY-5" data-name="MM/DD/YYYY" transform="translate(188 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MM/DD/YYYY</tspan></text>
+        <text id="Start_Date-3" data-name="Start Date" transform="translate(0 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Start Date</tspan></text>
+      </g>
+      <g id="Date_Input-6" data-name="Date Input" transform="translate(1484.5 1065)">
+        <line id="Date_Input_Line-6" data-name="Date Input Line" x2="164" transform="translate(173.5 22.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <text id="Date_Error_Message_if_any_6" data-name="Date Error Message (if any)" transform="translate(0 46)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
+        <text id="MM_DD_YYYY-6" data-name="MM/DD/YYYY" transform="translate(188 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MM/DD/YYYY</tspan></text>
+        <text id="End_Date-3" data-name="End Date" transform="translate(0 17)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">End Date</tspan></text>
+      </g>
+    </g>
+    <g id="Date_Picker_Description" data-name="Date Picker Description" transform="translate(369.109 983)">
+      <path id="back-button-5" data-name="back-button" d="M4.791,14.8l6.72-6.576L9.782,6.5,0,16l9.782,9.582,1.729-1.721L4.791,17.2H19.563V14.8Z" transform="translate(0 -3.577)" fill-rule="evenodd"/>
+      <text id="Date_Pickers" data-name="Date Pickers" transform="translate(22.782 19)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Date Pickers</tspan></text>
+    </g>
+    <g id="Date_Picker_Description-2" data-name="Date Picker Description" transform="translate(1337.109 1091)">
+      <path id="back-button-6" data-name="back-button" d="M4.791,14.8l6.72-6.576L9.782,6.5,0,16l9.782,9.582,1.729-1.721L4.791,17.2H19.563V14.8Z" transform="translate(0 -3.577)" fill-rule="evenodd"/>
+      <text id="Date_Pickers-2" data-name="Date Pickers" transform="translate(22.782 19)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Date Pickers</tspan></text>
+    </g>
+    <g id="Date_Picker_Description-3" data-name="Date Picker Description" transform="translate(1842.218 1033)">
+      <path id="back-button-7" data-name="back-button" d="M4.791,14.8l6.72-6.576L9.782,6.5,0,16l9.782,9.582,1.729-1.721L4.791,17.2H19.563V14.8Z" transform="translate(0 -3.577)" fill-rule="evenodd"/>
+      <text id="Date_Pickers-3" data-name="Date Pickers" transform="translate(22.782 19)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Date Pickers</tspan></text>
+    </g>
+  </g>
+</svg>

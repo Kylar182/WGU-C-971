@@ -42,6 +42,9 @@ namespace C971.ViewModels.ItemCUDVMs
       }
     }
 
+    /// <inheritdoc cref="Course.Name"/>
+    public string NameError => Errors.ContainsKey(nameof(Name)) ? Errors[nameof(Name)].First() : "";
+
     /// <summary>
     /// Command to Navigate to the Assessment Create / Update / Delete <para />
     /// Page for the Performance Assessment related to this Course (if Any)
@@ -54,8 +57,10 @@ namespace C971.ViewModels.ItemCUDVMs
     /// </summary>
     public ICommand OACommand { get; }
 
-    /// <inheritdoc cref="Course.Name"/>
-    public string NameError => Errors.ContainsKey(nameof(Name)) ? Errors[nameof(Name)].First() : "";
+    /// <summary>
+    /// Command to Share Notes
+    /// </summary>
+    public ICommand ShareCommand { get; }
 
     private string description;
     /// <inheritdoc cref="Course.Description"/>
@@ -282,7 +287,7 @@ namespace C971.ViewModels.ItemCUDVMs
     }
 
     /// <inheritdoc cref="CourseCUDVM" />
-    public CourseCUDVM(Func<Task> save, Func<Task> delete) : base(save, delete)
+    public CourseCUDVM(Func<Task> save, Func<Task> delete, Func<Task> share) : base(save, delete)
     {
       Service = DependencyService.Get<ICourseService>();
       _termService = DependencyService.Get<IAcademicTermService>();
@@ -310,6 +315,7 @@ namespace C971.ViewModels.ItemCUDVMs
 
       PACommand = new Command(async () => await OnPANavigate());
       OACommand = new Command(async () => await OnOANavigate());
+      ShareCommand = new Command(async () => await share?.Invoke());
 
       IsBusy = false;
     }

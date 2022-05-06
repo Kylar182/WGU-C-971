@@ -24,7 +24,7 @@
 
   <ContentPage.Content>
     <FlexLayout Direction="Column" Padding="10,0,10,10" VerticalOptions="StartAndExpand"
-                  JustifyContent="SpaceEvenly">
+                JustifyContent="SpaceEvenly">
 
       <Entry Text="{Binding Name}" Placeholder="Course Name" HeightRequest="44" />
       <Label TextColor="{StaticResource WGURed}" Text="{Binding NameError}" FontSize="Small" />
@@ -33,8 +33,18 @@
               AutoSize="Disabled" HeightRequest="75"/>
       <Label TextColor="{StaticResource WGURed}" Text="{Binding DescriptionError}" FontSize="Small" />
 
-      <Editor Text="{Binding Notes}" Placeholder="Notes" FontSize="Small" AutoSize="Disabled" HeightRequest="75" />
-      <Label TextColor="{StaticResource WGURed}" Text="{Binding NotesError}" FontSize="Small" />
+      <Grid Padding="0" RowSpacing="0" MinimumHeightRequest="100">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+        <Editor Text="{Binding Notes}" Placeholder="Notes" FontSize="Small" AutoSize="Disabled" HeightRequest="75"
+                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" />
+        <Button Text="SHARE" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" HeightRequest="75"
+                Command="{Binding ShareCommand}" />
+        <Label TextColor="{StaticResource WGURed}" Text="{Binding NotesError}" FontSize="Small" Grid.Row="1"
+                Grid.Column="0" Grid.ColumnSpan="6" />
+      </Grid>
 
       <Grid Margin="0,0,0,5" Padding="0" RowSpacing="0" MinimumHeightRequest="100">
         <Grid.RowDefinitions>
