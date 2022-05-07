@@ -5,8 +5,8 @@ using C971.Models.DatabaseModels;
 using C971.ViewModels;
 using C971.ViewModels.ItemCUDVMs;
 using SQLite;
-using Xamarin.Forms;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace C971.Views.ItemCUDPages
 {

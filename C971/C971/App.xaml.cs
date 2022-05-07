@@ -60,12 +60,10 @@ namespace C971
         {
           TermTitle = "Spring 2022",
           Start = new DateTime(2022, 1, 01, 12, 0, 0, DateTimeKind.Utc),
-          End = new DateTime(2022, 6, 30, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 1
+          End = new DateTime(2022, 6, 30, 11, 59, 59, DateTimeKind.Utc)
         };
 
         _syncConn.Insert(term);
-        _syncConn.Insert(term.Notification());
 
         _syncConn.Insert(new Instructor()
         {
@@ -95,11 +93,16 @@ namespace C971
           Start = new DateTime(2022, 1, 1, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 1, 20, 11, 59, 59, DateTimeKind.Utc),
           Status = CourseStatus.Completed,
-          NotificationId = 2
+          StartId = 2,
+          EndId = 3
         };
 
         _syncConn.Insert(D191);
-        _syncConn.Insert(D191.Notification());
+        _syncConn.Insert(D191.StartNotification());
+        _syncConn.Insert(D191.EndNotification());
+
+        D191.StartNotification().StartInsert();
+        D191.EndNotification().EndInsert();
 
         Assessment paADM = new()
         {
@@ -107,11 +110,16 @@ namespace C971
           CourseId = 1,
           Start = new DateTime(2022, 1, 17, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 1, 18, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 3
+          StartId = 4,
+          EndId = 5
         };
 
         _syncConn.Insert(paADM);
-        _syncConn.Insert(paADM.Notification());
+        _syncConn.Insert(paADM.StartNotification());
+        _syncConn.Insert(paADM.EndNotification());
+
+        paADM.StartNotification().StartInsert();
+        paADM.EndNotification().EndInsert();
 
         Assessment oaDM = new()
         {
@@ -119,11 +127,16 @@ namespace C971
           CourseId = 1,
           Start = new DateTime(2022, 1, 19, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 1, 20, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 4
+          StartId = 6,
+          EndId = 7
         };
 
         _syncConn.Insert(oaDM);
-        _syncConn.Insert(oaDM.Notification());
+        _syncConn.Insert(oaDM.StartNotification());
+        _syncConn.Insert(oaDM.EndNotification());
+
+        oaDM.StartNotification().StartInsert();
+        oaDM.EndNotification().EndInsert();
 
         _syncConn.Insert(new Instructor()
         {
@@ -147,11 +160,16 @@ namespace C971
           Start = new DateTime(2022, 1, 20, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 3, 1, 11, 59, 59, DateTimeKind.Utc),
           Status = CourseStatus.Completed,
-          NotificationId = 5
+          StartId = 8,
+          EndId = 9
         };
 
         _syncConn.Insert(C949);
-        _syncConn.Insert(C949.Notification());
+        _syncConn.Insert(C949.StartNotification());
+        _syncConn.Insert(C949.EndNotification());
+
+        C949.StartNotification().StartInsert();
+        C949.EndNotification().EndInsert();
 
         Assessment paDS = new()
         {
@@ -159,11 +177,16 @@ namespace C971
           CourseId = 2,
           Start = new DateTime(2022, 2, 23, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 2, 24, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 6
+          StartId = 10,
+          EndId = 11
         };
 
         _syncConn.Insert(paDS);
-        _syncConn.Insert(paDS.Notification());
+        _syncConn.Insert(paDS.StartNotification());
+        _syncConn.Insert(paDS.EndNotification());
+
+        paDS.StartNotification().StartInsert();
+        paDS.EndNotification().EndInsert();
 
         Assessment oaDS = new()
         {
@@ -171,11 +194,16 @@ namespace C971
           CourseId = 2,
           Start = new DateTime(2022, 2, 27, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 3, 1, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 7
+          StartId = 12,
+          EndId = 13
         };
 
         _syncConn.Insert(oaDS);
-        _syncConn.Insert(oaDS.Notification());
+        _syncConn.Insert(oaDS.StartNotification());
+        _syncConn.Insert(oaDS.EndNotification());
+
+        oaDS.StartNotification().StartInsert();
+        oaDS.EndNotification().EndInsert();
 
         _syncConn.Insert(new Instructor()
         {
@@ -200,11 +228,16 @@ namespace C971
           Start = new DateTime(2022, 3, 1, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 4, 15, 11, 59, 59, DateTimeKind.Utc),
           Status = CourseStatus.InProgress,
-          NotificationId = 8
+          StartId = 14,
+          EndId = 15
         };
 
         _syncConn.Insert(C971);
-        _syncConn.Insert(C971.Notification());
+        _syncConn.Insert(C971.StartNotification());
+        _syncConn.Insert(C971.EndNotification());
+
+        C971.StartNotification().StartInsert();
+        C971.EndNotification().EndInsert();
 
         Assessment paMA = new()
         {
@@ -212,11 +245,16 @@ namespace C971
           CourseId = 3,
           Start = new DateTime(2022, 4, 11, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 4, 12, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 9
+          StartId = 16,
+          EndId = 17
         };
 
         _syncConn.Insert(paMA);
-        _syncConn.Insert(paMA.Notification());
+        _syncConn.Insert(paMA.StartNotification());
+        _syncConn.Insert(paMA.EndNotification());
+
+        paMA.StartNotification().StartInsert();
+        paMA.EndNotification().EndInsert();
 
         Assessment oaMA = new()
         {
@@ -224,11 +262,16 @@ namespace C971
           CourseId = 3,
           Start = new DateTime(2022, 4, 14, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 4, 15, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 10
+          StartId = 18,
+          EndId = 19
         };
 
         _syncConn.Insert(oaMA);
-        _syncConn.Insert(oaMA.Notification());
+        _syncConn.Insert(oaMA.StartNotification());
+        _syncConn.Insert(oaMA.EndNotification());
+
+        oaMA.StartNotification().StartInsert();
+        oaMA.EndNotification().EndInsert();
 
         _syncConn.Insert(new Instructor()
         {
@@ -250,11 +293,16 @@ namespace C971
           Start = new DateTime(2022, 4, 15, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 6, 30, 11, 59, 59, DateTimeKind.Utc),
           Status = CourseStatus.PlanToTake,
-          NotificationId = 11
+          StartId = 20,
+          EndId = 21
         };
 
         _syncConn.Insert(C868);
-        _syncConn.Insert(C868.Notification());
+        _syncConn.Insert(C868.StartNotification());
+        _syncConn.Insert(C868.EndNotification());
+
+        C868.StartNotification().StartInsert();
+        C868.EndNotification().EndInsert();
 
         Assessment paSD = new()
         {
@@ -262,11 +310,16 @@ namespace C971
           CourseId = 4,
           Start = new DateTime(2022, 6, 14, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 6, 15, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 12
+          StartId = 22,
+          EndId = 23
         };
 
         _syncConn.Insert(paSD);
-        _syncConn.Insert(paSD.Notification());
+        _syncConn.Insert(paSD.StartNotification());
+        _syncConn.Insert(paSD.EndNotification());
+
+        paSD.StartNotification().StartInsert();
+        paSD.EndNotification().EndInsert();
 
         Assessment oaSD = new()
         {
@@ -274,11 +327,16 @@ namespace C971
           CourseId = 4,
           Start = new DateTime(2022, 6, 28, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 6, 30, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 13
+          StartId = 24,
+          EndId = 25
         };
 
         _syncConn.Insert(oaSD);
-        _syncConn.Insert(oaSD.Notification());
+        _syncConn.Insert(oaSD.StartNotification());
+        _syncConn.Insert(oaSD.EndNotification());
+
+        oaSD.StartNotification().StartInsert();
+        oaSD.EndNotification().EndInsert();
 
         _syncConn.Insert(new Instructor()
         {
@@ -306,11 +364,16 @@ namespace C971
           Start = new DateTime(2022, 1, 25, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 2, 28, 11, 59, 59, DateTimeKind.Utc),
           Status = CourseStatus.Completed,
-          NotificationId = 12
+          StartId = 26,
+          EndId = 27
         };
 
         _syncConn.Insert(C393);
-        _syncConn.Insert(C393.Notification());
+        _syncConn.Insert(C393.StartNotification());
+        _syncConn.Insert(C393.EndNotification());
+
+        C393.StartNotification().StartInsert();
+        C393.EndNotification().EndInsert();
 
         Assessment paITF = new()
         {
@@ -318,11 +381,16 @@ namespace C971
           CourseId = 5,
           Start = new DateTime(2022, 2, 14, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 2, 15, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 13
+          StartId = 28,
+          EndId = 29
         };
 
         _syncConn.Insert(paITF);
-        _syncConn.Insert(paITF.Notification());
+        _syncConn.Insert(paITF.StartNotification());
+        _syncConn.Insert(paITF.EndNotification());
+
+        paITF.StartNotification().StartInsert();
+        paITF.EndNotification().EndInsert();
 
         Assessment oaITF = new()
         {
@@ -330,11 +398,16 @@ namespace C971
           CourseId = 5,
           Start = new DateTime(2022, 2, 26, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 2, 28, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 14
+          StartId = 30,
+          EndId = 31
         };
 
         _syncConn.Insert(oaITF);
-        _syncConn.Insert(oaITF.Notification());
+        _syncConn.Insert(oaITF.StartNotification());
+        _syncConn.Insert(oaITF.EndNotification());
+
+        oaITF.StartNotification().StartInsert();
+        oaITF.EndNotification().EndInsert();
 
         _syncConn.Insert(new Instructor()
         {
@@ -365,11 +438,16 @@ namespace C971
           Start = new DateTime(2022, 3, 1, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 3, 30, 11, 59, 59, DateTimeKind.Utc),
           Status = CourseStatus.Completed,
-          NotificationId = 15
+          StartId = 32,
+          EndId = 33
         };
 
         _syncConn.Insert(C394);
-        _syncConn.Insert(C394.Notification());
+        _syncConn.Insert(C394.StartNotification());
+        _syncConn.Insert(C394.EndNotification());
+
+        C394.StartNotification().StartInsert();
+        C394.EndNotification().EndInsert();
 
         Assessment paITA = new()
         {
@@ -377,11 +455,16 @@ namespace C971
           CourseId = 6,
           Start = new DateTime(2022, 3, 14, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 3, 15, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 16
+          StartId = 34,
+          EndId = 35
         };
 
         _syncConn.Insert(paITA);
-        _syncConn.Insert(paITA.Notification());
+        _syncConn.Insert(paITA.StartNotification());
+        _syncConn.Insert(paITA.EndNotification());
+
+        paITA.StartNotification().StartInsert();
+        paITA.EndNotification().EndInsert();
 
         Assessment oaITA = new()
         {
@@ -389,13 +472,16 @@ namespace C971
           CourseId = 6,
           Start = new DateTime(2022, 3, 28, 12, 0, 0, DateTimeKind.Utc),
           End = new DateTime(2022, 3, 30, 11, 59, 59, DateTimeKind.Utc),
-          NotificationId = 17
+          StartId = 36,
+          EndId = 37
         };
 
         _syncConn.Insert(oaITA);
-        _syncConn.Insert(oaITA.Notification());
+        _syncConn.Insert(oaITA.StartNotification());
+        _syncConn.Insert(oaITA.EndNotification());
 
-        _syncConn.Table<Notification>().ToList().ForEach(o => o.Insert());
+        oaITA.StartNotification().StartInsert();
+        oaITA.EndNotification().EndInsert();
 
         Preferences.Set(nameof(Initial), Initial);
       }

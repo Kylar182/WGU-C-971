@@ -26,12 +26,26 @@
     <FlexLayout Direction="Column" Padding="10,0,10,10" VerticalOptions="StartAndExpand"
                 JustifyContent="SpaceEvenly">
 
-      <Entry Text="{Binding Name}" Placeholder="Course Name" HeightRequest="44" />
-      <Label TextColor="{StaticResource WGURed}" Text="{Binding NameError}" FontSize="Small" />
+      <Grid Padding="0" RowSpacing="0" HeightRequest="65">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+        <Entry Text="{Binding Name}" Placeholder="Course Name" HeightRequest="44" Grid.Row="0" Margin="0" />
+        <Label TextColor="{StaticResource WGURed}" Text="{Binding NameError}" FontSize="12" Grid.Row="1"
+               Margin="0" Padding="0" />
+      </Grid>
 
-      <Editor Text="{Binding Description}" Placeholder="Course Description" FontSize="Small"
-              AutoSize="Disabled" HeightRequest="75"/>
-      <Label TextColor="{StaticResource WGURed}" Text="{Binding DescriptionError}" FontSize="Small" />
+      <Grid Padding="0" RowSpacing="0" MinimumHeightRequest="90">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+        <Editor Text="{Binding Description}" Placeholder="Course Description" FontSize="Small"
+                AutoSize="Disabled" HeightRequest="75" Grid.Row="0" Margin="0" />
+        <Label TextColor="{StaticResource WGURed}" Text="{Binding DescriptionError}" FontSize="12" Grid.Row="1"
+               Margin="0" Padding="0" />
+      </Grid>
 
       <Grid Padding="0" RowSpacing="0" MinimumHeightRequest="100">
         <Grid.RowDefinitions>
@@ -39,14 +53,14 @@
           <RowDefinition Height="15" />
         </Grid.RowDefinitions>
         <Editor Text="{Binding Notes}" Placeholder="Notes" FontSize="Small" AutoSize="Disabled" HeightRequest="75"
-                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" />
+                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="0" />
         <Button Text="SHARE" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" HeightRequest="75"
                 Command="{Binding ShareCommand}" />
-        <Label TextColor="{StaticResource WGURed}" Text="{Binding NotesError}" FontSize="Small" Grid.Row="1"
-                Grid.Column="0" Grid.ColumnSpan="6" />
+        <Label TextColor="{StaticResource WGURed}" Text="{Binding NotesError}" FontSize="12" Grid.Row="1"
+                Grid.Column="0" Grid.ColumnSpan="6" Margin="0" Padding="0" />
       </Grid>
 
-      <Grid Margin="0,0,0,5" Padding="0" RowSpacing="0" MinimumHeightRequest="100">
+      <Grid Margin="0,0,0,5" Padding="0" RowSpacing="0" HeightRequest="115">
         <Grid.RowDefinitions>
           <RowDefinition Height="*" />
           <RowDefinition Height="15" />
@@ -56,32 +70,46 @@
         <Label Text="Start Date" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" FontSize="Small" />
         <DatePicker Date="{Binding Start}" Grid.Column="1" Grid.Row="0" />
         <Label TextColor="{StaticResource WGURed}" Text="{Binding StartError}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
-               VerticalOptions="Start" FontSize="Small" HorizontalOptions="Center" Padding="0" Margin="0" />
+               VerticalOptions="Start" FontSize="12" HorizontalOptions="Center" Padding="0" Margin="0" />
 
         <Label Text="End Date" Grid.Column="0" Grid.Row="2" VerticalOptions="Center" FontSize="Small" />
         <DatePicker Date="{Binding End}" Grid.Column="1" Grid.Row="2" />
         <Label TextColor="{StaticResource WGURed}" Text="{Binding EndError}" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
-               VerticalOptions="Start" FontSize="Small" HorizontalOptions="Center" Padding="0" Margin="0" />
+               VerticalOptions="Start" FontSize="12" HorizontalOptions="Center" Padding="0" Margin="0" />
+      </Grid>
+      
+      <Grid Padding="0" RowSpacing="0" HeightRequest="65">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+        <Picker Title="Select the Instructor" SelectedItem="{Binding Instructor}" Margin="0"
+                ItemsSource="{Binding Instructors}" ItemDisplayBinding="{Binding Name}" />
+        <Label TextColor="{StaticResource WGURed}" Text="{Binding InstructorIdError}" FontSize="12" Grid.Row="1"
+               Margin="0" Padding="0"/>
       </Grid>
 
-      <Picker Title="Select the Instructor" SelectedItem="{Binding Instructor}"
-              ItemsSource="{Binding Instructors}" ItemDisplayBinding="{Binding Name}" />
-      <Label TextColor="{StaticResource WGURed}" Text="{Binding InstructorIdError}" FontSize="Small" />
+      <Grid Padding="0" RowSpacing="0" HeightRequest="65">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+        <Picker Title="Select the Term" SelectedItem="{Binding Term}" ItemsSource="{Binding Terms}"
+                ItemDisplayBinding="{Binding TermTitle}" Margin="0" />
+        <Label TextColor="{StaticResource WGURed}" Text="{Binding AcademicTermIdError}" FontSize="12" Grid.Row="1" 
+               Margin="0" Padding="0" />
+      </Grid>
 
-      <Picker Title="Select the Term" SelectedItem="{Binding Term}" ItemsSource="{Binding Terms}"
-              ItemDisplayBinding="{Binding TermTitle}" />
-      <Label TextColor="{StaticResource WGURed}" Text="{Binding AcademicTermIdError}" FontSize="Small" />
-
-      <Grid Margin="0,10,0,10" RowSpacing="0">
+      <Grid Margin="0,10,0,10" RowSpacing="0" HeightRequest="48">
         <Label Text="Status" FontSize="Small" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
         <Picker Title="Select the Status" SelectedItem="{Binding Status}" ItemsSource="{Binding Statuses}" Grid.ColumnSpan="5"
                 ItemDisplayBinding="{Binding ., Converter={StaticResource EnumString}}" Grid.Row="0" Grid.Column="1" />
       </Grid>
 
-      <Grid Margin="0,5,0,8" RowSpacing="0" HeightRequest="65">
-        <Frame BorderColor="{StaticResource WGUBlue}" CornerRadius="3" Grid.Column="0" Grid.Row="0" Padding="5">
+      <Grid Margin="0,5,0,0" RowSpacing="0" HeightRequest="75">
+        <Frame BorderColor="{StaticResource WGUBlue}" CornerRadius="3" Grid.Column="0" Grid.Row="0" Padding="3">
           <Label Text="{Binding PerfAssessment.Name}" VerticalOptions="CenterAndExpand" FontSize="Small"
-               IsVisible="{Binding PerfAssessment, Converter={StaticResource NullBool}}" HorizontalOptions="CenterAndExpand"
+               IsVisible="{Binding PerfAssessment, Converter={StaticResource NullBool}}" HorizontalOptions="StartAndExpand"
                TextColor="{StaticResource WGUBlue}" />
           <Frame.GestureRecognizers>
             <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding PACommand}" />
@@ -90,9 +118,9 @@
         <Button Text="PERFORMANCE ASSESSMENT" IsVisible="{Binding PerfAssessment, Converter={StaticResource NotNullBool}}"
                 Grid.Column="0" Grid.Row="0" Padding="0" Command="{Binding PACommand}" IsEnabled="{Binding CanDelete}" 
                 VerticalOptions="FillAndExpand" />
-        <Frame BorderColor="{StaticResource WGUBlue}" CornerRadius="3" Grid.Column="1" Grid.Row="0" Padding="5">
+        <Frame BorderColor="{StaticResource WGUBlue}" CornerRadius="3" Grid.Column="1" Grid.Row="0" Padding="3">
           <Label Text="{Binding ObjAssessment.Name}" VerticalOptions="CenterAndExpand" FontSize="Small"
-                 IsVisible="{Binding ObjAssessment, Converter={StaticResource NullBool}}" HorizontalOptions="CenterAndExpand"
+                 IsVisible="{Binding ObjAssessment, Converter={StaticResource NullBool}}" HorizontalOptions="StartAndExpand"
                  TextColor="{StaticResource WGUBlue}" />
           <Frame.GestureRecognizers>
             <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding OACommand}" />

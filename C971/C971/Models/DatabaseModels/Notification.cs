@@ -19,23 +19,40 @@ namespace C971.Models.DatabaseModels
     /// <summary>
     /// Date the Notification should Display, Universal Time
     /// </summary>
-    public DateTime Start { get; set; }
+    public DateTime Display { get; set; }
 
     /// <summary>
-    /// Add this Notification to the Local Notifications
+    /// Add this Start Notification to the Local Notifications
     /// </summary>
-    public void Insert()
+    public void StartInsert()
     {
-      CrossLocalNotifications.Current.Show(Title, $"{Title} starts today!", Id, Start);
+      CrossLocalNotifications.Current.Show(Title, $"{Title} starts today!", Id, Display);
     }
 
     /// <summary>
-    /// Update this Notification in the Local Notifications
+    /// Add this End Notification to the Local Notifications
     /// </summary>
-    public void Update()
+    public void EndInsert()
+    {
+      CrossLocalNotifications.Current.Show(Title, $"{Title} ends today!", Id, Display);
+    }
+
+    /// <summary>
+    /// Update this Start Notification in the Local Notifications
+    /// </summary>
+    public void StartUpdate()
     {
       Cancel();
-      CrossLocalNotifications.Current.Show(Title, $"{Title} starts today!", Id, Start);
+      CrossLocalNotifications.Current.Show(Title, $"{Title} starts today!", Id, Display);
+    }
+
+    /// <summary>
+    /// Update this End Notification in the Local Notifications
+    /// </summary>
+    public void EndUpdate()
+    {
+      Cancel();
+      CrossLocalNotifications.Current.Show(Title, $"{Title} ends today!", Id, Display);
     }
 
     /// <summary>

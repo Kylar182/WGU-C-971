@@ -26,12 +26,18 @@ namespace C971.Services.Implementations
 
       if (item is INotify notify)
       {
-        Notification notification = notify.Notification();
-        _ = await _conn.InsertAsync(notification);
-        notify.NotificationId = notification.Id;
+        Notification startNotify = notify.StartNotification();
+        _ = await _conn.InsertAsync(startNotify);
+        notify.StartId = startNotify.Id;
+
+        Notification endNotify = notify.EndNotification();
+        _ = await _conn.InsertAsync(endNotify);
+        notify.EndId = endNotify.Id;
+
         _ = await _conn.UpdateAsync(notify);
 
-        notification.Insert();
+        startNotify.StartInsert();
+        startNotify.EndInsert();
       }
 
       return item;
@@ -48,10 +54,15 @@ namespace C971.Services.Implementations
     {
       if (item is INotify notify)
       {
-        Notification notification = notify.Notification();
-        _ = await _conn.UpdateAsync(notification);
+        Notification startNotify = notify.StartNotification();
+        _ = await _conn.UpdateAsync(startNotify);
 
-        notification.Update();
+        startNotify.StartUpdate();
+
+        Notification endNotify = notify.EndNotification();
+        _ = await _conn.UpdateAsync(endNotify);
+
+        endNotify.EndUpdate();
 
         return await _conn.UpdateAsync(notify);
       }
@@ -64,9 +75,13 @@ namespace C971.Services.Implementations
     {
       if (item is INotify notify)
       {
-        Notification notification = notify.Notification();
-        notification.Cancel();
-        _ = await _conn.DeleteAsync(notification);
+        Notification startNotify = notify.StartNotification();
+        startNotify.Cancel();
+        _ = await _conn.DeleteAsync(startNotify);
+
+        Notification endNotify = notify.EndNotification();
+        endNotify.Cancel();
+        _ = await _conn.DeleteAsync(endNotify);
       }
 
       return await _conn.DeleteAsync(item);

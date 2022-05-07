@@ -25,7 +25,6 @@ namespace C971.Models.DatabaseModels
     /// </summary>
     [NotNull]
     public DateTime Start { get; set; }
-
     /// <summary>
     /// Date / Time the Assessment is due, Universal Time
     /// </summary>
@@ -33,16 +32,29 @@ namespace C971.Models.DatabaseModels
     public DateTime End { get; set; }
 
     /// <inheritdoc />
-    public int NotificationId { get; set; }
+    public int StartId { get; set; }
+    /// <inheritdoc />
+    public int EndId { get; set; }
 
     /// <inheritdoc />
-    public Notification Notification()
+    public Notification StartNotification()
     {
       return new()
       {
-        Id = NotificationId,
+        Id = StartId,
         Title = Name,
-        Start = Start
+        Display = Start
+      };
+    }
+
+    /// <inheritdoc />
+    public Notification EndNotification()
+    {
+      return new()
+      {
+        Id = EndId,
+        Title = Name,
+        Display = End
       };
     }
   }

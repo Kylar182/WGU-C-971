@@ -8,18 +8,31 @@ namespace C971.Models.DatabaseModels
   public interface INotify
   {
     /// <summary>
-    /// Foreign Key to the Notification
+    /// Foreign Key to the Start Notification
     /// </summary>
-    public int NotificationId { get; set; }
+    public int StartId { get; set; }
+    /// <summary>
+    /// Foreign Key to the End Notification
+    /// </summary>
+    public int EndId { get; set; }
 
     /// <summary>
-    /// Date the Notification should Display, Universal Time
+    /// Date the Start Notification should Display, Universal Time
     /// </summary>
     public DateTime Start { get; set; }
+    /// <summary>
+    /// Date the End Notification should Display, Universal Time
+    /// </summary>
+    public DateTime End { get; set; }
 
     /// <summary>
-    /// Creates and Returns a Notification for this Implementation
+    /// Creates and Returns a Start Notification for this Implementation
     /// </summary>
-    public Notification Notification();
+    public Notification StartNotification();
+
+    /// <summary>
+    /// Creates and Returns a End Notification for this Implementation
+    /// </summary>
+    public Notification EndNotification();
   }
 }

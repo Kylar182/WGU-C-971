@@ -61,16 +61,29 @@ namespace C971.Models.DatabaseModels
     public CourseStatus Status { get; set; }
 
     /// <inheritdoc />
-    public int NotificationId { get; set; }
+    public int StartId { get; set; }
+    /// <inheritdoc />
+    public int EndId { get; set; }
 
     /// <inheritdoc />
-    public Notification Notification()
+    public Notification StartNotification()
     {
       return new()
       {
-        Id = NotificationId,
+        Id = StartId,
         Title = Name,
-        Start = Start
+        Display = Start
+      };
+    }
+
+    /// <inheritdoc />
+    public Notification EndNotification()
+    {
+      return new()
+      {
+        Id = EndId,
+        Title = Name,
+        Display = End
       };
     }
   }

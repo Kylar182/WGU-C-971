@@ -306,7 +306,7 @@ namespace C971.ViewModels.ItemCUDVMs
                                                                 12, 0, 0, DateTimeKind.Utc);
         End = new(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day,
                                                                 12, 0, 0, DateTimeKind.Utc);
-        Status = Statuses.FirstOrDefault();
+        Status = Statuses.Where(pr => pr == CourseStatus.PlanToTake).FirstOrDefault();
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "An Instructor is required") }, -1,
                                                                                           nameof(Course.InstructorId));
         SetOrError(new() { new Tuple<bool, string>(-1 > 0, "A Term is required") }, -1,

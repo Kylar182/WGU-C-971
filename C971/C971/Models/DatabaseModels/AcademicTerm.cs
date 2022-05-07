@@ -10,7 +10,7 @@ namespace C971.Models.DatabaseModels
   /// Typically Six Month Increments
   /// </remarks>
   [Table(nameof(AcademicTerm) + "s")]
-  public class AcademicTerm : BaseModel, INotify
+  public class AcademicTerm : BaseModel
   {
     /// <summary>
     /// The Term Title, must be Unique
@@ -28,19 +28,5 @@ namespace C971.Models.DatabaseModels
     /// </summary>
     [MaxLength(150), NotNull]
     public DateTime End { get; set; }
-
-    /// <inheritdoc />
-    public int NotificationId { get; set; }
-
-    /// <inheritdoc />
-    public Notification Notification()
-    {
-      return new()
-      {
-        Id = NotificationId,
-        Title = TermTitle,
-        Start = Start
-      };
-    }
   }
 }
