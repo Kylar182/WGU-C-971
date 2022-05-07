@@ -43,7 +43,7 @@
     </g>
     <g id="Course_Notes_Input" data-name="Course Notes Input" transform="translate(33 218)">
       <text id="Course_Notes_Input-2" data-name="Course Notes Input" transform="translate(0.5 19)" fill="#707070" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Notes Input</tspan></text>
-      <line id="Input_Line-3" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+      <line id="Input_Line-3" data-name="Input Line" y1="1" x2="248" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
       <text id="Error_Message_if_any_3" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
     </g>
     <g id="Button" transform="translate(80 625)">
@@ -104,6 +104,13 @@
         <rect x="0.5" y="0.5" width="175" height="56" rx="4.5" fill="none"/>
       </g>
       <text id="OBJECTIVE_ASSESSMENT" data-name="OBJECTIVEASSESSMENT" transform="translate(49 13)" fill="#707070" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="-30.841" y="13">OBJECTIVE</tspan><tspan x="-38.068" y="29">ASSESSMENT</tspan></text>
+    </g>
+    <g id="Button-3" data-name="Button" transform="translate(287 206)">
+      <g id="Button_Outline-3" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+        <rect width="96" height="40" rx="6" stroke="none"/>
+        <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+      </g>
+      <text id="SHARE" transform="translate(26 26)" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">SHARE</tspan></text>
     </g>
   </g>
 </svg>

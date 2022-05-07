@@ -392,7 +392,7 @@
       </g>
       <g id="Course_Notes_Input" data-name="Course Notes Input" transform="translate(1001 1001)">
         <text id="Course_Notes_Input-2" data-name="Course Notes Input" transform="translate(0.5 19)" fill="#707070" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Course Notes Input</tspan></text>
-        <line id="Input_Line-7" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
+        <line id="Input_Line-7" data-name="Input Line" y1="1" x2="248" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
         <text id="Error_Message_if_any_7" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
       </g>
       <g id="Button-5" data-name="Button" transform="translate(1048 1408)">
@@ -460,6 +460,13 @@
           <text id="ASSESSMENT-2" data-name="ASSESSMENT" transform="translate(10.932 42)" fill="#707070" stroke="#707070" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">ASSESSMENT</tspan></text>
         </g>
       </g>
+      <g id="Button-7" data-name="Button" transform="translate(1255 989)">
+        <g id="Button_Outline-7" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+          <rect width="96" height="40" rx="6" stroke="none"/>
+          <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
+        </g>
+        <text id="SHARE" transform="translate(26 26)" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">SHARE</tspan></text>
+      </g>
     </g>
     <g id="Assessment_CRUD" data-name="Assessment CRUD" transform="translate(15 13)" clip-path="url(#clip-path-7)">
       <rect id="Rectangle_28" data-name="Rectangle 28" width="414" height="736" transform="translate(1452 783)" fill="#fff" stroke="#707070" stroke-width="1"/>
@@ -486,15 +493,15 @@
         <line id="Input_Line-11" data-name="Input Line" y1="1" x2="348" transform="translate(0 24.5)" fill="none" stroke="#707070" stroke-width="1"/>
         <text id="Error_Message_if_any_11" data-name="Error Message (if any)" transform="translate(0.5 45)" fill="red" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Error Message (if any)</tspan></text>
       </g>
-      <g id="Button-7" data-name="Button" transform="translate(1533 1157)">
-        <g id="Button_Outline-7" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+      <g id="Button-8" data-name="Button" transform="translate(1533 1157)">
+        <g id="Button_Outline-8" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
           <rect width="96" height="40" rx="6" stroke="none"/>
           <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
         </g>
         <text id="SAVE-4" data-name="SAVE" transform="translate(31 26)" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">SAVE</tspan></text>
       </g>
-      <g id="Button-8" data-name="Button" transform="translate(1692 1157)">
-        <g id="Button_Outline-8" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+      <g id="Button-9" data-name="Button" transform="translate(1692 1157)">
+        <g id="Button_Outline-9" data-name="Button Outline" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
           <rect width="96" height="40" rx="6" stroke="none"/>
           <rect x="0.5" y="0.5" width="95" height="39" rx="5.5" fill="none"/>
         </g>
@@ -526,5 +533,6 @@
       <path id="back-button-7" data-name="back-button" d="M4.791,14.8l6.72-6.576L9.782,6.5,0,16l9.782,9.582,1.729-1.721L4.791,17.2H19.563V14.8Z" transform="translate(0 -3.577)" fill-rule="evenodd"/>
       <text id="Date_Pickers-3" data-name="Date Pickers" transform="translate(22.782 19)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Date Pickers</tspan></text>
     </g>
+    <text id="After_initial_feedback_I_ve_made_changes_to_the_Mock_ups_and_application._Initial_I_had_not_made_any_changes." data-name="After initial feedback I&apos;ve made changes to the Mock ups andapplication. Initial I had not made any changes." transform="translate(1436 93)" fill="#707070" stroke="#707070" stroke-width="1" font-size="18" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">After initial feedback I&apos;ve made changes to the Mock ups and</tspan><tspan x="0" y="24">application. Initial I had not made any changes.</tspan></text>
   </g>
 </svg>
